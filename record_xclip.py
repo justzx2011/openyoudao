@@ -74,9 +74,10 @@ def record_callback(reply):
                 pre_text = text.strip()
                 #cmd ="echo -e \'"+ text + "\'  >> history.txt"
                 url= text
-                fin,fout = popen2.popen2("tee -a history.txt")
-                fout.write(text)
-                fout.close()
+                #fin,fout = popen2.popen2("tee -a history.txt")
+                #fout.write(text)
+                #fout.write("\n")
+                #fout.close()
                 #url="http://dict.youdao.com/search?q=" + text
                 #window.load(url)
                 #window.show()
@@ -91,6 +92,7 @@ def record_callback(reply):
                 #f.close()
                 #方法一echo
                 #os.system("/bin/bash -c \"echo -e %s  >> history.txt\"" % text)
+                os.system("/bin/echo \'"+ text + "\' >> history.txt")
 
 
             else:
