@@ -27,18 +27,17 @@ def webshow():
     window.resize(720, 480)
     window.connect("delete-event", gtk.main_quit)
     browser = webkit.WebView()
-    #scroll = gtk.ScrolledWindow()
-    #scroll.add(browser)
+    scroll = gtk.ScrolledWindow()
+    scroll.add(browser)
     browser.open("http://dict.youdao.com/search?q=")
     # Define the horizontal widgets.
-    #toolbar = gtk.HBox()
+    toolbar = gtk.HBox()
     # Define the vertical widgets.
-    #display = gtk.VBox()
-    #display.pack_start(toolbar, False)
-    #display.pack_start(scroll)
+    display = gtk.VBox()
+    display.pack_start(toolbar, False)
+    display.pack_start(scroll)
     # Show the widgets
-    #window.add(display)
-    window.add(browser)
+    window.add(display)
     window.show_all()
     # Start the program
     browser.show()
