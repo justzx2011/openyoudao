@@ -14,7 +14,7 @@
 #Installation
         #apt-get install python-xlib python-webkit xclip
         
-        $git clone git@github.com:justzx2011/youdao.git
+        $git clone git://github.com/justzx2011/openyoudao.git
          
         $cd youdao
         
