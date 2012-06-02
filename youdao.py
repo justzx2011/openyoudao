@@ -16,32 +16,26 @@ def lookup():
     myfile=os.popen("tail -f history.txt")
     while True:
         text=myfile.readline()
-        url="http://dict.youdao.com/search?q=" + text
-        browser.open(url) 
+        if (pre_text != text): 
+            if (text != ""):
+                pre_text = text
+                url="http://dict.youdao.com/search?q=" + text
+                browser.open(url) 
+    
          
 def webshow():
     global browser
     global Alive
     window = gtk.Window()
-    window.set_title("有道字典")
-    window.resize(720, 480)
-    window.connect("delete-event", gtk.main_quit)
     browser = webkit.WebView()
-    #scroll = gtk.ScrolledWindow()
-    #scroll.add(browser)
-    browser.open("http://dict.youdao.com/search?q=")
-    # Define the horizontal widgets.
-    #toolbar = gtk.HBox()
-    # Define the vertical widgets.
-    #display = gtk.VBox()
-    #display.pack_start(toolbar, False)
-    #display.pack_start(scroll)
-    # Show the widgets
-    #window.add(display)
+    window.set_default_size(480,320)
+    window.set_resizable(True)
     window.add(browser)
     window.show_all()
-    # Start the program
     browser.show()
+    browser.load_uri("http://dict.youdao.com/search?q=")
+    window.connect("delete-event", gtk.main_quit)
+    window.set_title("有道字典")
     gtk.main()  
     Alive=0
 
