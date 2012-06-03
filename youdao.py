@@ -1,6 +1,7 @@
 #encoding=utf-8 
 import webkit, gtk
 import thread
+import webshot
 import record_xclip
 import random
 import os
@@ -15,28 +16,23 @@ def lookup():
     #监视history.txt变化
     myfile=os.popen("tail -f history.txt")
     while True:
-        text=myfile.readline()
+        text=myfile.readline().strip('\r\n\x00')
         if (pre_text != text): 
-            if (text != ""):
-                pre_text = text
-                url="http://dict.youdao.com/search?q=" + text
-                browser.open(url) 
+            pre_text = text
+            url="http://dict.youdao.com/search?q=" + text
+            window.load(url)
+            window.show() 
+            #if(text != ""):
+            #    sleep(1)
+            #browser.open(url) 
     
-         
 def webshow():
-    global browser
+    global window
     global Alive
-    window = gtk.Window()
-    browser = webkit.WebView()
-    window.set_default_size(480,320)
-    window.set_resizable(True)
-    window.add(browser)
-    window.show_all()
-    browser.show()
-    browser.load_uri("http://dict.youdao.com/search?q=")
-    window.connect("delete-event", gtk.main_quit)
-    window.set_title("有道字典")
-    gtk.main()  
+    window = webshot.Window()
+    window.load("http://dict.youdao.com/")
+    window.show() 
+    gtk.main() 
     Alive=0
 
 def gettext():
