@@ -69,9 +69,10 @@ def record_callback(reply):
             #webshot.gtk.main()
             global pre_text
             global url
+            text = text.strip('\r\n\x00')
             if(pre_text != text):
                 
-                pre_text = text.strip()
+                pre_text = text
                 #cmd ="echo -e \'"+ text + "\'  >> history.txt"
                 url= text
                 #fin,fout = popen2.popen2("tee -a history.txt")
@@ -92,7 +93,7 @@ def record_callback(reply):
                 #f.close()
                 #方法一echo
                 #os.system("/bin/bash -c \"echo -e %s  >> history.txt\"" % text)
-                os.system("/bin/echo \'"+ text + "\' >> history.txt")
+                os.system("/bin/echo -e  \'"+ text + "\' >> history.txt")
 
 
             else:

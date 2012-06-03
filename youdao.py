@@ -12,6 +12,7 @@ def lookup():
     sleep(5)
     pre_text=""
     text=""
+    global url
     url=""
     #监视history.txt变化
     myfile=os.popen("tail -f history.txt")
@@ -20,12 +21,10 @@ def lookup():
         if (pre_text != text): 
             pre_text = text
             url="http://dict.youdao.com/search?q=" + text
-            window.load(url)
+            window.reconstruction(url)
+            window.load('file:///home/justzx/workplace/openyoudao/index.html')
             window.show() 
-            #if(text != ""):
-            #    sleep(1)
-            #browser.open(url) 
-    
+
 def webshow():
     global window
     global Alive
@@ -36,6 +35,7 @@ def webshow():
     Alive=0
 
 def gettext():
+    os.system("/bin/echo "" > history.txt")
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 # Main thread
