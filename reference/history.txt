@@ -1,0 +1,9 @@
+
+soup = BeautifulSoup(open("index.html"))
+history
+
+parse
+documen
+history
+pass
+BeautifulSoup

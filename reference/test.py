@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#一个简单的浏览器
 # Sam's Web Browser, a nice simple web browser that is most appropriately useless, like it's creator.
 
 # Known bugs: Trying to open a new browser window is possible from the GUI, but does not work. You have to type "http://" before everything or it will not work. This is probably easy to fix but I am just lazy.
