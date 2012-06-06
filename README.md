@@ -59,6 +59,12 @@ RULES
         2 主程序中既是测试程序，不许有功能模块
         3 所有功能模块保持最大化的独立，尤其是界面和程序不许纠缠
         4 取词模块(xclip)、查词模块(curl)、显示模块(webkit)、聚合模块(beautiful soup)
+
+
+Path & File
+----
+
+
 Construction
 ----
         

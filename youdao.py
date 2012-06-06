@@ -10,21 +10,28 @@ import time
 from time import sleep
 def lookup():
     sleep(5)
+    global homedir
+    homedir = os.getcwd()
     pre_text=""
     text=""
     global url
     url=""
     #监视history.txt变化
-    myfile=os.popen("tail -f history.txt")
+    cmd = "tail -f " + homedir + "/cache/history.cache"
+    #print cmd
+    #myfile=os.popen("tail -f \'" + homedir +"\' + \'"/cache/history.txt"\'")
+    myfile=os.popen(cmd)
     while True:
         text=myfile.readline().strip('\r\n\x00')
         if (pre_text != text): 
             pre_text = text
             url="http://dict.youdao.com/search?q=" + text
-            os.system("curl -s -o index.html \'" + url+ "\'")
+            #tmp="curl -s -o " + homedir + "/cache/youdao.htm \'" + url+ "\'"
+            #print tmp
+            os.system("curl -s -o " + homedir + "/cache/youdao.html \'" + url+ "\'")
             fusion.reconstruct()
-            #sleep(1)
-            window.load('file:///home/justzx/workplace/openyoudao/history.html')
+            homeurl="file://" + homedir + "/cache" + "/result.html"
+            window.load(homeurl)
             window.show() 
 
 def webshow():
@@ -37,7 +44,7 @@ def webshow():
     Alive=0
 
 def gettext():
-    os.system("/bin/echo "" > history.txt")
+    os.system("/bin/echo "" > cache/history.cache")
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 # Main thread

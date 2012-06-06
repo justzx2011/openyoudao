@@ -93,7 +93,7 @@ def record_callback(reply):
                 #f.close()
                 #方法一echo
                 #os.system("/bin/bash -c \"echo -e %s  >> history.txt\"" % text)
-                os.system("/bin/echo -e  \'"+ text + "\' >> history.txt")
+                os.system("/bin/echo -e  \'"+ text + "\' >> cache/history.cache")
 
 
             else:
