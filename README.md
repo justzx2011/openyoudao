@@ -63,6 +63,23 @@ RULES
 
 Path & File
 ----
+── cache                         临时数据
+│   ├── history.cache               查词历史
+│   ├── result.html                 合成结果
+│   ├── result-min.css              css风格
+│   └── youdao.html                 有道原始页面
+├── fusion.py                    合成模块
+├── fusion.pyc
+├── README.md                    本说明
+├── record_xclip.py              屏幕取词模块
+├── record_xclip.pyc
+├── ref                          引用参考目录
+├── web                          项目主页网站
+│   ├── index.html                  项目主页
+│   └── style.css                   项目主页风格
+├── webshot.py                   显示模块
+├── webshot.pyc
+└── youdao.py                    主程序(测试程序) 
 
 
 Construction
