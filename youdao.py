@@ -22,7 +22,8 @@ def lookup():
             pre_text = text
             url="http://dict.youdao.com/search?q=" + text
             window.reconstruction(url)
-            window.load('file:///home/justzx/workplace/openyoudao/index.html')
+            #sleep(1)
+            window.load('file:///home/zbn/workplace/openyoudao/history.html')
             window.show() 
 
 def webshow():
