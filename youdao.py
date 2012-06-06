@@ -1,13 +1,13 @@
 #encoding=utf-8 
 import webkit, gtk
 import thread
+import fusion
 import webshot
 import record_xclip
 import random
 import os
 import time
 from time import sleep
-from Queue import Queue
 def lookup():
     sleep(5)
     pre_text=""
@@ -21,9 +21,10 @@ def lookup():
         if (pre_text != text): 
             pre_text = text
             url="http://dict.youdao.com/search?q=" + text
-            window.reconstruction(url)
+            os.system("curl -s -o index.html \'" + url+ "\'")
+            fusion.reconstruct()
             #sleep(1)
-            window.load('file:///home/zbn/workplace/openyoudao/history.html')
+            window.load('file:///home/justzx/workplace/openyoudao/history.html')
             window.show() 
 
 def webshow():

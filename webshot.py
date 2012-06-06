@@ -21,8 +21,6 @@ class Window(gtk.Window):
         self.is_fullscreen = False
     def load(self, url):
         self.output.load_uri(url)
-    def reconstruction(self,url):
-        os.system("curl -s -o index.html \'" + url+ "\'")
         
 #window = Window()
 #window.load(sys.argv[1])
