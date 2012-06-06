@@ -28,9 +28,9 @@ def lookup():
             url="http://dict.youdao.com/search?q=" + text
             #tmp="curl -s -o " + homedir + "/cache/youdao.htm \'" + url+ "\'"
             #print tmp
-            os.system("curl -s -o " + homedir + "/cache/youdao.html \'" + url+ "\'")
+            os.system("curl -s -o cache/youdao.html \'" + url+ "\'")
             fusion.reconstruct()
-            homeurl="file://" + homedir + "/cache" + "/result.html"
+            homeurl="file://" + homedir + "/cache/result.html"
             window.load(homeurl)
             window.show() 
 

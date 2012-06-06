@@ -11,7 +11,7 @@ def reconstruct():
     result = soup.find('div',{"id":"results"})
     sousuo = soup.find('form',{"id":"f"})
     sousuo  = str(sousuo).replace("action=\"/search\"","action=\"http://dict.youdao.com/search\"")
-    os.system("rm  cache/result.html")
+    os.system("echo "" > cache/result.html")
     fin,fout = popen2.popen2("tee -a cache/result.html")
     fout.write("<html>")
     fout.write(str(head))
