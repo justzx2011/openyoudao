@@ -10,8 +10,8 @@ def reconstruct():
     head = soup.html.head.extract()
     result = soup.find('div',{"id":"results"})
     sousuo = soup.find('form',{"id":"f"})
-    sousuo  = str(sousuo).replace("action=\"/search\"","action=\"http://dict.youdao.com/search\"")
-    result  = str(result).replace("href=\"/example/","href=\"http://dict.youdao.com/example/")
+    #sousuo  = str(sousuo).replace("action=\"/search\"","action=\"http://dict.youdao.com/search\"")
+    #result  = str(result).replace("href=\"/example/","href=\"http://dict.youdao.com/example/")
     os.system("echo "" > cache/result.html")
     fin,fout = popen2.popen2("tee -a cache/result.html")
     fout.write("<html>")
@@ -27,3 +27,8 @@ def reconstruct():
     fout.write("</body>")
     fout.write("</html>")
     fout.close()
+    #sed -i 's/text/111/g' test 
+    #sed -e "s:':kd:g" iii  
+    #result  = str(result).replace("href=\"/example/","href=\"http://dict.youdao.com/example/")
+    os.system("sed -i -e \"s\/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g\" result.html")
+    os.system("sed -i -e \"s\/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g\" result.html")
