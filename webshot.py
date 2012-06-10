@@ -11,12 +11,12 @@ class OutputView(webkit.WebView):
 class Window(gtk.Window):
     def __init__(self):
         gtk.Window.__init__(self)
-        self.set_default_size(1024, 768)
-        self.scroll = gtk.ScrolledWindow()
+        self.set_resizable(True)
+        self.set_title("openyoudao")
+        self.set_default_size(480, 320)
         self.output = OutputView()
-        self.scroll.add(self.output)
-        self.add(self.scroll)
-        self.scroll.show_all()
+        self.add(self.output)
+        self.show_all()
         self.connect('delete-event', gtk.main_quit)
         self.is_fullscreen = False
     def load(self, url):
