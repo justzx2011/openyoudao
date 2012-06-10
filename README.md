@@ -67,41 +67,77 @@ RULES
 Path & File
 ----
 <p>├── cache
+
 │   ├── construction
+
 │   │   ├── body-end.txt
+
 │   │   ├── body-start.txt
+
 │   │   └── head.html
+
 │   ├── css
+
 │   │   └── result-min.css
+
 │   ├── history.cache
+
 │   ├── images
+
 │   │   ├── down<em>arrow.gif
+
 │   │   ├── scrollbar</em>handle.gif
+
 │   │   ├── scrollbar<em>track.gif
+
 │   │   └── up</em>arrow.gif
+
 │   ├── js
+
 │   │   ├── autocomplete.r156903.js
+
 │   │   ├── extra.js
+
 │   │   ├── jsScrollbar.js
+
 │   │   ├── jsScroller.js
+
 │   │   └── result-min.js
+
 │   ├── result.html
+
 │   └── youdao.html
+
 ├── fusion.py
+
 ├── fusion.pyc
+
 ├── README.md
+
 ├── record<em>xclip.py
+
 ├── record</em>xclip.pyc
+
 ├── ref
+
 │   ├── browser.py
+
 │   ├── inspector.py
+
 │   ├── inspector.pyc
+
 │   └── scrolledwin.py
+
 ├── web
+
 │   ├── index.html
+
 │   └── style.css
+
 ├── webshot.py
+
 ├── webshot.pyc
+
 └── youdao.py</p>
 
 Construction
