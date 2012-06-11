@@ -26,7 +26,10 @@ TODO
         2 增强与其它程序的兼容性
         3 重新规划目录、打包
         4 重新格式化网页界面 ----- 使用beautiful soup 
-        5 创建配置页面 
+        5 创建配置页面
+        6 去除滚动条，改用js
+        7 编写config.html,作为配置页,用作主页,用js
+        8 浏览器侧边加方形标签，用于切换
 DONE
 -----  
         2012-6-6   -------   对网页进行了简单重构
@@ -67,24 +70,79 @@ RULES
 
 Path & File
 ----
-── cache                         临时数据
-│   ├── history.cache               查词历史
-│   ├── result.html                 合成结果
-│   ├── result-min.css              css风格
-│   └── youdao.html                 有道原始页面
-├── fusion.py                    合成模块
-├── fusion.pyc
-├── README.md                    本说明
-├── record_xclip.py              屏幕取词模块
-├── record_xclip.pyc
-├── ref                          引用参考目录
-├── web                          项目主页网站
-│   ├── index.html                  项目主页
-│   └── style.css                   项目主页风格
-├── webshot.py                   显示模块
-├── webshot.pyc
-└── youdao.py                    主程序(测试程序) 
+<p>├── cache
 
+│   ├── construction
+
+│   │   ├── body-end.txt
+
+│   │   ├── body-start.txt
+
+│   │   └── head.html
+
+│   ├── css
+
+│   │   └── result-min.css
+
+│   ├── history.cache
+
+│   ├── images
+
+│   │   ├── down<em>arrow.gif
+
+│   │   ├── scrollbar</em>handle.gif
+
+│   │   ├── scrollbar<em>track.gif
+
+│   │   └── up</em>arrow.gif
+
+│   ├── js
+
+│   │   ├── autocomplete.r156903.js
+
+│   │   ├── extra.js
+
+│   │   ├── jsScrollbar.js
+
+│   │   ├── jsScroller.js
+
+│   │   └── result-min.js
+
+│   ├── result.html
+
+│   └── youdao.html
+
+├── fusion.py
+
+├── fusion.pyc
+
+├── README.md
+
+├── record<em>xclip.py
+
+├── record</em>xclip.pyc
+
+├── ref
+
+│   ├── browser.py
+
+│   ├── inspector.py
+
+│   ├── inspector.pyc
+
+│   └── scrolledwin.py
+
+├── web
+
+│   ├── index.html
+
+│   └── style.css
+
+├── webshot.py
+
+├── webshot.pyc
+
+└── youdao.py</p>
 
 Construction
 ----

@@ -29,6 +29,7 @@ def lookup():
             #tmp="curl -s -o " + homedir + "/cache/youdao.htm \'" + url+ "\'"
             #print tmp
             os.system("curl -s -o cache/youdao.html \'" + url+ "\'")
+            os.system("echo "" > cache/result.html")
             fusion.reconstruct()
             homeurl="file://" + homedir + "/cache/result.html"
             window.load(homeurl)
@@ -37,8 +38,11 @@ def lookup():
 def webshow():
     global window
     global Alive
+    global homedir
+    homedir = os.getcwd()
     window = webshot.Window()
-    window.load("http://dict.youdao.com/")
+    #window.load("http://dict.youdao.com/")
+    window.load("file://" + homedir + "/cache/config.html")
     window.show() 
     gtk.main() 
     Alive=0
