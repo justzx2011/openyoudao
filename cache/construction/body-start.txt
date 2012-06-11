@@ -1,3 +1,25 @@
+<ul id="demo_menu2" >
+            <li><a href="#" >有道字典</a></li>
+            <li><a href="#" >爱词霸</a></li>
+            <li><a href="#" >维基百科</a></li>
+            <li><a href="#" >豆瓣</a></li>
+            <li><a href="#" >fusion</a></li>
+        </ul>
+<script type="text/javascript">
+        $("ul#demo_menu2").sidebar({
+            position:"right",
+            callback:{
+                item : {
+                    enter : function(){
+                        $(this).find("a").animate({color:"red"}, 250);
+                    },
+                    leave : function(){
+                        $(this).find("a").animate({color:"white"}, 250);
+                    }
+                }
+            }
+        });
+        </script>
 <div id="Scrollbar-Container">
     <img src="images/up_arrow.gif" class="Scrollbar-Up" />
     <img src="images/down_arrow.gif" class="Scrollbar-Down" />
