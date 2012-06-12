@@ -1,9 +1,9 @@
 <ul id="demo_menu2" >
-            <li><a href="http://dict.youdao.com/" >有道字典</a></li>
-            <li><a href="http://www.iciba.com/" >爱词霸</a></li>
-            <li><a href="http://zh.wikipedia.org/" >维基百科</a></li>
-            <li><a href="http://www.douban.com/" >豆瓣</a></li>
-            <li><a href="http://openyoudao.org/" >fusion</a></li>
+            <li><a rel="http://dict.youdao.com/" id='dict_1' onclick='Getconfig(1)'>有道字典</a></li>
+            <li><a rel="http://www.iciba.com/" id='dict_2' onclick='Getconfig(2)'>爱词霸</a></li>
+            <li><a rel="http://zh.wikipedia.org/" id='dict_3' onclick='Getconfig(3)'>维基百科</a></li>
+            <li><a rel="http://www.douban.com/" id='dict_4' onclick='Getconfig(4)'>豆瓣</a></li>
+            <li><a rel="http://openyoudao.org/" id='dict_5' onclick='Getconfig(5)'>fusion</a></li>
         </ul>
 <script type="text/javascript">
         $("ul#demo_menu2").sidebar({

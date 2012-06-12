@@ -74,4 +74,14 @@ window.onload = function () {
   scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
 }
 </script>
+
+<script>
+function Getconfig(i)
+{
+var content=$('#dict_'+i).attr('rel');
+localStorage.content=content;
+alert(localStorage.content);
+}
+</script>
+
 </head>
