@@ -79,13 +79,9 @@ window.onload = function () {
 function Getconfig(i)
 {
 var content=$('#dict_'+i).attr('rel');
-var content=$('#dict_'+i).attr('rel');
-var t = getElementsByClassName( 's-inpt');
-localStorage.dict=content.split("###")[0];
-localStorage.url=content.split("###")[1];
-localStorage.construction=content.split("###")[2];
-localStorage.keywords=document.getElementsByTagName("input");
-alert(t)
+localStorage.setItem('dict',content)
+alert(document.getElementsByTagName("input")[1].getAttribute("value"))
+localStorage.setItem('keyword',document.getElementsByTagName("input")[1].getAttribute("value"))
 }
 </script>
 
