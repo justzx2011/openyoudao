@@ -13,7 +13,8 @@ url=""
 #print "SQLite version: %s" % output.getvalue()
 #text1=''.join(output)
 #print text1
-url=str(output.getvalue())
+url="".join("%s" % tup for tup in output.getvalue())
+url=url.strip()
 #print url >> cache/history.cache
 #os.system("/bin/echo -e  \'"+ url  + "\' >> cache/history.cache")
 oldStdout = sys.stdout

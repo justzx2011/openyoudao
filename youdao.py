@@ -1,6 +1,7 @@
 #encoding=utf-8 
 import sqlite3
 import gl
+import string
 import sys
 import webkit, gtk
 import thread
@@ -37,7 +38,8 @@ def inputconfig():
     print >>output1,r1[0]
     #print gl.baseurl,output.getvalue()
     #print gl.keywordtext,output1.getvalue()
-    gl.baseurl=str(output.getvalue())
+    #gl.baseurl=str(output.getvalue())
+    gl.baseurl= ''.join(output.getvalue())
     if(gl.prebaseurl != gl.baseurl):
         gl.keywordtext=str(output1.getvalue())
         oldStdout = sys.stdout
