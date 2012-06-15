@@ -1,5 +1,6 @@
 #encoding=utf-8 
 import sqlite3
+import gl
 import sys
 import webkit, gtk
 import thread
@@ -11,16 +12,19 @@ import os
 import StringIO
 import time
 from time import sleep
+#global keywordtext
+#global baseurl
+#global prebaseurl
+#global homedir
+#global url
+#keywordtext = ""
+#baseurl=""
+#prebaseurl=""
+#url=""
+#homedir = os.getcwd()
 def inputconfig():
-    global keywordtext
-    keywordtext = ""
-    global baseurl
-    baseurl=""
-    global prebaseurl
-    prebaseurl=""
-    prebaseurl = baseurl
+    gl.prebaseurl = gl.baseurl
     conn = sqlite3.connect('/home/justzx/.local/share/webkit/databases/file__0.localstorage')
-    homedir = os.getcwd()
     c = conn.cursor()
     c1 = conn.cursor()
     c.execute("select value from ItemTable where key = 'dict' ")
@@ -31,40 +35,31 @@ def inputconfig():
     output1=StringIO.StringIO() 
     print >>output,r[0]
     print >>output1,r1[0]
-    print baseurl,output.getvalue()
-    print keywordtext,output1.getvalue()
-    baseurl=str(output.getvalue())
-    keywordtext=str(output1.getvalue())
-    if(prebaseurl != baseurl):
-        text=str(output1.getvalue())
-        #print keywordtext
-        #os.system("/bin/echo -e  \'"+ keywordtext + "\' >> cache/history.cache")
+    #print gl.baseurl,output.getvalue()
+    #print gl.keywordtext,output1.getvalue()
+    gl.baseurl=str(output.getvalue())
+    if(gl.prebaseurl != gl.baseurl):
+        gl.keywordtext=str(output1.getvalue())
         oldStdout = sys.stdout
         sys.stdout= open("cache/history.cache", "w+")
-        print >> sys.stdout,url.strip()
-    prebaseurl=baseurl
+        print >> sys.stdout,gl.keywordtext.strip()
     output.close()
     output1.close()
 def lookup():
     sleep(5)
-    global homedir
-    homedir = os.getcwd()
     pre_text=""
     text=""
-    global url
-    url=""
-    global baseurl
     #监视history.txt变化
     cmd = "tail -f " + homedir + "/cache/history.cache"
     inputconfig()
-    print baseurl
+    print gl.baseurl
     #myfile=os.popen("tail -f \'" + homedir +"\' + \'"/cache/history.txt"\'")
     myfile=os.popen(cmd)
     while True:
         text=myfile.readline().strip('\r\n\x00')
         if (pre_text != text): 
             pre_text = text
-            url= baseurl + text
+            url= gl.baseurl + text
             #tmp="curl -s -o " + homedir + "/cache/youdao.htm \'" + url+ "\'"
             #print tmp
             os.system("curl -s -o cache/youdao.html \'" + url+ "\'")
