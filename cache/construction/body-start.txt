@@ -1,9 +1,7 @@
 <ul id="demo_menu2" >
-            <li><a rel="http://dict.youdao.com/" id='dict_1' onclick='Getconfig(1)'>有道字典</a></li>
+            <li><a rel="http://dict.youdao.com/search?q=" id='dict_1' onclick='Getconfig(1)'>有道字典</a></li>
             <li><a rel="http://www.iciba.com/" id='dict_2' onclick='Getconfig(2)'>plugins</a></li>
-            <li><a rel="http://zh.wikipedia.org/" id='dict_3' onclick='Getconfig(3)'>works</a></li>
-            <li><a rel="http://www.douban.com/" id='dict_4' onclick='Getconfig(4)'>daily</a></li>
-            <li><a rel="http://openyoudao.org/" id='dict_5' onclick='Getconfig(5)'>contact</a></li>
+            <li><a rel="http://zh.wikipedia.org/wiki/" id='dict_3' onclick='Getconfig(3)'>works</a></li>
         </ul>
 <script type="text/javascript">
         $("ul#demo_menu2").sidebar({
