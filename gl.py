@@ -5,8 +5,10 @@ global baseurl
 global prebaseurl
 global homedir
 global url
-keywordtext = ""
+keywordtext = "text"
 baseurl=""
 prebaseurl=""
 url=""
 homedir = os.getcwd()
+baseurlyoudao="http://dict.youdao.com/search?q="
+baseurlicb="http://www.iciba.com/"

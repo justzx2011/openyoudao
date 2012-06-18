@@ -5,9 +5,9 @@ import popen2
 def reconstruct():
     homedir = os.getcwd()
     soup = BeautifulSoup(open(homedir +  "/cache/youdao.html"))
-    head = BeautifulSoup(open(homedir +  "/cache/construction/head.html"))
-    bodystart = BeautifulSoup(open(homedir +  "/cache/construction/body-start.txt"))
-    bodyend = BeautifulSoup(open(homedir +  "/cache/construction/body-end.txt"))
+    head = BeautifulSoup(open(homedir +  "/cache/construction/youdao/head.html"))
+    bodystart = BeautifulSoup(open(homedir +  "/cache/construction/youdao/body-start.txt"))
+    bodyend = BeautifulSoup(open(homedir +  "/cache/construction/youdao/body-end.txt"))
     result = soup.find('div',{"id":"results"})
     sousuo = soup.find('form',{"id":"f"})
     #sousuo  = str(sousuo).replace("action=\"/search\"","action=\"http://dict.youdao.com/search\"")

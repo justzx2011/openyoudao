@@ -1,0 +1,29 @@
+<ul id="demo_menu2" >
+            <li><a rel="http://dict.youdao.com/search?q=" id='dict_1' onclick='Getconfig(1)'>有道字典</a></li>
+            <li><a rel="http://www.iciba.com/" id='dict_2' onclick='Getconfig(2)'>icb</a></li>
+        </ul>
+<script type="text/javascript">
+        $("ul#demo_menu2").sidebar({
+            position:"right",
+            callback:{
+                item : {
+                    enter : function(){
+                        $(this).find("a").animate({color:"red"}, 250);
+                    },
+                    leave : function(){
+                        $(this).find("a").animate({color:"white"}, 250);
+                    }
+                }
+            }
+        });
+        </script>
+<div id="Scrollbar-Container">
+    <img src="images/up_arrow.gif" class="Scrollbar-Up" />
+    <img src="images/down_arrow.gif" class="Scrollbar-Down" />
+    <div class="Scrollbar-Track">
+    <img src="images/scrollbar_handle.gif" class="Scrollbar-Handle" />
+    </div>
+</div>
+<div class="Container">
+  <div id="Scroller-1">
+   <div class="Scroller-Container">

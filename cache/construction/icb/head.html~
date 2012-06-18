@@ -1,0 +1,74 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/dark-glass/sidebar.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.sidebar.js"></script>
+<style type="text/css">
+.Container {
+  position: absolute;
+  top: 0px; left: 100px;
+  width: 1024px;
+  height: 768px;
+}
+#Scroller-1 {
+  position: absolute;
+  overflow: hidden;
+  width: 1024px;
+  height: 768px;
+}
+#Scroller-1 p {
+  margin: 0; padding: 10px 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  text-indent: 20px;
+  color: #6F6048;
+}
+.Scroller-Container {
+  position: absolute;
+  top: 0px; left: 0px;
+}
+#Scrollbar-Container {
+  position: absolute;
+  top: 40px; left: 60px;
+}
+.Scrollbar-Up {
+  cursor: pointer;
+  position: absolute;
+}
+.Scrollbar-Track {
+  width: 20px; height: 600px;
+  position: absolute;
+  top: 36px; left: 4px;
+  background: transparent url(images/scrollbar_track.gif) no-repeat center center;
+}
+.Scrollbar-Handle {
+  position: absolute;
+  width: 20px; height: 22px;
+}
+.Scrollbar-Down {
+  cursor: pointer;
+  position: absolute;
+  top: 640px;
+}
+</style>
+<script>
+function Getconfig(i)
+{
+var content=$('#dict_'+i).attr('rel');
+localStorage.setItem('dict',content)
+alert(document.getElementsByTagName("input")[0].getAttribute("value"))
+localStorage.setItem('keyword',document.getElementsByTagName("input")[0].getAttribute("value"))
+}
+</script>
+<script type="text/javascript">
+var scroller  = null;
+var scrollbar = null;
+window.onload = function () {
+  scroller  = new jsScroller(document.getElementById("Scroller-1"), 1024, 768);
+  scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
+}
+</script>
+<script type="text/javascript" src="js/jsScroller.js"></script>
+<script type="text/javascript" src="js/jsScrollbar.js"></script>
+</head>

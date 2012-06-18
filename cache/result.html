@@ -1,48 +1,696 @@
-
-<html><head>
-<meta charset="utf-8" />
-<meta name="description" content="" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-<link href="../../scripts/compressor/styles/entry-min.css" type="text/css" rel="stylesheet" />
-<title>有道词典首页</title>
-</head><div class="c-header"><form method="get" action="http://dict.youdao.com/search" class="c-fm-w" id="f">
-<!--Begin 搜索框 -->
-<span class="s-inpt-w">
-<input type="text" class="s-inpt" autocomplete="off" name="q" id="query" onmouseover="this.focus()" onfocus="this.select()" maxlength="256" />
-<span id="hnwBtn" class="hand-write"></span>
-<!-- Begin 这两个SPAN 尽量写一行 -->
-</span><span class="s-btn-w">
-<!-- #End 这两个SPAN 尽量写一行 -->
-<input type="submit" class="s-btn" id="qb" value="搜 索" />
-<input type="hidden" name="keyfrom" value="dict.index" />
-</span>
-<!--End 搜索框 -->
-<div class="sg-wrap" style="width: 503px;display:none">
-<table width="100%" cellspacing="0" cellpadding="0" border="0">
-<tr>
-<td valign="top">
-<ul class="sg-result-list">
-</ul>
-</td>
-<td class="sob-wrap"><span class="sob-close">关闭</span>
-<div class="sob-main">
+<html>
+<head>
+<meta name="baidu_union_verify" content="b3b78fbb4a7fb8c99ada6de72aac8a0e" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="textile" />
+<title>【textile】什么意思_翻译_解释_音标_有道词典</title>
+<link rel="shortcut icon" href="http://shared.ydstatic.com/images/favicon.ico" type="image/x-icon" />
+<link href="http://shared.ydstatic.com/dict/v5.03/styles/result-min.css" rel="stylesheet" type="text/css" />
+<link rel="canonical" href="http://dict.youdao.com/w/textile/" />
+<link rel="search" type="application/opensearchdescription+xml" title="Yodao Dict" href="plugins/search-provider.xml" />
 <style type="text/css">
-                                    .sob-zhida {
-                                        margin: 9px 0 0 15px;
-                                    }
+.Container {
+  position: absolute;
+  top: 0px; left: 100px;
+  width: 1024px;
+  height: 768px;
+}
+#Scroller-1 {
+  position: absolute;
+  overflow: hidden;
+  width: 1024px;
+  height: 768px;
+}
+#Scroller-1 p {
+  margin: 0; padding: 10px 20px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  text-indent: 20px;
+  color: #6F6048;
+}
+.Scroller-Container {
+  position: absolute;
+  top: 0px; left: 0px;
+}
+#Scrollbar-Container {
+  position: absolute;
+  top: 40px; left: 60px;
+}
+.Scrollbar-Up {
+  cursor: pointer;
+  position: absolute;
+}
+.Scrollbar-Track {
+  width: 20px; height: 600px;
+  position: absolute;
+  top: 36px; left: 4px;
+  background: transparent url(images/scrollbar_track.gif) no-repeat center center;
+}
+.Scrollbar-Handle {
+  position: absolute;
+  width: 20px; height: 22px;
+}
+.Scrollbar-Down {
+  cursor: pointer;
+  position: absolute;
+  top: 640px;
+}
+</style>
+<script type="text/javascript" src="js/result-min.js"></script>
+<script type="text/javascript" src="js/autocomplete.r156903.js"></script>
+<script type="text/javascript" src="js/extra.js"></script>
+<script type="text/javascript" src="js/jsScroller.js"></script>
+<script type="text/javascript" src="js/jsScrollbar.js"></script>
 
-                                    .sob-zhida .sob-zhida-list li {
-                                        padding: 5px 0;
-                                        font-family: "\5B8B\4F53";
-                                        color: #cdcdcc;
-                                    }
+<link rel="stylesheet" type="text/css" href="css/dark-glass/sidebar.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.sidebar.js"></script>
 
-                                    .sob-zhida .sob-zhida-list li a {
-                                        color: #000;
-                                    }
-                                </style>
-</div></td>
-</tr>
-</table>
+<script type="text/javascript">
+var scroller  = null;
+var scrollbar = null;
+window.onload = function () {
+  scroller  = new jsScroller(document.getElementById("Scroller-1"), 1024, 768);
+  scrollbar = new jsScrollbar (document.getElementById("Scrollbar-Container"), scroller, false);
+}
+</script>
+
+<script>
+function Getconfig(i)
+{
+var content=$('#dict_'+i).attr('rel');
+localStorage.setItem('dict',content)
+alert(document.getElementsByTagName("input")[1].getAttribute("value"))
+localStorage.setItem('keyword',document.getElementsByTagName("input")[1].getAttribute("value"))
+}
+</script>
+
+</head>
+
+<body>
+<ul id="demo_menu2" >
+            <li><a rel="http://dict.youdao.com/search?q=" id='dict_1' onclick='Getconfig(1)'>有道字典</a></li>
+            <li><a rel="http://www.iciba.com/" id='dict_2' onclick='Getconfig(2)'>icb</a></li>
+        </ul>
+<script type="text/javascript">
+        $("ul#demo_menu2").sidebar({
+            position:"right",
+            callback:{
+                item : {
+                    enter : function(){
+                        $(this).find("a").animate({color:"red"}, 250);
+                    },
+                    leave : function(){
+                        $(this).find("a").animate({color:"white"}, 250);
+                    }
+                }
+            }
+        });
+        </script>
+<div id="Scrollbar-Container">
+    <img src="images/up_arrow.gif" class="Scrollbar-Up" />
+    <img src="images/down_arrow.gif" class="Scrollbar-Down" />
+    <div class="Scrollbar-Track">
+    <img src="images/scrollbar_handle.gif" class="Scrollbar-Handle" />
+    </div>
 </div>
-</form></div>None</html>
+<div class="Container">
+  <div id="Scroller-1">
+   <div class="Scroller-Container">
+
+
+
+<div class="c-header">
+<form id="f" method="get" action="http://dict.youdao.com/search" class="c-fm-w">
+<div id="langSelector" class="langSelector">
+<span id="langText">汉英互译</span>
+<span class="aca">▼</span>
+<input type="hidden" id="le" name="le" value="eng" />
+</div>
+<span class="s-inpt-w">
+<input type="text" class="s-inpt" autocomplete="off" name="q" id="query" onmouseover="this.focus()" onfocus="this.select()" value="available" />
+<input type="hidden" name="tab" value="" />
+<input type="hidden" name="keyfrom" value="dict.top" />
+<span id="hnwBtn" class="hand-write"></span>
+</span><span class="s-btn-w">
+<input type="submit" class="s-btn" value="搜 索" />
+</span>
+</form>
+</div>
+<div id="results">
+<div id="result_navigator" class="result_navigator">
+<h3>目录</h3>
+<ul class="sub-catalog">
+<li class="split"></li>
+<li class="sub1_all"><a class="nav-js log-js" href="#" hidefocus="true" data-4log="dict.nav.basic">释义</a></li>
+<li class="spoken"><a class="nav-js log-js" href="#eTransform" hidefocus="true" data-4log="dict.nav.usage">用法</a></li>
+<li class="written"><a class="nav-js log-js" href="#examples" hidefocus="true" data-4log="dict.nav.sentence">例句</a></li>
+<li class="split"></li>
+<li class="nav-collins"><a class="nav-js log-js" href="#collins" hidefocus="true" data-4log="dict.nav.collins" title="柯林斯高级英汉双解词典">柯林斯</a><span class="collins-icon"></span></li>
+<li class="nav-21"><a class="nav-js log-js" href="#tfdict" hidefocus="true" data-4log="dict.nav.tf" title="21世纪大英汉词典">21世纪</a></li>
+</ul>
+<a href="#" class="go-top log-js" data-4log="dict.result.nav.top" title="返回顶部">go top</a>
+</div>
+<!-- 结果内容 -->
+<div id="results-contents" class="results-content">
+<div id="phrsListTab" class="trans-wrapper clearfix">
+<h2 class="wordbook-js">
+<span class="keyword">available</span>
+<span class="phonetic">[ə'veiləbl]</span>
+<a href="#" title="发音" class="sp dictvoice voice-js log-js" data-rel="available" data-4log="dict.basic.ec.voice"></a>
+</h2>
+<div class="trans-container">
+<ul>
+<li>adj. 有效的，可得的；可利用的；空闲的</li>
+</ul>
+</div>
+</div>
+<div id="webTrans" class="trans-wrapper trans-tab">
+<h3>
+<span class="tabs">
+<a rel="#tWebTrans"><span>网络释义</span></a><a rel="#tEETrans"><span>英英释义</span></a>
+</span>
+<a class="toggle toggleOpen" rel="#webTransToggle"></a>
+</h3>
+<!--网络翻译-->
+<div id="webTransToggle">
+<div id="tWebTrans" class="trans-container tab-content">
+<div class="wt-container">
+<div class="title">
+<a href="#" title="详细释义" rel="#rw1" class="sp do-detail">&nbsp;</a>
+<span>
+                可到职</span>
+</div>
+<p class="collapse-content">
+    引用 中英对照---团体简历词汇大全-深圳英语网—... ...
+date of availability <b>可到职</b>时间
+<b>available </b><b>可到职</b>
+membership 会员，资格[http://52english.kingerenglish.com-专业英语学习网] ...</p>
+<p class="collapse-content via">基于1070个网页<span class="sl">-</span><a href="http://www.youdao.com/search?keyfrom=dict&amp;q=available+%E5%8F%AF%E5%88%B0%E8%81%8C&amp;ue=utf8" target="_blank" rel="nofollow">相关网页</a></p>
+</div>
+<div class="wt-container wt-collapse">
+<div class="title">
+<a href="#" title="详细释义" rel="#rw1" class="sp do-detail">&nbsp;</a>
+<span>
+                可用的</span>
+</div>
+<p class="collapse-content">
+    课程推荐 ...
+presidential?总统的，总统职务的
+<b>available</b>?<b>可用的</b>，合用的，可得到的，可到达的
+fully?完全地，彻底地 ...</p>
+<p class="collapse-content via">基于913个网页<span class="sl">-</span><a href="http://www.youdao.com/search?keyfrom=dict&amp;q=available+%E5%8F%AF%E7%94%A8%E7%9A%84&amp;ue=utf8" target="_blank" rel="nofollow">相关网页</a></p>
+</div>
+<div class="wt-container wt-collapse">
+<div class="title">
+<a href="#" title="详细释义" rel="#rw1" class="sp do-detail">&nbsp;</a>
+<span>
+                可得到的</span>
+</div>
+<p class="collapse-content">
+    然后，我用RecipeID字段做连接要求创建了第三个视图，增加了一个的要求那那是<b>可得到的</b>（<b>Available</b>）必需等于需求的（Required）。为了使那个列表更吸引人，我把Recipes表也加到里面去了，所以我能获得食谱的姓名。</p>
+<p class="collapse-content via">基于233个网页<span class="sl">-</span><a href="http://www.youdao.com/search?keyfrom=dict&amp;q=available+%E5%8F%AF%E5%BE%97%E5%88%B0%E7%9A%84&amp;ue=utf8" target="_blank" rel="nofollow">相关网页</a></p>
+</div>
+<div class="wt-container wt-collapse">
+<div class="title">
+<a href="#" title="详细释义" rel="#rw1" class="sp do-detail">&nbsp;</a>
+<span>
+                可利用的</span>
+</div>
+<p class="collapse-content">
+    公共英语三级词汇表2 ...
+autumn 秋
+<b>available </b><b>可利用的</b>，可得到的
+avenue 林荫路，大街，途径 ...</p>
+<p class="collapse-content via">基于231个网页<span class="sl">-</span><a href="http://www.youdao.com/search?keyfrom=dict&amp;q=available+%E5%8F%AF%E5%88%A9%E7%94%A8%E7%9A%84&amp;ue=utf8" target="_blank" rel="nofollow">相关网页</a></p>
+</div>
+<div id="webPhrase" class="pr-container more-collapse">
+<div class="title">短语</div>
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/available_material/">available material</a></span>
+                          良品可使用
+                      ;
+                  可用材料
+                      ;
+                  可用物料
+                      ;
+                  良品可以使用
+              </p>
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/date_available/">Date Available</a></span>
+                          有效日期
+                      ;
+                  可到职日期
+                      ;
+                  具体职位
+                      ;
+                  三副
+              </p>
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/available_income/">available income</a></span>
+<span class="gray">[经]</span>
+                   可用收益
+                      ;
+            	   	   <span class="gray">[经]</span>
+                   可用收入
+                      ;
+            	   	   <span class="gray">[经]</span>
+                   可动用收益
+              </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_capacity/">available capacity</a></span>
+                          有效容积
+                      ;
+                  可用功率
+                      ;
+                  有效容量
+                      ;
+                  可用容量
+              </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_heat/">available heat</a></span>
+<span class="gray">[热]</span>
+                   有效热
+                      ;
+                  有用热量
+                      ;
+                  可用热量
+                      ;
+                  可用热
+              </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_space/">available space</a></span>
+<span class="gray">[计]</span>
+                   可用空间
+                      ;
+                  可用范围
+                      ;
+            	   	   <span class="gray">[计]</span>
+                   可用间隙
+                      ;
+                  有效舱容
+              </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/c_available/">C available</a></span>
+                          可利用的
+              </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_credit/">available credit</a></span>
+                          可资利用的信用
+                      ;
+                  可用额度
+                      ;
+                  可用信用额度
+                      ;
+                  可用信用额
+              </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_accuracy/">available accuracy</a></span>
+                          可达精度
+                      ;
+            	   	   <span class="gray">[机]</span>
+                   有效准确度
+              </p>
+<div class="more"><a href="#" class="sp more_sp">&nbsp;</a><span class="show_more">更多</span><span class="show_less">收起</span>网络短语</div>
+</div> <!-- close webPhrase Tag -->
+</div>
+<div id="tEETrans" class="trans-container tab-content">
+<div class="trans-container">
+<!--eng eng result start-->
+<h4>
+        available
+            <span class="phonetic">[ ə'veiləbl ]</span>
+</h4>
+<ul>
+<li>
+<span class="pos">adj.</span>
+<ul class="ol">
+<li>
+<span class="def">obtainable or accessible and ready for use or service</span>
+<p><em>&quot;kept a fire extinguisher available&quot;; &quot; much information is available through computers&quot;; &quot; available in many colors&quot;; &quot; the list of available candidates is unusually long&quot;</em></p>
+</li>
+<li>
+<span class="def">not busy; not otherwise committed</span>
+<p><em>&quot;he was not available for comment&quot;; &quot; he was available and willing to accompany her&quot;</em></p>
+<p class="gray">同义词：
+								                                  				    <a class="search-js" href="/w/uncommitted/">uncommitted</a>
+</p>
+</li>
+<li>
+<span class="def">convenient for use or disposal</span>
+<p><em>&quot;the house is available after July 1&quot;</em></p>
+<p class="gray">同义词：
+								                                  				    <a class="search-js" href="/w/usable/">usable</a>
+<a class="search-js" href="/w/useable/">useable</a>
+</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="via ar">
+以上来源于:
+<a class="tipshuiseunderline log-js" data-4log="wordnet" target="_blank" href="http://wordnet.princeton.edu/" rel="nofollow">WordNet</a>
+</p>
+<!-- 英英翻译结束 -->
+</div>
+</div>
+</div>
+</div>
+<div id="eTransform" class="trans-wrapper trans-tab">
+<h3>
+<span class="tabs">
+<a rel="#wordGroup"><span>词组短语</span></a><a rel="#synonyms"><span>同近义词</span></a><a rel="#relWordTab"><span>同根词</span></a>
+</span>
+<a class="toggle toggleOpen" rel="#transformToggle"></a>
+</h3>
+<div id="transformToggle">
+<div id="wordGroup" class="trans-container tab-content hide more-collapse">
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/available_for/">available for</a></span>
+                                                                                可用于…的；对…有效的；能参加…的
+                                                </p>
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/available_on/">available on</a></span>
+                                                                                仅在…有效（付款）
+                                                </p>
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/available_from/">available from</a></span>
+                                                                                可向…购买
+                                                </p>
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/available_with/">available with</a></span>
+                                                                                向（指定银行）押汇
+                                                </p>
+<p class="wordGroup">
+<span class="contentTitle"><a class="search-js" href="/w/available_resources/">available resources</a></span>
+                                                                                可利用的资源
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/commercially_available/">commercially available</a></span>
+                                                                                市场上可买到的
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_data/">available data</a></span>
+                                                                                现有数据；可用数据
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_information/">available information</a></span>
+                                                                                可利用信息
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/make_available/">make available</a></span>
+                                                                                使有用；使可用到
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_water/">available water</a></span>
+                                                                                有效水分
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/space_available/">space available</a></span>
+                                                                                可用空间
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_energy/">available energy</a></span>
+                                                                                有效能；可用能
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_time/">available time</a></span>
+                                                                                可用时间；有效时间
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_funds/">available funds</a></span>
+                                                                                可用基金；可动用的资金
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_memory/">available memory</a></span>
+                                                                                可用内存
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_capacity/">available capacity</a></span>
+                                                                                有效容积；可用功率
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_material/">available material</a></span>
+                                                                                可用物料；可用材料；良品可使用
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_work/">available work</a></span>
+                                                                                [物]可用功，可利用工时
+                                                </p>
+<p class="wordGroup collapse">
+<span class="contentTitle"><a class="search-js" href="/w/available_light/">available light</a></span>
+                                                                                [美术][摄影术]自然光线
+                                                </p>
+<div class="more"><a href="#" class="sp more_sp">&nbsp;</a>
+<span class="show_more">更多</span><span class="show_less">收起</span>词组短语
+</div>
+</div>
+<div id="synonyms" class="trans-container tab-content hide">
+<ul>
+<li>adj. [交]有效的，可得的；可利用的；空闲的</li>
+<p class="wordGroup">
+<span class="contentTitle">
+<a class="search-js" href="/w/valid/">valid</a>
+      ,
+     </span>
+<span class="contentTitle">
+<a class="search-js" href="/w/effective/">effective</a>
+      ,
+     </span>
+<span class="contentTitle">
+<a class="search-js" href="/w/virtual/">virtual</a>
+      ,
+     </span>
+<span class="contentTitle">
+<a class="search-js" href="/w/telling/">telling</a>
+      ,
+     </span>
+<span class="contentTitle">
+<a class="search-js" href="/w/significant/">significant</a>
+</span>
+</p>
+</ul>
+</div>
+<div id="relWordTab" class="trans-container tab-content hide">
+<p class="wordGroup">
+        词根：
+        <span class="contentTitle">
+<a class="search-js" href="/w//">avail</a>
+</span>
+</p>
+        n.
+                <p class="wordGroup">
+<span class="contentTitle">
+<a class="search-js" href="/w/availability/">availability</a>
+</span>
+         可用性；有效性；实用性
+        </p>
+<p class="wordGroup">
+<span class="contentTitle">
+<a class="search-js" href="/w/avail/">avail</a>
+</span>
+         效用，利益
+        </p>
+                  vi.
+                <p class="wordGroup">
+<span class="contentTitle">
+<a class="search-js" href="/w/avail/">avail</a>
+</span>
+         有用，有利
+        </p>
+                  vt.
+                <p class="wordGroup">
+<span class="contentTitle">
+<a class="search-js" href="/w/avail/">avail</a>
+</span>
+         有利，有用
+        </p>
+</div>
+</div>
+</div>
+<!--例句选项卡 begin-->
+<div id="examples" class="trans-wrapper">
+<h3>
+<span class="tabs">
+<a rel="#bilingual"><span>双语例句</span></a><a rel="#originalSound"><span>原声例句</span></a><a rel="#authority"><span>权威例句</span></a>
+</span>
+<a class="toggle toggleOpen" rel="#examplesToggle"></a>
+</h3>
+<div id="examplesToggle">
+<div id="bilingual" class="trans-container  tab-content">
+<ul class="ol">
+<li>
+<p><span id="src_0_0" onmouseover="hlgt('#src_0_0,#tran_0_0')" onmouseout="unhlgt('#src_0_0,#tran_0_0')">We</span><span> </span><span id="src_0_1" onmouseover="hlgt('#src_0_1,#tran_0_1')" onmouseout="unhlgt('#src_0_1,#tran_0_1')">must</span><span> </span><span id="src_0_2" onmouseover="hlgt('#src_0_2,#tran_0_2')" onmouseout="unhlgt('#src_0_2,#tran_0_2')">utilize</span><span> </span><span id="src_0_3" onmouseover="hlgt('#src_0_3,#tran_0_4')" onmouseout="unhlgt('#src_0_3,#tran_0_4')">all</span><span> </span><span id="src_0_4" onmouseover="hlgt('#src_0_4,#tran_0_3')" onmouseout="unhlgt('#src_0_4,#tran_0_3')"><b>available</b></span><span> </span><span id="src_0_5" onmouseover="hlgt('#src_0_5,#tran_0_5')" onmouseout="unhlgt('#src_0_5,#tran_0_5')">resources</span><span>.</span>
+<a class="sp dictvoice voice-js log-js" title="点击发音" href="#" data-rel="We+must+utilize+all+available+resources.&amp;le=eng" data-4log="dict.main.blng"></a>
+</p>
+<p><span id="tran_0_0" onmouseover="hlgt('#src_0_0,#tran_0_0')" onmouseout="unhlgt('#src_0_0,#tran_0_0')">我们</span><span id="tran_0_1" onmouseover="hlgt('#src_0_1,#tran_0_1')" onmouseout="unhlgt('#src_0_1,#tran_0_1')">必须</span><span id="tran_0_2" onmouseover="hlgt('#src_0_2,#tran_0_2')" onmouseout="unhlgt('#src_0_2,#tran_0_2')">利用</span><span id="tran_0_3" onmouseover="hlgt('#src_0_4,#tran_0_3')" onmouseout="unhlgt('#src_0_4,#tran_0_3')">可以得到</span><span>的</span><span id="tran_0_4" onmouseover="hlgt('#src_0_3,#tran_0_4')" onmouseout="unhlgt('#src_0_3,#tran_0_4')">一切</span><span id="tran_0_5" onmouseover="hlgt('#src_0_5,#tran_0_5')" onmouseout="unhlgt('#src_0_5,#tran_0_5')">资源</span><span>。</span>
+</p>
+<p class="example-via">
+<a target="_blank" rel="nofollow">《21世纪大英汉词典》</a>
+</p>
+</li>
+<li>
+<p><span id="src_1_0" onmouseover="hlgt('#src_1_0,#tran_1_0')" onmouseout="unhlgt('#src_1_0,#tran_1_0')">He</span><span> </span><span id="src_1_1" onmouseover="hlgt('#src_1_1,#tran_1_1')" onmouseout="unhlgt('#src_1_1,#tran_1_1')">truncated</span><span> </span><span id="src_1_2" onmouseover="hlgt('#src_1_2,#tran_1_2')" onmouseout="unhlgt('#src_1_2,#tran_1_2')">a news</span><span> item </span><span id="src_1_4" onmouseover="hlgt('#src_1_4,#tran_1_4')" onmouseout="unhlgt('#src_1_4,#tran_1_4')">to</span><span> </span><span id="src_1_5" onmouseover="hlgt('#src_1_5,#tran_1_5')" onmouseout="unhlgt('#src_1_5,#tran_1_5')">fit</span><span> the </span><span id="src_1_6" onmouseover="hlgt('#src_1_6,#tran_1_6')" onmouseout="unhlgt('#src_1_6,#tran_1_6')"><b>available</b></span><span> </span><span id="src_1_7" onmouseover="hlgt('#src_1_7,#tran_1_7')" onmouseout="unhlgt('#src_1_7,#tran_1_7')">space</span><span>.</span>
+<a class="sp dictvoice voice-js log-js" title="点击发音" href="#" data-rel="He+truncated+a+news+item+to+fit+the+available+space.&amp;le=eng" data-4log="dict.main.blng"></a>
+</p>
+<p><span id="tran_1_0" onmouseover="hlgt('#src_1_0,#tran_1_0')" onmouseout="unhlgt('#src_1_0,#tran_1_0')">他</span><span id="tran_1_1" onmouseover="hlgt('#src_1_1,#tran_1_1')" onmouseout="unhlgt('#src_1_1,#tran_1_1')">删节</span><span id="tran_1_2" onmouseover="hlgt('#src_1_2,#tran_1_2')" onmouseout="unhlgt('#src_1_2,#tran_1_2')">一则</span><span>新闻</span><span id="tran_1_4" onmouseover="hlgt('#src_1_4,#tran_1_4')" onmouseout="unhlgt('#src_1_4,#tran_1_4')">以</span><span id="tran_1_5" onmouseover="hlgt('#src_1_5,#tran_1_5')" onmouseout="unhlgt('#src_1_5,#tran_1_5')">适合</span><span id="tran_1_6" onmouseover="hlgt('#src_1_6,#tran_1_6')" onmouseout="unhlgt('#src_1_6,#tran_1_6')">可用</span><span>的</span><span id="tran_1_7" onmouseover="hlgt('#src_1_7,#tran_1_7')" onmouseout="unhlgt('#src_1_7,#tran_1_7')">版面</span><span>。</span>
+</p>
+<p class="example-via">
+<a target="_blank" rel="nofollow">《21世纪大英汉词典》</a>
+</p>
+</li>
+<li>
+<p><span id="src_2_0" onmouseover="hlgt('#src_2_0,#tran_2_0')" onmouseout="unhlgt('#src_2_0,#tran_2_0')">You</span><span> </span><span id="src_2_1" onmouseover="hlgt('#src_2_1,#tran_2_1')" onmouseout="unhlgt('#src_2_1,#tran_2_1')">have no</span><span> </span><span id="src_2_2" onmouseover="hlgt('#src_2_2,#tran_2_2')" onmouseout="unhlgt('#src_2_2,#tran_2_2')">way</span><span> </span><span id="src_2_3" onmouseover="hlgt('#src_2_3,#tran_2_3')" onmouseout="unhlgt('#src_2_3,#tran_2_3')">to</span><span> </span><span id="src_2_4" onmouseover="hlgt('#src_2_4,#tran_2_4')" onmouseout="unhlgt('#src_2_4,#tran_2_4')">indicate</span><span> </span><span id="src_2_5" onmouseover="hlgt('#src_2_5,#tran_2_7')" onmouseout="unhlgt('#src_2_5,#tran_2_7')">whether</span><span> </span><span id="src_2_6" onmouseover="hlgt('#src_2_6,#tran_2_5')" onmouseout="unhlgt('#src_2_6,#tran_2_5')">this</span><span> </span><span id="src_2_7" onmouseover="hlgt('#src_2_7,#tran_2_6')" onmouseout="unhlgt('#src_2_7,#tran_2_6')">method</span><span> </span><span id="src_2_8" onmouseover="hlgt('#src_2_8,#tran_2_9')" onmouseout="unhlgt('#src_2_8,#tran_2_9')">should</span><span> </span><span id="src_2_9" onmouseover="hlgt('#src_2_9,#tran_2_10')" onmouseout="unhlgt('#src_2_9,#tran_2_10')">or</span><span> </span><span id="src_2_10" onmouseover="hlgt('#src_2_10,#tran_2_12')" onmouseout="unhlgt('#src_2_10,#tran_2_12')">should</span><span> </span><span id="src_2_11" onmouseover="hlgt('#src_2_11,#tran_2_11')" onmouseout="unhlgt('#src_2_11,#tran_2_11')">not</span><span> </span><span id="src_2_12" onmouseover="hlgt('#src_2_12,#tran_2_8')" onmouseout="unhlgt('#src_2_12,#tran_2_8')">also</span><span> be </span><span id="src_2_13" onmouseover="hlgt('#src_2_13,#tran_2_18')" onmouseout="unhlgt('#src_2_13,#tran_2_18')"><b>available</b></span><span> </span><span id="src_2_14" onmouseover="hlgt('#src_2_14,#tran_2_13')" onmouseout="unhlgt('#src_2_14,#tran_2_13')">to</span><span> </span><span id="src_2_15" onmouseover="hlgt('#src_2_15,#tran_2_17')" onmouseout="unhlgt('#src_2_15,#tran_2_17')">classes</span><span> </span><span id="src_2_16" onmouseover="hlgt('#src_2_16,#tran_2_16')" onmouseout="unhlgt('#src_2_16,#tran_2_16')">outside</span><span> </span><span id="src_2_17" onmouseover="hlgt('#src_2_17,#tran_2_14')" onmouseout="unhlgt('#src_2_17,#tran_2_14')">the</span><span> </span><span id="src_2_18" onmouseover="hlgt('#src_2_18,#tran_2_15')" onmouseout="unhlgt('#src_2_18,#tran_2_15')">JAR</span><span>.</span>
+<a class="sp dictvoice voice-js log-js" title="点击发音" href="#" data-rel="You+have+no+way+to+indicate+whether+this+method+should+or+should+not+also+be+available+to+classes+outside+the+JAR.&amp;le=eng" data-4log="dict.main.blng"></a>
+</p>
+<p><span id="tran_2_0" onmouseover="hlgt('#src_2_0,#tran_2_0')" onmouseout="unhlgt('#src_2_0,#tran_2_0')">您</span><span id="tran_2_1" onmouseover="hlgt('#src_2_1,#tran_2_1')" onmouseout="unhlgt('#src_2_1,#tran_2_1')">没有</span><span id="tran_2_2" onmouseover="hlgt('#src_2_2,#tran_2_2')" onmouseout="unhlgt('#src_2_2,#tran_2_2')">办法</span><span id="tran_2_3" onmouseover="hlgt('#src_2_3,#tran_2_3')" onmouseout="unhlgt('#src_2_3,#tran_2_3')">来</span><span id="tran_2_4" onmouseover="hlgt('#src_2_4,#tran_2_4')" onmouseout="unhlgt('#src_2_4,#tran_2_4')">表明</span><span id="tran_2_5" onmouseover="hlgt('#src_2_6,#tran_2_5')" onmouseout="unhlgt('#src_2_6,#tran_2_5')">这个</span><span id="tran_2_6" onmouseover="hlgt('#src_2_7,#tran_2_6')" onmouseout="unhlgt('#src_2_7,#tran_2_6')">方法</span><span id="tran_2_7" onmouseover="hlgt('#src_2_5,#tran_2_7')" onmouseout="unhlgt('#src_2_5,#tran_2_7')">是否</span><span id="tran_2_8" onmouseover="hlgt('#src_2_12,#tran_2_8')" onmouseout="unhlgt('#src_2_12,#tran_2_8')">也</span><span id="tran_2_9" onmouseover="hlgt('#src_2_8,#tran_2_9')" onmouseout="unhlgt('#src_2_8,#tran_2_9')">应该</span><span id="tran_2_10" onmouseover="hlgt('#src_2_9,#tran_2_10')" onmouseout="unhlgt('#src_2_9,#tran_2_10')">或</span><span id="tran_2_11" onmouseover="hlgt('#src_2_11,#tran_2_11')" onmouseout="unhlgt('#src_2_11,#tran_2_11')">不</span><span id="tran_2_12" onmouseover="hlgt('#src_2_10,#tran_2_12')" onmouseout="unhlgt('#src_2_10,#tran_2_12')">应该</span><span id="tran_2_13" onmouseover="hlgt('#src_2_14,#tran_2_13')" onmouseout="unhlgt('#src_2_14,#tran_2_13')">对</span><span id="tran_2_14" onmouseover="hlgt('#src_2_17,#tran_2_14')" onmouseout="unhlgt('#src_2_17,#tran_2_14')">该</span><span> </span><span id="tran_2_15" onmouseover="hlgt('#src_2_18,#tran_2_15')" onmouseout="unhlgt('#src_2_18,#tran_2_15')">JAR</span><span> </span><span id="tran_2_16" onmouseover="hlgt('#src_2_16,#tran_2_16')" onmouseout="unhlgt('#src_2_16,#tran_2_16')">之外</span><span>的</span><span id="tran_2_17" onmouseover="hlgt('#src_2_15,#tran_2_17')" onmouseout="unhlgt('#src_2_15,#tran_2_17')">类</span><span id="tran_2_18" onmouseover="hlgt('#src_2_13,#tran_2_18')" onmouseout="unhlgt('#src_2_13,#tran_2_18')">可用</span><span>。</span>
+</p>
+<p class="example-via">
+<a href="http://www.ibm.com/developerworks/cn/websphere/techjournal/1007_robinson/1007_robinson.html" target="_blank" rel="nofollow">www.ibm.com</a>
+</p>
+</li>
+</ul>
+<a class="more-example" href="http://dict.youdao.com/example/available/">更多双语例句</a>
+</div>
+<!-- Media Result Start -->
+<div id="originalSound" class="trans-container  tab-content">
+<ul class="ol">
+<li>
+<p>More than seven thousand six hundred incidents were reported nationwide in two thousand seven, the most recent year <b>available</b>.
+                                  <a class="sp humanvoice humanvoice-js log-js" title="点击发音" href="#" data-rel="http://dict.youdao.com/pureaudio?docid=-7441422545050093173" data-4log="dict.main.pureaudio"></a>
+</p>
+<p class="via">
+                          VOA: special.2009.10.31
+                          </p>
+</li>
+<li>
+<p>The Magi here are, again, an image, a kind of visionary symbol, an image <b>available</b> "in the mind's eye" at all times.<br /></p>
+<p>这儿，三圣贤又是个意象，一个幻想出的标志，时时存在于大脑中的一个意象。<br /></p>
+<div class="video">
+<a class="play log-js" data-4log="dict.main.purevideo" href="/simplayer.swf?movie=http://dict.youdao.com/purevideo?docid=-1891757695651287572&amp;auto=true"> <img src="http://dict.youdao.com/pureimage?docid=-1891757695651287572" alt="耶鲁公开课中出现available的视频截图" title="耶鲁公开课的相关视频,点击播放" rel="nofollow" />
+<span class="playicon"><img src="http://shared.ydstatic.com/dict/v5.03/images/play.png" /></span>
+</a>
+<a href="#" class="close" style="display: none;"></a>
+</div>
+<p class="example-via"><a href="http://v.163.com/special/sp/modernpoetry.html" target="_blank" rel="nofollow">耶鲁公开课 - 现代诗歌课程节选</a></p>
+</li>
+<li>
+<p>Apparently, my room is <b>available</b>.<br />Some might call this a "fustercluck," But on the upper east side, we call it sunday afternoon.<br /></p>
+<p>还有，我的房间空着。<br />有认为这是“一团乱“,但在这儿，我们称为“星期天的下午“<br /></p>
+<div class="video">
+<a class="play log-js" data-4log="dict.main.purevideo" href="http://share.vrs.sohu.com/59915/v.swf&amp;autoPlay=true&amp;topBar=0&amp;startTime=2052&amp;endTime=2063&amp;showCtrlBar=0&amp;sogouBtn=0&amp;api_key=cc69c36f471b1b8dcc241e5f96e73eb1&amp;cooperator=youdaoDict"> <img src="http://dict.youdao.com/pureimage?docid=-3560275780796621808" alt="绯闻女孩第1季第2集中出现available的视频截图" title="绯闻女孩第1季第2集的相关视频,点击播放" rel="nofollow" />
+<span class="playicon"><img src="http://shared.ydstatic.com/dict/v5.03/images/play.png" /></span>
+</a>
+<a href="#" class="close" style="display: none;"></a>
+</div>
+<p class="example-via"><a href="http://tv.sohu.com/20100304/n270570863.shtml" target="_blank" rel="nofollow">绯闻女孩第1季第2集 - 搜狐视频</a></p>
+</li>
+</ul>
+<a class="more-example" href="http://dict.youdao.com/example/media/available/">更多原声例句</a>
+</div>
+<div id="authority" class="trans-container  tab-content">
+<ul class="ol">
+<li>
+<p>Book directly through their own sites and you're assured the lowest rates for rooms <b>available</b> online. 
+                        <a class="sp dictvoice voice-js log-js" title="点击发音" href="#" data-rel="Book+directly+through+their+own+sites+and+you%27re+assured+the+lowest+rates+for+rooms+available+online.+" data-4log="dict.main.moreauth"></a>
+</p>
+<p class="example-via"><a href="http://www.bbc.com/travel/blog/20110404-the-promise-and-peril-of-hotel-booking-apps" target="_blank" rel="nofollow">BBC: <i>The promise and peril of hotel booking apps</i></a></p>
+</li>
+<li>
+<p>The jobs that are <b>available</b> pay 20, 30 percent less than what I was making before. 
+                        <a class="sp dictvoice voice-js log-js" title="点击发音" href="#" data-rel="The+jobs+that+are+available+pay+20%2C+30+percent+less+than+what+I+was+making+before.+" data-4log="dict.main.moreauth"></a>
+</p>
+<p class="example-via"><a href="http://www.whitehouse.gov/photos-and-video/video/2010/09/29/discussing-economy-des-moines?page=34&amp;v=accessibility" target="_blank" rel="nofollow">WHITEHOUSE: <i>Discussing the Economy in Des Moines</i></a></p>
+</li>
+<li>
+<p>My job as Secretary of State is to negotiate the most acceptable second-best position <b>available</b>. 
+                        <a class="sp dictvoice voice-js log-js" title="点击发音" href="#" data-rel="My+job+as+Secretary+of+State+is+to+negotiate+the+most+acceptable+second-best+position+available.+" data-4log="dict.main.moreauth"></a>
+</p>
+<p class="example-via"><a href="http://edition.cnn.com/SPECIALS/2004/reagan/stories/speech.archive/restore.html" target="_blank" rel="nofollow">CNN: <i>To Restore America</i></a></p>
+</li>
+</ul>
+<a class="more-example" href="http://dict.youdao.com/example/auth/available/">更多权威例句</a>
+</div>
+</div>
+</div>
+<!--例句选项卡 end-->
+<div id="collins" class="trans-wrapper collins">
+<h3>
+<span class="tab-current"><span>柯林斯高级英汉双解词典</span></span>
+<a target="_blank" href="http://cidian.youdao.com/5.0/help/deskdict5beta/features/16.html" class="need-help sp" title="柯林斯词典使用说明"></a>
+<a class="toggle toggleOpen" rel="#collinsResult"></a>
+</h3>
+<div id="collinsResult">
+<div id="collinsResult" class="tab-content">
+<div class="trans-container">
+<div class="trans-content">
+<div class="collinsToggle trans-container">
+<div class="wt-container">
+<h4>
+<span class="title">avail·able</span>
+<em class="additional spell phonetic">/əv<u>e</u><u>ɪ</u>ləb<sup>ə</sup>l/</em>
+<span class="via rank">CET4</span>
+</h4>
+<ul class="ol">
+<li>
+<p>
+<span title="形容词">ADJ</span>
+    																    															    														    														If something you want or need is <b>available</b>, you can find it or obtain it. 可获得的
+    														    														    															    															                                                                        															    															    															    															    															    															    															    															    															    															                                                                                                                                                                                                                                                                                        										
+                        										                                                                    													                                            				</p>
+<div class="additional">
+<p>
+<span>例:</span>
+                                                                                Since 1978, the amount of money available to buy books has fallen by 17%. </p>
+<p class="example-trans">自1978年以来，可供买书的钱已减少了17%。</p>
+</div>
+<div class="additional">
+<p>
+<span>例:</span>
+                                                                                The store has about 500 autographed copies of the book available for purchase. </p>
+<p class="example-trans">这家书店有大约500本该书的签名版本可供购买。</p>
+</div>
+<p>
+    														    														    														    															avail·abil·ity
+    														    														    															    															    															    															    															    																    																	<span title="不可数名词">N-UNCOUNT</span>
+    																    															    														    														可获得性
+    														    														    															    															                                                                        															    															    															    															    															    															    															    															    															    															                                                                                                                                                                                                                                                                                        										
+                        										                                                                    													                                            				</p>
+<div class="additional">
+<p>
+<span>例:</span>
+                                                                                ...the easy availability of guns. </p>
+<p class="example-trans">…获取枪支的容易性。</p>
+</div>
+</li>
+<li>
+<p>
+<span title="形容词">ADJ</span>
+    																    															    														    														Someone who is <b>available</b> is not busy and is therefore free to talk to you or to do a particular task. 有空的
+    														    														    															    															                                                                        															    															    															    															    															    															    															    															    																<span class="additional">[v-link ADJ]</span>
+</p>
+<div class="additional">
+<p>
+<span>例:</span>
+                                                                                Mr. Leach is on holiday and was not available for comment. </p>
+<p class="example-trans">利奇先生在休假，没空作评论。</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tfdict" class="trans-wrapper">
+<h3>
+<span id="powertrantab" class="tabs">
+<a class="tab-current" rel="#authDictTrans"><span>21世纪大英汉词典</span></a>
+</span>
+<a class="toggle toggleOpen" rel="#authDictToggle"></a>
+</h3>
+<div id="authDictToggle">
+<div clas
