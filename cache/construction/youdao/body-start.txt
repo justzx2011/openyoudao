@@ -1,6 +1,6 @@
 <ul id="demo_menu2" >
-            <li><a rel="http://dict.youdao.com/search?q=" id='dict_1' >有道字典</a></li>
-            <li><a rel="http://www.iciba.com/" id='dict_2' onclick='Getconfig(2)'>icb</a></li>
+            <li><sb-a rel="http://dict.youdao.com/search?q=" id='dict_1' >有道字典</sb-a></li>
+            <li><sb-a rel="http://www.iciba.com/" id='dict_2' onclick='Getconfig(2)'>icb</sb-a></li>
         </ul>
 <script type="text/javascript">
         $("ul#demo_menu2").sidebar({
@@ -8,10 +8,10 @@
             callback:{
                 item : {
                     enter : function(){
-                        $(this).find("a").animate({color:"red"}, 250);
+                        $(this).find("sb-a").animate({color:"red"}, 250);
                     },
                     leave : function(){
-                        $(this).find("a").animate({color:"white"}, 250);
+                        $(this).find("sb-a").animate({color:"white"}, 250);
                     }
                 }
             }

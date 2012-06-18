@@ -112,7 +112,7 @@ ul.sidebar-menu li{
     line-height:1.5em;
 }
 
-a,a:visited {
+sb-a,sb-a:visited {
     color:white;
     text-decoration:none;
     font-weight:bold;
