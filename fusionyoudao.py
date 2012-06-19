@@ -25,27 +25,7 @@ def reconstruct():
     print >> f_tar,result
     print >> f_tar,bodyend.read()
     print >> f_tar,"</body></html>"
-    #fin,fout = popen2.popen2("tee -a cache/result.html")
-    #fout.write("<html>")
-    #fout.write(str(head))
-    #fout.write("<body>")
-    #fout.write(str(bodystart))
-    #fout.write("\n")
-    #fout.write("<div class=\"c-header\">")
-    #fout.write(str(sousuo))
-    #fout.write("</div>")
-    #fout.write(str(result))
-    #fout.write(str(bodyend))
-    #fout.write("</body>")
-    #fout.write("</html>")
-    #fout.close()
-
-
-    #sed -i 's/text/111/g' test 
-    #sed -e "s:':kd:g" iii  
-    #action="/search"  ------------action="http://dict.youdao.com/search"
-    #href="/example/"-----href="http://dict.youdao.com/example/"
-    #result  = str(result).replace("href=\"/example/","href=\"http://dict.youdao.com/example/")
+    f_tar.close()
     os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' cache/result.html")
     os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' cache/result.html")
     os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")
