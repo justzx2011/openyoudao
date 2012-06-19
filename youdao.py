@@ -25,8 +25,8 @@ def inputconfig():
     r1= c1.fetchone()
     gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
     print gl.baseurl
-    if(gl.prebaseurl != gl.baseurl) and (gl.prebaseurl != ""):   #switch to the selected dict and transfer the keyword
-        os.system("/bin/echo -e  \'"+ "".join(str(r1[0]).split('\x00')) + "\' >> cache/history.cache")
+    #if(gl.prebaseurl != gl.baseurl) and (gl.prebaseurl != ""):   #switch to the selected dict and transfer the keyword
+    os.system("/bin/echo -e  \'"+ "".join(str(r1[0]).split('\x00')) + "\' >> cache/history.cache")
     c.close()
     c1.close()
     conn.close

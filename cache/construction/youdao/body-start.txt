@@ -17,13 +17,3 @@
             }
         });
         </script>
-<div id="Scrollbar-Container">
-    <img src="images/up_arrow.gif" class="Scrollbar-Up" />
-    <img src="images/down_arrow.gif" class="Scrollbar-Down" />
-    <div class="Scrollbar-Track">
-    <img src="images/scrollbar_handle.gif" class="Scrollbar-Handle" />
-    </div>
-</div>
-<div class="Container">
-  <div id="Scroller-1">
-   <div class="Scroller-Container">

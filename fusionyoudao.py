@@ -26,6 +26,9 @@ def reconstruct():
     print >> f_tar,bodyend.read()
     print >> f_tar,"</body></html>"
     f_tar.close()
+    head.close()
+    bodystart.close()
+    bodyend.close()
     os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' cache/result.html")
     os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' cache/result.html")
-    os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")
+    #os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")
