@@ -14,7 +14,9 @@ import os
 from time import sleep
 def inputconfig():
     gl.prebaseurl = gl.baseurl
-    conn = sqlite3.connect('/home/justzx/.local/share/webkit/databases/file__0.localstorage')
+    #print gl.datadir
+    conn = sqlite3.connect(gl.datadir)
+    #conn = sqlite3.connect(os.path.expanduser('~') + '.local/share/webkit/databases/file__0.localstorage')
     c = conn.cursor()
     c1 = conn.cursor()
     c.execute("select value from ItemTable where key = 'dict' ")
@@ -22,7 +24,7 @@ def inputconfig():
     r= c.fetchone()
     r1= c1.fetchone()
     gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
-    #gl.keywordtext= "".join(str(r1[0]).split('\x00'))
+    print gl.baseurl
     if(gl.prebaseurl != gl.baseurl) and (gl.prebaseurl != ""):   #switch to the selected dict and transfer the keyword
         os.system("/bin/echo -e  \'"+ "".join(str(r1[0]).split('\x00')) + "\' >> cache/history.cache")
     c.close()
@@ -81,9 +83,9 @@ def webshow():
     global homedir
     homedir = os.getcwd()
     window = webshot.Window()
-    conn = sqlite3.connect(os.path.expanduser('~') +"/.local/share/webkit/databases/file__0.localstorage")
-    c = conn.cursor()
-    c.execute("select * from ItemTable")
+    #conn = sqlite3.connect(os.path.expanduser('~') +"/.local/share/webkit/databases/file__0.localstorage")
+    #c = conn.cursor()
+    #c.execute("select * from ItemTable")
     window.load("file://" + homedir + "/cache/config.html")
     window.show() 
     gtk.main() 
@@ -95,7 +97,7 @@ def gettext():
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 def loadconfig():
     while Alive :
-        os.system("inotifywait -e modify /home/justzx/.local/share/webkit/databases/file__0.localstorage")
+        os.system("inotifywait -e modify "+ gl.datadir)
         inputconfig()
         #modify= "inotifywait -m -e modify /home/justzx/.local/share/webkit/databases/file__0.localstorage"
         #myfile=os.popen(modify)
