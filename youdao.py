@@ -81,6 +81,9 @@ def webshow():
     global homedir
     homedir = os.getcwd()
     window = webshot.Window()
+    conn = sqlite3.connect(os.path.expanduser('~') +"/.local/share/webkit/databases/file__0.localstorage")
+    c = conn.cursor()
+    c.execute("select * from ItemTable")
     window.load("file://" + homedir + "/cache/config.html")
     window.show() 
     gtk.main() 
