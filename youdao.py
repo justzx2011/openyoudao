@@ -18,6 +18,7 @@ from time import sleep
 def inputconfig():
     print "切换字典"
     gl.prebaseurl = gl.baseurl
+    os.system("touch cache/data.lck")
     conn = sqlite3.connect(gl.datadir)
     c = conn.cursor()
     c1 = conn.cursor()
@@ -30,6 +31,7 @@ def inputconfig():
     c.close()
     c1.close()
     conn.close
+    os.system("rm cache/data.lck")
     print stext 
     os.system("/bin/echo -e  \'"+ stext  + "\' >> cache/history.cache")
 def lookup():
@@ -83,10 +85,8 @@ def loadconfig():
     cmd = "inotifywait  -m " + gl.datadir
     switch=os.popen(cmd)
     while Alive :
-        if str(switch.readline()).find("MODIFY"):
+        if str(switch.readline()).find("MODIFY") and os.path.isfile("cache/data.lck") == False :
             inputconfig()
-            while switch.readline():
-                pass
 
 # Main thread
 def main():
