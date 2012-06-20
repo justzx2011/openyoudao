@@ -25,6 +25,7 @@ def inputconfig():
     r= c.fetchone()
     r1= c1.fetchone()
     gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
+    print "".join(str(r1[0]).split('\x00')) 
     os.system("/bin/echo -e  \'"+ "".join(str(r1[0]).split('\x00')) + "\' >> cache/history.cache")
     c.close()
     c1.close()
@@ -34,10 +35,11 @@ def lookup():
     pre_text=""
     text=""
     #监视history.txt变化
-    os.system("echo "" > cache/history.cache")
+    #os.system("echo "" > cache/history.cache")
     cmd = "tail -f " + homedir + "/cache/history.cache"
     if(gl.baseurl==""):
-        gl.baseurl="http://dict.youdao.com/search?q="
+        gl.baseurl=gl.baseurlicb
+        #gl.baseurl=baseurlyouda
     myfile=os.popen(cmd)
     while True:
         text=myfile.readline().strip('\r\n\x00')
@@ -77,7 +79,7 @@ def gettext():
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 def loadconfig():
     while Alive :
-        os.system("inotifywait -e modify "+ gl.datadir)
+        os.system("inotifywait -m -e modify "+ gl.datadir)
         inputconfig()
 # Main thread
 def main():
