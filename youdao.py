@@ -16,6 +16,7 @@ import random
 import os
 from time import sleep
 def inputconfig():
+    print "切换字典"
     gl.prebaseurl = gl.baseurl
     conn = sqlite3.connect(gl.datadir)
     c = conn.cursor()
@@ -25,11 +26,12 @@ def inputconfig():
     r= c.fetchone()
     r1= c1.fetchone()
     gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
-    print "".join(str(r1[0]).split('\x00')) 
-    os.system("/bin/echo -e  \'"+ "".join(str(r1[0]).split('\x00')) + "\' >> cache/history.cache")
+    stext = "".join(str(r1[0]).split('\x00')) 
     c.close()
     c1.close()
     conn.close
+    print stext 
+    os.system("/bin/echo -e  \'"+ stext  + "\' >> cache/history.cache")
 def lookup():
     sleep(5)
     pre_text=""
@@ -38,8 +40,8 @@ def lookup():
     #os.system("echo "" > cache/history.cache")
     cmd = "tail -f " + homedir + "/cache/history.cache"
     if(gl.baseurl==""):
-        gl.baseurl=gl.baseurlicb
-        #gl.baseurl=baseurlyouda
+        #gl.baseurl=gl.baseurlicb
+        gl.baseurl=gl.baseurlyoudao
     myfile=os.popen(cmd)
     while True:
         text=myfile.readline().strip('\r\n\x00')
@@ -78,9 +80,14 @@ def gettext():
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 def loadconfig():
+    cmd = "inotifywait  -m " + gl.datadir
+    switch=os.popen(cmd)
     while Alive :
-        os.system("inotifywait -m -e modify "+ gl.datadir)
-        inputconfig()
+        if str(switch.readline()).find("MODIFY"):
+            inputconfig()
+            while switch.readline():
+                pass
+
 # Main thread
 def main():
 
