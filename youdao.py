@@ -44,21 +44,21 @@ def lookup():
         if pre_text != text or gl.prebaseurl != gl.baseurl : # 或者不一定对lzt
             pre_text = text
             gl.prebaseurl =  gl.baseurl
-            url= gl.baseurl + text
-            print url + "kkkkkkkkkkkk"
-            r = requests.get(url) 
+            url= gl.baseurl + text                           #合成地址
+            print url + "kkkkkkkkkkkk"                       #合成地址检测点1 
+            r = requests.get(url)                            #获得网页
             doc = html.document_fromstring(r.text)
-            f_tar=open('cache/origin.html','w+')
+            f_tar=open('cache/origin.html','w+')             #缓存原始网页
             print >>f_tar,r.text
             f_tar.close()
-            os.system("echo "" > cache/result.html")
+            os.system("echo "" > cache/result.html")         #清空最终缓冲增强程序稳健性
             if(gl.baseurl==gl.baseurlyoudao):
-                fusionyoudao.reconstruct()   #区分聚合
+                fusionyoudao.reconstruct()                   #区分聚合
             if(gl.baseurl==gl.baseurlicb):
                 fusionicb.reconstruct()
-            homeurl="file://" + homedir + "/cache/result.html"
-            window.load(homeurl)
-            window.show()
+            homeurl="file://" + homedir + "/cache/result.html" #合成最终缓冲访问地址
+            window.load(homeurl)                             #加载最终缓冲内容到浏览器
+            window.show()                                    #显示结果
 
 def webshow():
     global window
