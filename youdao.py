@@ -17,8 +17,9 @@ import os
 from time import sleep
 def inputconfig():
     print "切换字典"
+    print gl.lock
     gl.prebaseurl = gl.baseurl
-    os.system("touch cache/data.lck")
+    #os.system("touch cache/data.lck")
     conn = sqlite3.connect(gl.datadir)
     c = conn.cursor()
     c1 = conn.cursor()
@@ -27,6 +28,8 @@ def inputconfig():
     r= c.fetchone()
     r1= c1.fetchone()
     gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
+    if(gl.prebaseurl !=gl.baseurl):
+        gl.lock=1
     stext = "".join(str(r1[0]).split('\x00')) 
     c.close()
     c1.close()
@@ -84,9 +87,12 @@ def gettext():
 def loadconfig():
     cmd = "inotifywait  -m " + gl.datadir
     switch=os.popen(cmd)
+    gl.lock=0
     while Alive :
-        if str(switch.readline()).find("MODIFY") and os.path.isfile("cache/data.lck") == False :
-            inputconfig()
+        #if str(switch.readline()).find("MODIFY") and os.path.isfile("cache/data.lck") == False :
+        if str(switch.readline()).find("MODIFY"):
+            if(gl.lock==0):
+                inputconfig()
 
 # Main thread
 def main():
