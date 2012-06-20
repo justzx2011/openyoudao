@@ -5,7 +5,7 @@ import popen2
 def reconstruct():
     print "start fusionyoudao"
     homedir = os.getcwd()
-    soup = BeautifulSoup(open(homedir +  "/cache/youdao.html"))
+    soup = BeautifulSoup(open(homedir +  "/cache/origin.html"))
     head=open('cache/construction/youdao/head.html','r')
     bodystart=open('cache/construction/youdao/body-start.txt','r')
     bodyend=open('cache/construction/youdao/body-end.txt','r')

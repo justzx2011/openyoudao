@@ -41,27 +41,24 @@ def lookup():
     myfile=os.popen(cmd)
     while True:
         text=myfile.readline().strip('\r\n\x00')
-        if (pre_text != text):
+        if pre_text != text or gl.prebaseurl != gl.baseurl : # 或者不一定对lzt
             pre_text = text
+            gl.prebaseurl =  gl.baseurl
             url= gl.baseurl + text
             print url + "kkkkkkkkkkkk"
             r = requests.get(url) 
             doc = html.document_fromstring(r.text)
-            f_tar=open('cache/youdao.html','w+')
+            f_tar=open('cache/origin.html','w+')
             print >>f_tar,r.text
             f_tar.close()
-            #if(gl.baseurl==gl.baseurlyoudao):
-            #os.system("curl -A \"Mozilla/5.0 (X11; Linux i686; rv:12.0) Gecko/20100101 Firefox/12.0\"  -s -o cache/youdao.html \'" + url+ "\'")
             os.system("echo "" > cache/result.html")
-            fusionyoudao.reconstruct()
-            #elif(gl.baseurl==gl.baseurlicb):
-            #    os.system("curl -s -o cache/icb.html \'" + url+ "\'") 
-            #    os.system("echo "" > cache/result.html")
-            #    fusionicb.reconstruct()
+            if(gl.baseurl==gl.baseurlyoudao):
+                fusionyoudao.reconstruct()   #区分聚合
+            if(gl.baseurl==gl.baseurlicb):
+                fusionicb.reconstruct()
             homeurl="file://" + homedir + "/cache/result.html"
             window.load(homeurl)
             window.show()
-        #elif(gl.baseurl != gl.prebaseurl):
 
 def webshow():
     global window

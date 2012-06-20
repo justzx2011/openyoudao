@@ -5,7 +5,7 @@ import popen2
 def reconstruct():
     print "start fusionicb"
     homedir = os.getcwd()
-    soup = BeautifulSoup(open(homedir +  "/cache/icb.html"))
+    soup = BeautifulSoup(open(homedir +  "/cache/origin.html"))
     head=open('cache/construction/icb/head.html','r') 
     bodystart=open('cache/construction/icb/body-start.txt','r') 
     bodyend=open('cache/construction/icb/body-end.txt','r') 
