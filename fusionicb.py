@@ -3,6 +3,7 @@ import os
 import re
 import popen2
 def reconstruct():
+    print "start fusionicb"
     homedir = os.getcwd()
     soup = BeautifulSoup(open(homedir +  "/cache/icb.html"))
     head=open('cache/construction/icb/head.html','r') 
@@ -29,3 +30,4 @@ def reconstruct():
     #os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' cache/result.html")
     #os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' cache/result.html")
     #os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")
+    print "fusionicb completed"
