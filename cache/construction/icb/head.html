@@ -16,6 +16,7 @@ function Getconfig(i)
 var content=$('#dict_'+i).attr('rel');
 localStorage.setItem('dict',content)
 //alert(document.getElementsByTagName("input")[0].getAttribute("value"))
+localStorage.setItem('keyword',document.getElementsByClassName("explain")[0].childNodes[0].nodeValue)
 //localStorage.setItem('keyword',document.getElementsByTagName("input")[0].getAttribute("value"))
 //alert(content)
 }
