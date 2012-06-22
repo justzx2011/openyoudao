@@ -42,33 +42,37 @@ def lookup():
     text=""
     #监视history.txt变化
     #os.system("echo "" > cache/history.cache")
-    cmd = "tail -f " + homedir + "/cache/history.cache"
+    #cmd = "tail -f " + homedir + "/cache/history.cache"
+    cmd = "inotifywait -m  cache/history.cache"
+    cmdtext = "tail -n 1  cache/history.cache"
     if(gl.baseurl==""):
         #gl.baseurl=gl.baseurlicb
         gl.baseurl=gl.baseurlyoudao
     myfile=os.popen(cmd)
     while True:
-        text=myfile.readline().strip('\r\n\x00')
-        if pre_text != text or gl.prebaseurl != gl.baseurl : # 或者不一定对lzt
-            pre_text = text
-            print gl.lock
-            gl.prebaseurl =  gl.baseurl
-            url= gl.baseurl + text                           #合成地址
-            print url + "kkkkkkkkkkkk"                       #合成地址检测点1 
-            r = requests.get(url)                            #获得网页
-            doc = html.document_fromstring(r.text)
-            f_tar=open('cache/origin.html','w+')             #缓存原始网页
-            print >>f_tar,r.text
-            f_tar.close()
-            os.system("echo \"wait...\" > cache/result.html")         #清空最终缓冲增强程序稳健性
-            if(gl.baseurl==gl.baseurlyoudao):
-                fusionyoudao.reconstruct()                   #区分聚合
-            if(gl.baseurl==gl.baseurlicb):
-                fusionicb.reconstruct()
-            homeurl="file://" + homedir + "/cache/result.html" #合成最终缓冲访问地址
-            window.load(homeurl)                             #加载最终缓冲内容到浏览器
-            window.show()                                    #显示结果
-            gl.lock=0
+        #text=myfile.readline().strip('\r\n\x00')
+        if str(myfile.readline()).find("CLOSE"):
+            text=os.popen(cmdtext).readline()
+            if pre_text != text or gl.prebaseurl != gl.baseurl : # 或者不一定对lzt
+                pre_text = text
+                print gl.lock
+                gl.prebaseurl =  gl.baseurl
+                url= gl.baseurl + text                           #合成地址
+                print url + "kkkkkkkkkkkk"                       #合成地址检测点1 
+                r = requests.get(url)                            #获得网页
+                doc = html.document_fromstring(r.text)
+                f_tar=open('cache/origin.html','w+')             #缓存原始网页
+                print >>f_tar,r.text
+                f_tar.close()
+                os.system("echo \"wait...\" > cache/result.html")         #清空最终缓冲增强程序稳健性
+                if(gl.baseurl==gl.baseurlyoudao):
+                    fusionyoudao.reconstruct()                   #区分聚合
+                if(gl.baseurl==gl.baseurlicb):
+                    fusionicb.reconstruct()
+                homeurl="file://" + homedir + "/cache/result.html" #合成最终缓冲访问地址
+                window.load(homeurl)                             #加载最终缓冲内容到浏览器
+                window.show()                                    #显示结果
+                gl.lock=0
 
 def webshow():
     global window
