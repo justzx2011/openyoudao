@@ -103,14 +103,17 @@ def loadconfig():
 # Main thread
 def main():
 
-    thread.start_new_thread(gettext,())
-    thread.start_new_thread(lookup,())
-    thread.start_new_thread(webshow,())
-    thread.start_new_thread(loadconfig,())
-    	
     #运行标志结束 
     global Alive
     Alive=1
+    thread.start_new_thread(webshow,())
+    thread.start_new_thread(gettext,())
+    sleep(1)
+    thread.start_new_thread(lookup,())
+    sleep(1)
+    thread.start_new_thread(loadconfig,())
+    sleep(1)
+    	
     while Alive:
         sleep(1)
         
