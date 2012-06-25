@@ -86,6 +86,7 @@ def webshow():
     Alive=0
 
 def gettext():
+    os.system("xclip -f /dev/null")           #清空剪切板
     os.system("/bin/echo "" > cache/history.cache")
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
