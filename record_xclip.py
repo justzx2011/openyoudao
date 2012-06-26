@@ -37,10 +37,8 @@ def record_callback(reply):
         if event.type == X.ButtonRelease:
             # get text
             pipe = os.popen("xclip -o")
-            text = pipe.readlines()
-            num = len(text)
-            text = text[num-1] 
-            print num
+            text = pipe.readline()
+            pipe.readlines()    #清空管道剩余部分
             pipe.close()
             print "您抹黑的是: ", text
             pipe.close()
