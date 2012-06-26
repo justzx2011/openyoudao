@@ -107,7 +107,7 @@ def main():
     thread.start_new_thread(gettext,())
     sleep(1)
     thread.start_new_thread(lookup,())
-    #thread.start_new_thread(loadconfig,())
+    thread.start_new_thread(loadconfig,())
     	
     while Alive:
         sleep(1)
