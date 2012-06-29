@@ -1,0 +1,4 @@
+<script type="text/javascript">
+document.write("<scr"+"ipt src=\"http://static.www.iciba.com/scripts/event_result.js\"></sc"+"ript>")
+document.write("<scr"+"ipt src=\"http://static.www.iciba.com/scripts/basic.js\"></sc"+"ript>")
+</script>
