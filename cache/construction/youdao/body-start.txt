@@ -6,15 +6,5 @@
 <script type="text/javascript">
         $("ul#demo_menu2").sidebar({
             position:"right",
-            callback:{
-                item : {
-                    enter : function(){
-                        $(this).find("sb-a").animate({color:"red"}, 250);
-                    },
-                    leave : function(){
-                        $(this).find("sb-a").animate({color:"white"}, 250);
-                    }
-                }
-            }
         });
         </script>
