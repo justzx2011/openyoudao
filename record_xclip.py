@@ -4,6 +4,7 @@
 # Not very much unlike the xmacrorec2 program in the xmacro package.
 import popen2
 import sys
+import gl
 import os
 import webkit, gtk
 # Change path so we find Xlib
@@ -46,7 +47,8 @@ def record_callback(reply):
             global pre_text
             if(pre_text != text):
                 pre_text = text
-                os.system("/bin/echo -e  \'"+ text + "\' >> cache/history.cache")
+                dir = gl.homedir + "/cache/history.cache"
+                os.system("/bin/echo -e  \'"+ text + "\' >> '"+ dir + "\'")
             else:
                 print "我不翻译"
 # Check if the extension is present
