@@ -8,6 +8,8 @@ global prebaseurl
 global homedir
 global datadir
 global historydir
+global origindir
+global resultdir
 global url
 global homeurl
 keywordtext = ""
@@ -19,6 +21,8 @@ url=""
 #homedir = os.getcwd()
 homedir = sys.path[0]
 historydir = homedir + "/cache/history.cache"
+origindir = homedir + "/cache/origin.html"
+resultdir = homedir + "/cache/result.html"
 homeurl = "file://" + homedir + "/cache/config.html"
 baseurlyoudao="http://dict.youdao.com/search?q="
 baseurlicb="http://www.iciba.com/"
