@@ -1,5 +1,6 @@
 from BeautifulSoup import BeautifulSoup
 import os
+import gl
 import re
 import popen2
 def reconstruct():
