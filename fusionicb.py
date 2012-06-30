@@ -5,13 +5,13 @@ import popen2
 def reconstruct():
     print "start fusionicb"
     homedir = os.getcwd()
-    soup = BeautifulSoup(open(homedir +  "/cache/origin.html"))
-    head=open('cache/construction/icb/head.html','r') 
-    bodystart=open('cache/construction/icb/body-start.txt','r') 
-    bodyend=open('cache/construction/icb/body-end.txt','r') 
+    soup = BeautifulSoup(open(gl.origindir))
+    head=open(gl.headicb,'r') 
+    bodystart=open(gl.bodystarticb,'r') 
+    bodyend=open(gl.bodyendicb,'r') 
     result = soup.find('div',{"id":"main_box"})
     #sousuo = soup.find('div',{"class":"search_box"})
-    f_tar=open('cache/result.html','w+')
+    f_tar=open(gl.resultdir,'w+')
     print >> f_tar,"<html>"
     print >> f_tar,head.read()
     print >> f_tar,"<body>"
@@ -29,5 +29,5 @@ def reconstruct():
     bodyend.close()
     #os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' cache/result.html")
     #os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' cache/result.html")
-    os.system("sed -i -e 's/document.write(\"<scr\"+\"ipt src=\"http:\/\/static.www.iciba.com\/scripts\/event_result.js\"><\/sc\"+\"ript>\")/ /g' cache/result.html")
+    os.system("sed -i -e 's/document.write(\"<scr\"+\"ipt src=\"http:\/\/static.www.iciba.com\/scripts\/event_result.js\"><\/sc\"+\"ript>\")/ /g' \'"+ gl.resultdir + "\'")
     print "fusionicb completed"
