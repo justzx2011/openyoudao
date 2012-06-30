@@ -83,6 +83,7 @@ def gettext():
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 def loadconfig():
+    sleep(2)
     cmd = "inotifywait  -m " + gl.datadir
     switch=os.popen(cmd)
     gl.lock=0
@@ -104,7 +105,6 @@ def main():
     thread.start_new_thread(gettext,())
     sleep(1)
     thread.start_new_thread(lookup,())
-    sleep(3)
     thread.start_new_thread(loadconfig,())
     	
     while Alive:
