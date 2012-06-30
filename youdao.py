@@ -47,7 +47,7 @@ def lookup():
     myfile=os.popen(cmd)
     while True:
         text=myfile.readline().strip('\r\n\x00')
-        if pre_text != text or gl.prebaseurl != gl.baseurl : # 或者不一定对lzt
+        if (pre_text != text or gl.prebaseurl != gl.baseurl) and text != "" : # 或者不一定对lzt
             pre_text = text
             print gl.lock
             gl.prebaseurl =  gl.baseurl
