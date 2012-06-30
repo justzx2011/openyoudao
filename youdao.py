@@ -103,6 +103,7 @@ def main():
     thread.start_new_thread(gettext,())
     sleep(1)
     thread.start_new_thread(lookup,())
+    sleep(3)
     thread.start_new_thread(loadconfig,())
     	
     while Alive:
