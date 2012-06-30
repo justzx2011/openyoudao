@@ -35,13 +35,13 @@ def inputconfig():
     c1.close()
     conn.close
     print stext 
-    os.system("/bin/echo -e  \'"+ stext  + "\' >> cache/history.cache")
+    os.system("/bin/echo -e  \'"+ stext  + "\' >> \'"+ gl.historydir + "\'")
 def lookup():
     pre_text=""
     text=""
     #监视history.txt变化
     #os.system("echo "" > cache/history.cache")
-    cmd = "tail -f " + gl.homedir + "/cache/history.cache"
+    cmd = "tail -f " + gl.historydir 
    # cmd = "inotifywait -m  cache/history.cache"
    # cmdtext = "tail -n 1  cache/history.cache"
     if(gl.baseurl==""):
@@ -61,7 +61,7 @@ def lookup():
             f_tar=open('cache/origin.html','w+')             #缓存原始网页
             print >>f_tar,r.text
             f_tar.close()
-            os.system("echo \"wait...\" > cache/result.html")         #清空最终缓冲增强程序稳健性
+            #os.system("echo \"wait...\" > cache/result.html")         #清空最终缓冲增强程序稳健性
             if(gl.baseurl==gl.baseurlyoudao):
                 fusionyoudao.reconstruct()                   #区分聚合
             if(gl.baseurl==gl.baseurlicb):
@@ -82,7 +82,7 @@ def webshow():
 
 def gettext():
     os.system("xclip -f /dev/null")           #清空剪切板
-    os.system("/bin/echo "" > cache/history.cache")
+    os.system("/bin/echo "" > \'"+ gl.historydir + "\'")
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 def loadconfig():

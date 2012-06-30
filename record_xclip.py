@@ -48,7 +48,7 @@ def record_callback(reply):
             if(pre_text != text):
                 pre_text = text
                 gl.historydir = gl.homedir + "/cache/history.cache"
-                os.system("/bin/echo -e  \'"+ text + "\' >> '"+ gl.historydir + "\'")
+                os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
             else:
                 print "我不翻译"
 # Check if the extension is present
