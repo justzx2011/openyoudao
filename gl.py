@@ -2,6 +2,7 @@ import os
 import sys
 import sqlite3
 global keywordtext
+global downloadwait
 global baseurl
 global lock
 global prebaseurl
@@ -36,3 +37,4 @@ bodyendicb = homedir + "/cache/construction/icb/body-end.txt"
 homeurl = "file://" + homedir + "/cache/config.html"
 baseurlyoudao="http://dict.youdao.com/search?q="
 baseurlicb="http://www.iciba.com/"
+downloadwait = "<html><body><b style="font-size:80px;position:absolute;top:42%;left:35%;" >Wai    ting...</b></body></html>"

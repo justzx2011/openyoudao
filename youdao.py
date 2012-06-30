@@ -58,7 +58,7 @@ def lookup():
             f_tar=open(gl.origindir,'w+')             #缓存原始网页
             print >>f_tar,r.text
             f_tar.close()
-            #os.system("echo \"wait...\" > cache/result.html")         #清空最终缓冲增强程序稳健性
+            os.system("echo \'"+ gl.downloadwait + "\' > cache/result.html")         #清空最终缓冲增强程序稳健性
             if(gl.baseurl==gl.baseurlyoudao):
                 fusionyoudao.reconstruct()                   #区分聚合
             if(gl.baseurl==gl.baseurlicb):
