@@ -16,6 +16,7 @@ import random
 import os
 from time import sleep
 def inputconfig():
+    gl.lock=1
     print "切换字典"
     print gl.lock
     gl.prebaseurl = gl.baseurl
@@ -28,8 +29,8 @@ def inputconfig():
     r= c.fetchone()
     r1= c1.fetchone()
     gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
-    if(gl.prebaseurl !=gl.baseurl):
-        gl.lock=1
+    #if(gl.prebaseurl !=gl.baseurl):
+    #    gl.lock=1
     stext = "".join(str(r1[0]).split('\x00')) 
     c.close()
     c1.close()
