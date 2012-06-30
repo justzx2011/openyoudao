@@ -7,6 +7,7 @@ global prebaseurl
 global homedir
 global datadir
 global url
+global homeurl
 keywordtext = ""
 baseurl=""
 lock=0
@@ -14,5 +15,6 @@ datadir=os.path.expanduser('~') + "/.local/share/webkit/databases/file__0.locals
 prebaseurl=""
 url=""
 homedir = os.getcwd()
+homeurl = "file://" + homedir + "/cache/config.html"
 baseurlyoudao="http://dict.youdao.com/search?q="
 baseurlicb="http://www.iciba.com/"

@@ -66,8 +66,8 @@ def lookup():
                 fusionyoudao.reconstruct()                   #区分聚合
             if(gl.baseurl==gl.baseurlicb):
                 fusionicb.reconstruct()
-            homeurl="file://" + gl.homedir + "/cache/result.html" #合成最终缓冲访问地址
-            window.load(homeurl)                             #加载最终缓冲内容到浏览器
+            gl.homeurl="file://" + gl.homedir + "/cache/result.html" #合成最终缓冲访问地址
+            window.load(gl.homeurl)                             #加载最终缓冲内容到浏览器
             window.show()                                    #显示结果
             gl.lock=0
 
@@ -75,7 +75,7 @@ def webshow():
     global window
     global Alive
     window = webshot.Window()
-    window.load("file://" + gl.homedir + "/cache/config.html")
+    window.load(gl.homeurl)
     window.show() 
     gtk.main() 
     Alive=0
