@@ -12,6 +12,8 @@ global origindir
 global resultdir
 global url
 global homeurl
+global headyoudao
+global bodystartyoudao
 keywordtext = ""
 baseurl=""
 lock=0
@@ -23,6 +25,8 @@ homedir = sys.path[0]
 historydir = homedir + "/cache/history.cache"
 origindir = homedir + "/cache/origin.html"
 resultdir = homedir + "/cache/result.html"
+headyoudao = homedir + "/cache/construction/youdao/head.html"
+bodystartyoudao=homedir + "/cache/construction/youdao/body-start.txt"
 homeurl = "file://" + homedir + "/cache/config.html"
 baseurlyoudao="http://dict.youdao.com/search?q="
 baseurlicb="http://www.iciba.com/"
