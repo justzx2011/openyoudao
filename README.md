@@ -10,15 +10,21 @@
         
 
 #Dependencies:
-        python-xlib python-webkit xclip
+        python-xlib python-webkit python-requests python-lxml xclip inotify-tools
 #Installation
-        #apt-get install python-xlib python-webkit xclip
+        #apt-get install python-xlib python-webkit python-requests python-lxml xclip inotify-tools
         
         $git clone git://github.com/justzx2011/openyoudao.git
          
-        $cd youdao
-        
-        $python youdao.py
+        $打开主菜单，新建项目：
+         
+         程序名称：openyoudao
+         
+         命令：python2.7 ~/workplace/openyoudao/youdao.py
+
+         icon：~/workplace/openyoudao/cache/images/icon/icon.jpg
+
+         注释：youdao client for linux
         
 TODO
 --------------
@@ -70,79 +76,79 @@ RULES
 
 Path & File
 ----
-<p>├── cache
-
-│   ├── construction
-
-│   │   ├── body-end.txt
-
-│   │   ├── body-start.txt
-
-│   │   └── head.html
-
-│   ├── css
-
-│   │   └── result-min.css
-
-│   ├── history.cache
-
-│   ├── images
-
-│   │   ├── down<em>arrow.gif
-
-│   │   ├── scrollbar</em>handle.gif
-
-│   │   ├── scrollbar<em>track.gif
-
-│   │   └── up</em>arrow.gif
-
-│   ├── js
-
-│   │   ├── autocomplete.r156903.js
-
-│   │   ├── extra.js
-
-│   │   ├── jsScrollbar.js
-
-│   │   ├── jsScroller.js
-
-│   │   └── result-min.js
-
-│   ├── result.html
-
-│   └── youdao.html
-
-├── fusion.py
-
-├── fusion.pyc
-
-├── README.md
-
-├── record<em>xclip.py
-
-├── record</em>xclip.pyc
-
-├── ref
-
-│   ├── browser.py
-
-│   ├── inspector.py
-
-│   ├── inspector.pyc
-
-│   └── scrolledwin.py
-
-├── web
-
-│   ├── index.html
-
-│   └── style.css
-
-├── webshot.py
-
-├── webshot.pyc
-
-└── youdao.py</p>
+        <p>├── cache
+        
+        │   ├── construction
+        
+        │   │   ├── body-end.txt
+        
+        │   │   ├── body-start.txt
+        
+        │   │   └── head.html
+        
+        │   ├── css
+        
+        │   │   └── result-min.css
+        
+        │   ├── history.cache
+        
+        │   ├── images
+        
+        │   │   ├── down<em>arrow.gif
+        
+        │   │   ├── scrollbar</em>handle.gif
+        
+        │   │   ├── scrollbar<em>track.gif
+        
+        │   │   └── up</em>arrow.gif
+        
+        │   ├── js
+        
+        │   │   ├── autocomplete.r156903.js
+        
+        │   │   ├── extra.js
+        
+        │   │   ├── jsScrollbar.js
+        
+        │   │   ├── jsScroller.js
+        
+        │   │   └── result-min.js
+        
+        │   ├── result.html
+        
+        │   └── youdao.html
+        
+        ├── fusion.py
+        
+        ├── fusion.pyc
+        
+        ├── README.md
+        
+        ├── record<em>xclip.py
+        
+        ├── record</em>xclip.pyc
+        
+        ├── ref
+        
+        │   ├── browser.py
+        
+        │   ├── inspector.py
+        
+        │   ├── inspector.pyc
+        
+        │   └── scrolledwin.py
+        
+        ├── web
+        
+        │   ├── index.html
+        
+        │   └── style.css
+        
+        ├── webshot.py
+        
+        ├── webshot.pyc
+        
+        └── youdao.py</p>
 
 Construction
 ----
