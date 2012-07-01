@@ -88,7 +88,8 @@ def loadconfig():
     if os.path.isfile(gl.datadir)==False:
         os.system("cp -rf  \'"+ gl.youdaosqlitedir + "\' \'" + gl.sqlitedir +"\'")
         switch=os.popen(cmd)
-    switch=os.popen(cmd)
+    else:
+        switch=os.popen(cmd)
     gl.lock=0
     while Alive :
         if str(switch.readline()).find("MODIFY"):
