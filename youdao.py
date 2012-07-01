@@ -100,6 +100,7 @@ def loadconfig():
 def main():
     
     init()
+    sleep(1)
     #运行标志结束 
     global Alive
     Alive=1
