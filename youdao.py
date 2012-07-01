@@ -69,8 +69,6 @@ def lookup():
             gl.lock=0
 
 def webshow():
-    if os.path.isfile(gl.datadir)==False:
-        os.system("cp -rf  \'"+ gl.youdaosqlitedir + "\' \'" + gl.sqlitedir +"\'")
     global window
     global Alive
     window = webshot.Window()
@@ -79,6 +77,9 @@ def webshow():
     gtk.main() 
     Alive=0
 
+def init():
+    if os.path.isfile(gl.datadir)==False:
+        os.system("cp -rf  \'"+ gl.youdaosqlitedir + "\' \'" + gl.sqlitedir +"\'")
 def gettext():
     os.system("xclip -f /dev/null")           #清空剪切板
     os.system("/bin/echo "" > \'"+ gl.historydir + "\'")
@@ -90,7 +91,6 @@ def loadconfig():
     switch=os.popen(cmd)
     gl.lock=0
     while Alive :
-        #if str(switch.readline()).find("MODIFY") and os.path.isfile("cache/data.lck") == False :
         if str(switch.readline()).find("MODIFY"):
             if(gl.lock==0):
                 inputconfig()
@@ -98,7 +98,8 @@ def loadconfig():
 
 # Main thread
 def main():
-
+    
+    init()
     #运行标志结束 
     global Alive
     Alive=1
