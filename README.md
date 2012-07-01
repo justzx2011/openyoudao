@@ -76,79 +76,78 @@ RULES
 
 Path & File
 ----
-        <p>├── cache
-        
+        .
+        ├── cache
+        │   ├── config.html
         │   ├── construction
-        
-        │   │   ├── body-end.txt
-        
-        │   │   ├── body-start.txt
-        
-        │   │   └── head.html
-        
+        │   │   ├── icb
+        │   │   │   ├── body-end.txt
+        │   │   │   ├── body-start.txt
+        │   │   │   └── head.html
+        │   │   └── youdao
+        │   │       ├── body-end.txt
+        │   │       ├── body-start.txt
+        │   │       └── head.html
         │   ├── css
-        
-        │   │   └── result-min.css
-        
-        │   ├── history.cache
-        
+        │   │   ├── blue-glass
+        │   │   │   ├── inject-bottom.png
+        │   │   │   ├── inject-left.png
+        │   │   │   ├── inject-right.png
+        │   │   │   ├── inject-top.png
+        │   │   │   └── sidebar.css
+        │   │   ├── dark-glass
+        │   │   │   ├── inject-bottom.png
+        │   │   │   ├── inject-left.png
+        │   │   │   ├── inject-right.png
+        │   │   │   ├── inject-top.png
+        │   │   │   └── sidebar.css
+        │   │   ├── red-glass
+        │   │   │   ├── inject-bottom.png
+        │   │   │   ├── inject-left.png
+        │   │   │   ├── inject-right.png
+        │   │   │   ├── inject-top.png
+        │   │   │   └── sidebar.css
+        │   │   ├── result-min.css
+        │   │   └── style_result.css
         │   ├── images
-        
-        │   │   ├── down<em>arrow.gif
-        
-        │   │   ├── scrollbar</em>handle.gif
-        
-        │   │   ├── scrollbar<em>track.gif
-        
-        │   │   └── up</em>arrow.gif
-        
-        │   ├── js
-        
-        │   │   ├── autocomplete.r156903.js
-        
-        │   │   ├── extra.js
-        
-        │   │   ├── jsScrollbar.js
-        
-        │   │   ├── jsScroller.js
-        
-        │   │   └── result-min.js
-        
-        │   ├── result.html
-        
-        │   └── youdao.html
-        
-        ├── fusion.py
-        
-        ├── fusion.pyc
-        
+        │   │   ├── bg_more2.png
+        │   │   ├── blog_background.jpg
+        │   │   ├── down_arrow.gif
+        │   │   ├── icon
+        │   │   │   └── icon.jpg
+        │   │   ├── ok.png
+        │   │   ├── scrollbar_handle.gif
+        │   │   ├── scrollbar_track.gif
+        │   │   └── up_arrow.gif
+        │   └── js
+        │       ├── autocomplete.r156903.js
+        │       ├── extra.js
+        │       ├── huaci.js
+        │       ├── icibatop.js
+        │       ├── jquery.min.js
+        │       ├── jquery.sidebar.js
+        │       ├── jquery-ui.min.js
+        │       ├── jsScrollbar.js
+        │       ├── jsScroller.js
+        │       ├── jsScrollerTween.js
+        │       └── result-min.js
+        ├── fusionicb.py
+        ├── fusionyoudao.py
+        ├── gl.py
         ├── README.md
-        
-        ├── record<em>xclip.py
-        
-        ├── record</em>xclip.pyc
-        
+        ├── record_xclip.py
         ├── ref
-        
         │   ├── browser.py
-        
         │   ├── inspector.py
-        
-        │   ├── inspector.pyc
-        
         │   └── scrolledwin.py
-        
+        ├── test
         ├── web
-        
         │   ├── index.html
-        
         │   └── style.css
-        
         ├── webshot.py
+        └── youdao.py
         
-        ├── webshot.pyc
-        
-        └── youdao.py</p>
+        13 directories, 56 files
 
 Construction
 ----
