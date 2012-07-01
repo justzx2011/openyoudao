@@ -180,8 +180,8 @@ class ContentPane (gtk.Notebook):
         inspector = Inspector(web_view.get_web_inspector())
 
         scrolled_window = gtk.ScrolledWindow()
-        scrolled_window.props.hscrollbar_policy = gtk.POLICY_AUTOMATIC
-        scrolled_window.props.vscrollbar_policy = gtk.POLICY_AUTOMATIC
+        #scrolled_window.props.hscrollbar_policy = gtk.POLICY_NEVER
+        #scrolled_window.props.vscrollbar_policy = gtk.POLICY_NEVER
         scrolled_window.add(web_view)
         scrolled_window.show_all()
 
