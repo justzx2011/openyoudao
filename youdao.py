@@ -77,17 +77,17 @@ def webshow():
     gtk.main() 
     Alive=0
 
-def init():
-    if os.path.isfile(gl.datadir)==False:
-        os.system("cp -rf  \'"+ gl.youdaosqlitedir + "\' \'" + gl.sqlitedir +"\'")
 def gettext():
     os.system("xclip -f /dev/null")           #清空剪切板
     os.system("/bin/echo "" > \'"+ gl.historydir + "\'")
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 def loadconfig():
-    sleep(2)
+    sleep(1)
     cmd = "inotifywait  -m " + gl.datadir
+    if os.path.isfile(gl.datadir)==False:
+        os.system("cp -rf  \'"+ gl.youdaosqlitedir + "\' \'" + gl.sqlitedir +"\'")
+        switch=os.popen(cmd)
     switch=os.popen(cmd)
     gl.lock=0
     while Alive :
@@ -99,8 +99,6 @@ def loadconfig():
 # Main thread
 def main():
     
-    init()
-    sleep(1)
     #运行标志结束 
     global Alive
     Alive=1
