@@ -21,10 +21,13 @@ global headicb
 keywordtext = ""
 baseurl=""
 lock=0
-datadir=os.path.expanduser('~') + "/.local/share/webkit/databases/file__0.localstorage"
+userdir=os.path.expanduser('~')
+datadir=userdir + "/.local/share/webkit/databases/file__0.localstorage"
+sqlitedir=userdir + "/.local/share/webkit/."
 prebaseurl=""
 url=""
-#homedir = os.getcwd()
+workdir = os.getcwd()
+youdaosqlitedir = workdir + "/cache/databases"
 homedir = sys.path[0]
 historydir = homedir + "/cache/history.cache"
 origindir = homedir + "/cache/origin.html"

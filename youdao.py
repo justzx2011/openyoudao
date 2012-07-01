@@ -69,6 +69,8 @@ def lookup():
             gl.lock=0
 
 def webshow():
+    if os.path.isfile(gl.datadir)==False:
+        os.system("cp -rf  \'"+ gl.youdaosqlitedir + "\' \'" + gl.sqlitedir +"\'")
     global window
     global Alive
     window = webshot.Window()
