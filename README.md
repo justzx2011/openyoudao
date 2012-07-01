@@ -1,7 +1,6 @@
 # YouDao
 
         It is a YouDao client for linux.
-
          Video:  http://v.youku.com/v_show/id_XNDAzMDUxNDk2.html
                  ftp://linux.xidian.edu.cn/xdlinux/youdao.mp4
          Author: justzx2011@gmail.com  @justzx
