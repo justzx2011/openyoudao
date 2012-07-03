@@ -84,14 +84,15 @@ def gettext():
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 def loadconfig():
     sleep(1)
-    cmd = "inotifywait  -m " + gl.datadir
+    cmdswitch = "inotifywait  -m " + gl.datadir
+    #cmd = "inotifywait -m " + gl.sqlitedir
+    switch=os.popen(cmdswitch)
     if os.path.isfile(gl.datadir)==False:
         os.system("cp -rf  \'"+ gl.youdaosqlitedir + "\' \'" + gl.sqlitedir +"\'")
-        switch=os.popen(cmd)
-    else:
-        switch=os.popen(cmd)
+        #switch=os.popen(cmd)
     gl.lock=0
     while Alive :
+        #if str(switch.readline()).find("CLOSE_NOWRITE,CLOSE,ISDIR databases"):
         if str(switch.readline()).find("MODIFY"):
             if(gl.lock==0):
                 inputconfig()
