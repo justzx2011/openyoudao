@@ -34,3 +34,36 @@ del {text-decoration: line-through; color: #777777;}
 .intro {
 font-family: Georgia,"Times New Roman",Times,serif;
 pa{font-size:13px;font-weight:normal;line-height:18px;margin-bottom:9px;}pa small{font-size:11px;color:#bfbfbf;}}
+.ribbon {
+  background-color: rgba(0,0,0,0.5);
+  overflow: hidden;
+  /* top left corner */
+  position: absolute;
+  right: -4.5em;
+  top: 3.5em;
+  /* 45 deg ccw rotation */
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(45deg);
+  /* shadow */
+  -moz-box-shadow: 0 0 1em #888;
+  -webkit-box-shadow: 0 0 1em #888;
+  opacity: 0.2;
+  -moz-transition-property: opacity 200ms linear;
+  -webkit-transition: opacity 200ms linear; 
+  -o-transition: opacity 200ms linear; 
+  transition: opacity 200ms linear;
+}
+.ribbon a {
+  border: 1px solid #fff;
+  color: #fff;
+  display: block;
+  font: bold 14px 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+  margin: 0.05em 0 0.075em 0;
+  padding: 0.5em 3.5em;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 0.5em #444;
+}
+body:hover .ribbon {
+  opacity: 1;
+}
