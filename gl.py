@@ -20,25 +20,26 @@ global bodystarticb
 global bodyendicb
 global headicb
 proxyDict = {} 
-"""
-# SOCKS5 proxy for HTTP/HTTPS
-proxyDict = {
-    'http' : "socks5://1.2.3.4:1080",
-    'https' : "socks5://1.2.3.4:1080"
-}
 
-# SOCKS4 proxy for HTTP/HTTPS
-proxyDict = {
-    'http' : "socks4://1.2.3.4:1080",
-    'https' : "socks4://1.2.3.4:1080"
-}
+"""代理配置"""
+## SOCKS5 proxy for HTTP/HTTPS
+#proxyDict = {
+#    'http' : "socks5://1.2.3.4:1080",
+#    'https' : "socks5://1.2.3.4:1080"
+#}
+#
+## SOCKS4 proxy for HTTP/HTTPS
+#proxyDict = {
+#    'http' : "socks4://1.2.3.4:1080",
+#    'https' : "socks4://1.2.3.4:1080"
+#}
+#
+## HTTP proxy for HTTP/HTTPS
+#proxyDict = {
+#    'http' : "1.2.3.4:1080",
+#    'https' : "1.2.3.4:1080"
+#}
 
-# HTTP proxy for HTTP/HTTPS
-proxyDict = {
-    'http' : "1.2.3.4:1080",
-    'https' : "1.2.3.4:1080"
-}
-"""
 keywordtext = ""
 baseurl=""
 lock=0
