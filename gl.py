@@ -19,7 +19,7 @@ global bodystartyoudao
 global bodystarticb
 global bodyendicb
 global headicb
-proxyDict = {}  #默认不设置代理
+proxyDict = {} 
 """
 # SOCKS5 proxy for HTTP/HTTPS
 proxyDict = {
