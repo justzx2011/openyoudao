@@ -19,6 +19,7 @@ global bodystartyoudao
 global bodystarticb
 global bodyendicb
 global headicb
+proxyDict = {}  #默认不设置代理
 """
 # SOCKS5 proxy for HTTP/HTTPS
 proxyDict = {
@@ -38,7 +39,6 @@ proxyDict = {
     'https' : "1.2.3.4:1080"
 }
 """
-proxyDict = NULL
 keywordtext = ""
 baseurl=""
 lock=0
