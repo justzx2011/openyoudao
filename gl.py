@@ -18,7 +18,7 @@ global headyoudao
 global bodystartyoudao
 global bodystarticb
 global bodyendicb
-iglobal headicb
+global headicb
 """
 # SOCKS5 proxy for HTTP/HTTPS
 proxyDict = {
@@ -38,6 +38,7 @@ proxyDict = {
     'https' : "1.2.3.4:1080"
 }
 """
+proxyDict = NULL
 keywordtext = ""
 baseurl=""
 lock=0
