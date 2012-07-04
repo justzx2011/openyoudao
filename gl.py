@@ -2,6 +2,7 @@ import os
 import sys
 import sqlite3
 global keywordtext
+global proxyDict
 global downloadwait
 global baseurl
 global lock
@@ -17,7 +18,26 @@ global headyoudao
 global bodystartyoudao
 global bodystarticb
 global bodyendicb
-global headicb
+iglobal headicb
+"""
+# SOCKS5 proxy for HTTP/HTTPS
+proxyDict = {
+    'http' : "socks5://1.2.3.4:1080",
+    'https' : "socks5://1.2.3.4:1080"
+}
+
+# SOCKS4 proxy for HTTP/HTTPS
+proxyDict = {
+    'http' : "socks4://1.2.3.4:1080",
+    'https' : "socks4://1.2.3.4:1080"
+}
+
+# HTTP proxy for HTTP/HTTPS
+proxyDict = {
+    'http' : "1.2.3.4:1080",
+    'https' : "1.2.3.4:1080"
+}
+"""
 keywordtext = ""
 baseurl=""
 lock=0

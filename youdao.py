@@ -53,7 +53,10 @@ def lookup():
             gl.prebaseurl =  gl.baseurl
             url= gl.baseurl + text                           #合成地址
             print url + "kkkkkkkkkkkk"                       #合成地址检测点1 
-            r = requests.get(url)                            #获得网页
+            #如果需要设置了代理取消"代理"行注释，并将"非代理"行注释掉
+            #代理相关参数在gl.py中设置proxyDict变量
+            #r = requests.get(url, headers={'content-type':'text/plain'}, proxies=gl.proxyDict)  #（代理）
+            r = requests.get(url)                            #获得网页(非代理)
             #doc = html.document_fromstring(r.text)          
             f_tar=open(gl.origindir,'w+')             #缓存原始网页
             print >>f_tar,r.text
