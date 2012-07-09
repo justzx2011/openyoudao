@@ -1,0 +1,6 @@
+pkgname=openyoudao
+pkgver=alpha
+pkgrel=1
+pkgdesc="a  client for youdao on linux"
+url="http://openyoudao.org/"
+
