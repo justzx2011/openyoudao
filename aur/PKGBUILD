@@ -3,4 +3,6 @@ pkgver=alpha
 pkgrel=1
 pkgdesc="a  client for youdao on linux"
 url="http://openyoudao.org/"
-
+arch=('x86_64' 'i686')
+license=('GPLv3')
+depends=('xclip' 'inotify-tools' 'python-xlib' 'python-lxml') 
