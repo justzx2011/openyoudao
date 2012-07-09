@@ -6,3 +6,11 @@ url="http://openyoudao.org/"
 arch=('x86_64' 'i686')
 license=('GPLv3')
 depends=('xclip' 'inotify-tools' 'python-xlib' 'python-lxml' 'python-requests') 
+makedepends=()
+conflicts=()
+replaces=()
+backup=()
+install='openyoudao.install'
+source=()
+md5sums=()
+
