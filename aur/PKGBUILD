@@ -1,46 +1,26 @@
-# Maintainer: speps <speps at aur dot archlinux dot org>
-pkgbase=openyoudao
+# Maintainer: justzx <justzx2011@gmail.com>
 pkgname=openyoudao
 #true && pkgname=('openyoudao-gtk2')
 pkgver=alpha
 pkgrel=1
 pkgdesc="a youdao client for linux"
-arch=('any')
+arch=('x86_64' 'i686')
 url="http://www.openyoudao.org/"
 license=('LGPL3')
-depends=('xclip' 'inotify-tools' 'python-xlib' 'python-lxml' 'python-requests') 
-makedepends=('python')
+depends=('python2' 'xclip' 'inotify-tools' 'python-xlib' 'python-lxml' 'python-requests')
 install="openyoudao.install"
 source=("https://github.com/justzx2011/openyoudao/tarball/$pkgver")
 md5sums=('52c2c1a4d30000ca3d3ce1e3ef3cf468')
-#build() {
-#  cd ${srcdir}/justzx2011-openyoudao-*
-#  for _pkg in ${pkgname[@]/openyoudao-}; do
-#    msg2 "Building $_pkg .."
-#    [ -d bld-$_pkg ] || mkdir bld-$_pkg && pushd bld-$_pkg
-#
-#    cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
-#             -DWITH_GTK=`[[ $_pkg = gtk[23] ]] && echo ON || echo OFF` \
-#             -DWITH_CHROME=OFF \
-#             -DPYTHON_EXECUTABLE=/usr/bin/python2
-#    make && popd
-#  done
-#}
-
-package_openyoudao-gtk2() {
-  cd ${srcdir}/justzx2011-openyoudao-*/bld-gtk2
-
+package() {
+  cd ${srcdir}/justzx2011-openyoudao-*/
   # bin
   install -Dm755 scripts/openyoudao \
     "$pkgdir/usr/bin/openyoudao"
-
   # libs
   install -d "$pkgdir/usr/lib/python2.7/site-packages/openyoudao"
   install -Dm644 openyoudao/*.py* \
     "$pkgdir/usr/lib/python2.7/site-packages/openyoudao"
-
   # desktop file
   install -Dm644 desktop/openyoudao.desktop \
     "$pkgdir/usr/share/applications/openyoudao.desktop"
 }
-# vim:set ts=2 sw=2 et:
