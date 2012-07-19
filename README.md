@@ -41,8 +41,10 @@ TODO
         11 增加项目日志
 DONE
 -----  
+        2012-7-19  -------   将程序打包为aur
         2012-7-11  -------   编写了openyoudao.desktop
         2012-7-10  -------   kokdemo重新设计了项目主页
+        2012-7-4  -------    增加了代理设置
         2012-7-01  -------   完善了README.md，更新了网页，发布Alpha
         2012-6-30  -------   增加了程序图标，调整了相对路径，清理了github分支
         2012-6-29  -------   改进了webshot
@@ -65,17 +67,18 @@ DONE
         2012-5-26  -------   完成了程序退出机制，全局统一退出标志，为差错控制模块预留了接口
 UPDATES
 --------------
+        2012-7-19  发布aur包
         2012-7-01  发布Alpha
         2012-6-10  增加了侧边栏
-        2012-6-9  增加了滚动条
-        2012-6-6  重构了界面
-        2012-6-4  对网页进行了重构,修改了css，网页交由bainizhao更新维护
-        2012-6-1  增加了滚动条
-        2012-5-31 给项目主页添加了域名,地址:http://openyoudao.org/    
-        2012-5-30 修正了一些Bug,项目可以正常使用,正式命名为openyoudao
-        2012-5-28 完善了项目主页,地址:http://74.117.59.126/,注册了推@openyoudao
-        2012-5-27 整理代码并提交到github
-        2012-5-26 实现了屏幕取词翻译，完善了程序的主框架
+        2012-6-9   增加了滚动条
+        2012-6-6   重构了界面
+        2012-6-4   对网页进行了重构,修改了css，网页交由bainizhao更新维护
+        2012-6-1   增加了滚动条
+        2012-5-31  给项目主页添加了域名,地址:http://openyoudao.org/    
+        2012-5-30  修正了一些Bug,项目可以正常使用,正式命名为openyoudao
+        2012-5-28  完善了项目主页,地址:http://74.117.59.126/,注册了推@openyoudao
+        2012-5-27  整理代码并提交到github
+        2012-5-26  实现了屏幕取词翻译，完善了程序的主框架
 RULES
 ----
         1 界面上永远不许有按钮
@@ -87,18 +90,18 @@ RULES
 Path & File
 ----
         .
-        ├── cache
-        │   ├── config.html
+        ├── cache                                 #存放页面相关的文件(html、js、图片、css)
+        │   ├── config.html                       #程序启动时,默认的页面
         │   ├── construction
-        │   │   ├── icb
+        │   │   ├── icb                           #icb字典重构需要的html元素
         │   │   │   ├── body-end.txt
         │   │   │   ├── body-start.txt
         │   │   │   └── head.html
-        │   │   └── youdao
+        │   │   └── youdao                        #yoduao字典重构需要的html元素
         │   │       ├── body-end.txt
         │   │       ├── body-start.txt
         │   │       └── head.html
-        │   ├── css
+        │   ├── css                               #设计侧边栏使用的css
         │   │   ├── blue-glass
         │   │   │   ├── inject-bottom.png
         │   │   │   ├── inject-left.png
@@ -119,7 +122,9 @@ Path & File
         │   │   │   └── sidebar.css
         │   │   ├── result-min.css
         │   │   └── style_result.css
-        │   ├── images
+        │   ├── databases                          #用户数据库
+        │   │   └── file__0.localstorage
+        │   ├── images                             #页面用到的图片文件
         │   │   ├── bg_more2.png
         │   │   ├── blog_background.jpg
         │   │   ├── down_arrow.gif
@@ -129,7 +134,7 @@ Path & File
         │   │   ├── scrollbar_handle.gif
         │   │   ├── scrollbar_track.gif
         │   │   └── up_arrow.gif
-        │   └── js
+        │   └── js                                #页面用到的js文件
         │       ├── autocomplete.r156903.js
         │       ├── extra.js
         │       ├── huaci.js
@@ -141,23 +146,86 @@ Path & File
         │       ├── jsScroller.js
         │       ├── jsScrollerTween.js
         │       └── result-min.js
-        ├── fusionicb.py
-        ├── fusionyoudao.py
-        ├── gl.py
-        ├── README.md
-        ├── record_xclip.py
-        ├── ref
+        ├── desktop                               #系统菜单配置文件
+        │   └── openyoudao.desktop
+        ├── fusionicb.py                          #icb界面重构脚本
+        ├── fusionyoudao.py                       #youdao界面重构脚本
+        ├── gl.py                                 #程序中用到的全局变量
+        ├── README.md                             #程序的说明文档
+        ├── record_xclip.py                       #屏幕取词脚本
+        ├── ref                                   #供参考的源码
         │   ├── browser.py
         │   ├── inspector.py
         │   └── scrolledwin.py
-        ├── test
-        ├── web
+        ├── scripts                               #打包aur时用到的可执行脚本
+        │   └── openyoudao
+        ├── web                                   #项目主页
+        │   ├── css
+        │   │   ├── bootstrap.css
+        │   │   ├── bootstrap.min.css
+        │   │   ├── loading.gif
+        │   │   ├── themes
+        │   │   │   ├── dark.css
+        │   │   │   ├── font
+        │   │   │   │   ├── AbrilFatface-Average.css
+        │   │   │   │   ├── Arvo-PTSans.css
+        │   │   │   │   ├── Bevan-PotanoSans.css
+        │   │   │   │   ├── BreeSerif-OpenSans.css
+        │   │   │   │   ├── DroidSerif-DroidSans.css
+        │   │   │   │   ├── Lekton-Molengo.css
+        │   │   │   │   ├── Lora-Istok.css
+        │   │   │   │   ├── Merriweather-NewsCycle.css
+        │   │   │   │   ├── NixieOne-Ledger.css
+        │   │   │   │   ├── Pacifico-Arimo.css
+        │   │   │   │   ├── PlayfairDisplay-Muli.css
+        │   │   │   │   ├── PoiretOne-Molengo.css
+        │   │   │   │   ├── PT.css
+        │   │   │   │   ├── PTSerif-PTSans.css
+        │   │   │   │   ├── Rancho-Gudea.css
+        │   │   │   │   └── SansitaOne-Kameron.css
+        │   │   │   ├── timeline-dark.png
+        │   │   │   └── timeline-texture.png
+        │   │   ├── timeline.css
+        │   │   └── timeline.png
+        │   ├── fork_me_on_github.png
+        │   ├── img
+        │   │   ├── glyphicons-halflings.png
+        │   │   └── glyphicons-halflings-white.png
         │   ├── index.html
-        │   └── style.css
-        ├── webshot.py
-        └── youdao.py
+        │   ├── js
+        │   │   ├── bootstrap.js
+        │   │   ├── bootstrap.min.js
+        │   │   ├── jquery-min.js
+        │   │   ├── locale
+        │   │   │   ├── cz.js
+        │   │   │   ├── de.js
+        │   │   │   ├── dk.js
+        │   │   │   ├── en.js
+        │   │   │   ├── es.js
+        │   │   │   ├── fo.js
+        │   │   │   ├── fr.js
+        │   │   │   ├── id.js
+        │   │   │   ├── is.js
+        │   │   │   ├── it.js
+        │   │   │   ├── ja.js
+        │   │   │   ├── kr.js
+        │   │   │   ├── nl.js
+        │   │   │   ├── pl.js
+        │   │   │   ├── pt-br.js
+        │   │   │   ├── ru.js
+        │   │   │   ├── zh-ch.js
+        │   │   │   └── zh-tw.js
+        │   │   ├── timeline-embed.js
+        │   │   ├── timeline.js
+        │   │   └── timeline-min.js
+        │   ├── json
+        │   │   |__ timeline.json
+        │   ├── openyoudao.jpg
+        │   └── tutorial.html
+        ├── webshot.py                           #webkit组件
+        └── youdao.py                            #主程序
         
-        13 directories, 56 files
+        23 directories, 114 files
 
 Construction
 ----
