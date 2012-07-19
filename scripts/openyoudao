@@ -6,5 +6,5 @@
 __revision__ = 'alpha'
 
 if __name__=="__main__":
-    import youdao
-    youdao.main()
+    import os
+    os.system("python2.7 /usr/lib/python2.7/site-packages/openyoudao/yoduao.py")
