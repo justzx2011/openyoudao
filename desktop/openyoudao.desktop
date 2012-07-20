@@ -48,6 +48,6 @@ Comment[tr_TR]=Gtk2 ve Webkit Tabanlı Hafif YouDao İstemcisi
 Comment[zh_CN]=基于 Gtk2 Webkit 的轻巧有道客户端
 Comment[zh_TW]=基於 Gtk2 Webkit 的輕巧 YouDao 用戶端
 Exec=openyoudao
-Icon=/usr/lib/python2.7/site-packages/openyoudao/cache/images/icon/icon.jpg
+Icon=/var/cache/openyoudao/images/icon/icon.jpg
 Categories=GTK;GNOME;Network;
 X-GNOME-Gettext-Domain=openyoudao
