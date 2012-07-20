@@ -7,7 +7,14 @@ pkgdesc="a youdao client for linux"
 arch=('x86_64' 'i686')
 url="http://www.openyoudao.org/"
 license=('LGPL3')
-depends=('python2' 'xclip' 'inotify-tools' 'python-xlib' 'python2-lxml' 'python2-requests' 'pywebkitgtk' 'python2-beautifulsoup3')
+depends=('python2' 'xclip' 'inotify-tools' 'python-xlib' 'python2-lxml' 'python-requests' 'pywebkitgtk' 'python2-beautifulsoup3')
+#extra/xclip 0.12-3
+#community/inotify-tools 3.14-2
+#community/python-xlib
+#extra/python2-lxml 2.3.4-2
+#aur/python-requests 0.13.1-1
+#extra/pywebkitgtk 1.1.8-2
+#community/python2-beautifulsoup3 3.2.1-1
 install="openyoudao.install"
 source=("https://github.com/justzx2011/openyoudao/tarball/$pkgver")
 md5sums=('608556b3f90ab8024d2ac41beea7f02a')
@@ -18,12 +25,12 @@ package() {
     "$pkgdir/usr/bin/openyoudao"
   # libs
   #/var/cache/openyoudao#
-  install -d "$pkgdir/usr/lib/python2.7/site-packages/openyoudao"
+  install -d "$pkgdir/usr/lib/openyoudao"
   install -Dm644 ./*.py \
-    "$pkgdir/usr/lib/python2.7/site-packages/openyoudao"
-  install -d "$pkgdir/usr/lib/python2.7/site-packages/openyoudao/cache"
-  cp -rf cache/* "$pkgdir/usr/lib/python2.7/site-packages/openyoudao/cache"
-  chmod 777 "$pkgdir/usr/lib/python2.7/site-packages/openyoudao/cache"
+    "$pkgdir/usr/lib/openyoudao"
+  install -d "$pkgdir/var/cache/openyoudao"
+  cp -rf cache/* "$pkgdir/var/cache/openyoudao"
+  chmod 755 "$pkgdir/var/cache/openyoudao"
   #install -dm644 cache/* \
   #  "$pkgdir/usr/lib/python2.7/site-packages/openyoudao/cache"
   # desktop file
