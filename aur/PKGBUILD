@@ -7,7 +7,7 @@ pkgdesc="a youdao client for linux"
 arch=('x86_64' 'i686')
 url="http://www.openyoudao.org/"
 license=('LGPL3')
-depends=('python2' 'xclip' 'inotify-tools' 'python-xlib' 'python2-lxml' 'python-requests' 'pywebkitgtk' 'python2-beautifulsoup3')
+depends=('python2' 'xclip' 'inotify-tools' 'python-xlib' 'python2-lxml' 'python2-requests' 'pywebkitgtk' 'python2-beautifulsoup3')
 #extra/xclip 0.12-3
 #community/inotify-tools 3.14-2
 #community/python-xlib
