@@ -2,7 +2,7 @@
 from lxml import html
 import popen2
 import sqlite3
-import requests
+#import requests
 import gl
 import string
 import sys
@@ -52,17 +52,22 @@ def lookup():
             print gl.lock
             gl.prebaseurl =  gl.baseurl
             url= gl.baseurl + text                           #合成地址
-            print url + "kkkkkkkkkkkk"                       #合成地址检测点1 
+            print url + "kkkkkkkkkkkk"                       #合成地址检测点1
+            #使用curl进行网页下载
+            #如果需要设置了代理取消"代理"行注释，并将"非代理"行注释掉
+            os.system("curl -s -o \'" + gl.origindir +"\' \'" + url+ "\'") 	 #获得网页(非代理)
+            #os.system("curl -s -o --socks5-hostname ip:port \'" + gl.origindir +"\' \'" + url+ "\'") #代理	 
+            #使用python-requests进行网页下载,在debian中可以正常使用，考虑到其它系统的兼容性，改用curl
             #如果需要设置了代理取消"代理"行注释，并将"非代理"行注释掉
             #代理相关参数在gl.py中设置proxyDict变量
-            if gl.proxyDict =={}:
-                r = requests.get(url)                            #获得网页(非代理)
-            else:
-                r = requests.get(url, headers={'content-type':'text/plain'}, proxies=gl.proxyDict)  #（代理）
-            f_tar=open(gl.origindir,'w+')             #缓存原始网页
-            print >>f_tar,r.text
-            f_tar.close()
-            os.system("echo \'"+ gl.downloadwait + "\' > cache/result.html")         #清空最终缓冲增强程序稳健性
+            #if gl.proxyDict =={}:
+            #    r = requests.get(url)                            #获得网页(非代理)
+            #else:
+            #    r = requests.get(url, headers={'content-type':'text/plain'}, proxies=gl.proxyDict)  #（代理）
+            #f_tar=open(gl.origindir,'w+')             #缓存原始网页
+            #print >>f_tar,r.text
+            #f_tar.close()
+            #os.system("echo \'"+ gl.downloadwait + "\' > cache/result.html")         #清空最终缓冲增强程序稳健性
             if(gl.baseurl==gl.baseurlyoudao):
                 fusionyoudao.reconstruct()                   #区分聚合
             if(gl.baseurl==gl.baseurlicb):
