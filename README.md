@@ -14,7 +14,11 @@
 #Installation
         #apt-get install python-xlib python-webkit python-requests python-lxml xclip inotify-tools python-beautifulsoup
         
-        $git clone git://github.com/justzx2011/openyoudao.git
+        $wget https://github.com/justzx2011/openyoudao/tarball/alpha-sid
+        
+        $tar -xvf justzx2011-openyoudao-alpha-sid-0-g37d716c.tar.gz
+        
+        $mv justzx2011-openyoudao-37d716c/ openyoudao
          
         $打开主菜单，新建项目：
          
