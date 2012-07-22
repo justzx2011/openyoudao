@@ -10,9 +10,9 @@
         
 
 #Dependencies:
-        python-xlib python-webkit python-requests python-lxml xclip inotify-tools
+        python-xlib python-webkit python-requests python-lxml xclip inotify-tools python-beautifulsoup
 #Installation
-        #apt-get install python-xlib python-webkit python-requests python-lxml xclip inotify-tools
+        #apt-get install python-xlib python-webkit python-requests python-lxml xclip inotify-tools python-beautifulsoup
         
         $git clone git://github.com/justzx2011/openyoudao.git
          
