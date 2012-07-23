@@ -1,0 +1,79 @@
+<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://shared.ydstatic.com/images/favicon.ico" type="image/x-icon" />
+<link href="http://shared.ydstatic.com/dict/v5.03/styles/result-min.css" rel="stylesheet" type="text/css" />
+<link rel="canonical" href="http://dict.youdao.com/w/textile/" />
+<link rel="search" type="application/opensearchdescription+xml" title="Yodao Dict" href="plugins/search-provider.xml" />
+<script type="text/javascript" src="js/result-min.js"></script>
+<script type="text/javascript" src="js/autocomplete.r156903.js"></script>
+<link rel="stylesheet" type="text/css" href="css/dark-glass/sidebar.css" />
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.sidebar.js"></script>
+<script type="text/javascript">
+function Getconfig(i)
+{
+var content=$('#dict_'+i).attr('rel');
+localStorage.setItem('dict',content)
+//alert(content)
+//alert(document.getElementsByTagName("input")[1].getAttribute("value"))
+localStorage.setItem('keyword',document.getElementsByClassName("keyword")[0].childNodes[0].nodeValue)
+//localStorage.setItem('keyword',document.getElementsByTagName("input")[1].getAttribute("value"))
+}
+</script>
+<script type="text/javascript">
+    var global = {
+        fromVm:{
+            searchDomain:'youdao.com'
+        }
+    };
+    function rwt(a, newlink) {
+        try {
+            if (a === window) {
+                a = window.event.srcElement;
+                while (a) {
+                    if (a.href)
+                        break;
+                    a = a.parentNode
+                }
+            }
+            a.href = newlink;
+            a.onmousedown = ""
+        } catch (p) {
+        }
+        return true
+    }
+</script>
+</head>
+
+<body>
+<ul id="demo_menu2" >
+            <li><sb-a rel="http://dict.youdao.com/search?q=" id='dict_1' >有道字典</sb-a></li>
+            <li><sb-a rel="http://www.iciba.com/" id='dict_2' onclick='Getconfig(2)'>icb</sb-a></li>
+        </ul>
+
+<script type="text/javascript">
+        $("ul#demo_menu2").sidebar({
+            position:"right",
+        });
+        </script>
+
+<div id="results">
+<div id="result_navigator" class="result_navigator">
+</div>
+<!-- 结果内容 -->
+<div id="results-contents" class="results-content">
+<div class="error-wrapper" style="height:400px">
+<div class="error-note">
+<dl>
+<dt>抱歉，没有找到与您查询的"<strong>https://github.com/justzx2011/openyoudao/tarball/alpha</strong>"相符的字词。
+	  </dt>
+<dd>请查看输入的字词是否有错误</dd><br />
+<dt>或者，<a href="http://feedback.youdao.com/quality_report.jsp?q=https%3A%2F%2Fgithub.com%2Fjustzx2011%2Fopenyoudao%2Ftarball%2Falpha&amp;prodtype=dict&amp;cmt=%E6%88%91%E8%A6%81%E6%B7%BB%E5%8A%A0%E2%80%9Chttps%3A%2F%2Fgithub.com%2Fjustzx2011%2Fopenyoudao%2Ftarball%2Falpha%E2%80%9D%E7%9A%84%E4%B8%AD%E6%96%87%E9%87%8A%E4%B9%89%E5%A6%82%E4%B8%8B%EF%BC%9A" rel="nofollow">添加释义，成为本词条创始人！</a></dt>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</body></html>
