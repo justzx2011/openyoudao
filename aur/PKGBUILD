@@ -17,7 +17,7 @@ depends=('python2' 'xclip' 'curl' 'inotify-tools' 'python-xlib' 'python2-lxml'  
 #community/python2-beautifulsoup3 3.2.1-1
 install="openyoudao.install"
 source=("https://github.com/justzx2011/openyoudao/tarball/$pkgver")
-md5sums=('ca650eab7d2353b6c723e53a4a14cfb4')
+md5sums=('ee6c65aaa8c49eaed55b90862e5c2609')
 package() {
   cd ${srcdir}/justzx2011-openyoudao-*/
   # bin
