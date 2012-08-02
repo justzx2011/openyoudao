@@ -42,7 +42,6 @@ def record_callback(reply):
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
             print "您抹黑的是: ", text
-            pipe.close()
             text = text.strip('\r\n\x00')
             global pre_text
             if(pre_text != text):
