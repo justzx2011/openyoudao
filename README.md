@@ -10,9 +10,9 @@
         
 
 #Dependencies:
-        python-xlib python-webkit python-requests python-lxml xclip inotify-tools python-beautifulsoup
+        python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
 #Installation
-        #apt-get install python-xlib python-webkit python-requests python-lxml xclip inotify-tools python-beautifulsoup
+        #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
         $wget https://github.com/justzx2011/openyoudao/tarball/alpha-sid
         
