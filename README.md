@@ -14,21 +14,45 @@
 #Installation
         #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
-        $wget https://github.com/justzx2011/openyoudao/tarball/alpha-sid
+        $git clone https://github.com/justzx2011/openyoudao
+         
+        安装bin文件，方便程序执行: 
         
-        $tar -xvf justzx2011-openyoudao-alpha-sid-0-g37d716c.tar.gz
+        将bin文件：scripts/openyoudao安装到目录/usr/bin/openyoudao:
         
-        $mv justzx2011-openyoudao-37d716c/ openyoudao
-         
-        $打开主菜单，新建项目：
-         
-         程序名称：openyoudao
-         
-         命令：python2.7 ~/workplace/openyoudao/youdao.py
+        #cp scripts/openyoudao /usr/bin/.
+        
+        设置权限：
+        
+        #chmod 755 /usr/bin/openyoudao
+        
+        安装libs文件: 
+        
+        #mkdir /usr/lib/openyoudao
 
-         icon：~/workplace/openyoudao/cache/images/icon/icon.jpg
+        #cp ./*.py /usr/lib/openyoudao
 
-         注释：youdao client for linux
+        #chmod 644 /usr/lib/openyoudao/*.py
+        
+        安装cache文件:
+        
+        #mkdir /var/cache/openyoudao
+
+        #cp -rf cache/* /var/cache/openyoudao/.
+
+        #chmod 777 /var/cache/openyoudao/*.html
+
+        #chmod 777 /var/cache/openyoudao/history.cache
+        
+        安装desktop:
+        
+        #cp desktop/openyoudao.desktop /usr/share/applications/
+
+        #chmod 644 /usr/share/applications/openyoudao.desktop
+
+        哈哈～现在应该看到openyoudao的图标了吧～
+
+        点击图标就能运行程序了
         
 TODO
 --------------
@@ -43,8 +67,18 @@ TODO
         9 推入软件源
         10 完善项目主页
         11 增加项目日志
+        12 打包ppa
+        13 打包rpm
+        14 增加ocr取词功能
+        15 编写QT版本
 DONE
 -----  
+        2012-8-08  -------   修复了发音功能
+        2012-8-07  -------   重新编写了使用教程，以兼容各个发行版linux
+        2012-8-01  -------   修正了取词脚本
+        2012-7-23  -------   添加程序运行过程中所需要的临时文件，以解决系统权限问题
+        2012-7-22  -------   修正了desktop存在的bug
+        2012-7-21  -------   考虑到python-requests存在过期依赖问题，改用curl进行网页下载
         2012-7-19  -------   将程序打包为aur
         2012-7-11  -------   编写了openyoudao.desktop
         2012-7-10  -------   kokdemo重新设计了项目主页
@@ -71,6 +105,7 @@ DONE
         2012-5-26  -------   完成了程序退出机制，全局统一退出标志，为差错控制模块预留了接口
 UPDATES
 --------------
+        2012-8-08  -------   修复了发音功能
         2012-7-19  发布aur包
         2012-7-01  发布Alpha
         2012-6-10  增加了侧边栏
