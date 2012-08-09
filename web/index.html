@@ -17,6 +17,7 @@
 	      h1 {
 	      	font-family:黑体;
 	      }
+	      id.show {text-align: center;}
 	    </style>
 	    
 
@@ -41,11 +42,6 @@
 		</a>		
 		<div class="navbar-inner">
 	        <div class="container">
-	        	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-		            <span class="icon-bar"></span>
-	        	</a>
 	        	<a class="brand" href="http://openyoudao.org">Openyoudao</a>
 		        <div class="nav-collapse">
 		            <ul class="nav nav-pills">
@@ -55,7 +51,7 @@
 		              	<li><a href="http://openyoudao.org/#timeline">时间表</a></li>
 						<li><a href="./tutorial.html">图文教程</a></li>
 		              	<li><a href="./donate.html">捐赠链接</a></li>
-		              	<li><a href="http://openyoudao.org/#about">联系我们</a></li> 
+		              	<li><a href="./about.html">联系我们</a></li> 
 		            </ul>
 		        </div>
 	        </div>
@@ -63,13 +59,14 @@
     </div>
 
     <div class="container">	
+    	
       	<div class="hero-unit">
 	      	<div class="row-fluid ">
 	      		<div class="span2 ">
 	      			<img  src="./pic/openyoudaologo.jpg" >
 	      		</div>
 	      		<div class="span10 ">
-		        	<h1>告别linux下查词之痛苦吧！</h1>
+		        	<h1>告别linux下查词之苦吧！</h1>
 		        	<p>Openyoudao是有道字典在linux下的客户端，在取词翻译的基础上，对查询到的信息进行有效的整合。我们将来会开发出更多、更有用的功能。</p>
 				</div>	        
 	        </div>
@@ -79,7 +76,7 @@
 		<div class="page-header ">
 			<h1>特性<small> &nbsp Features</small></h1>
 		</div>
-		<div class="row">
+		<div class="row-fluid">
 		    <div class="span4">
 		        <h3>取词稳定准确</h3>
 		        <p>Openyoudao的取词能力和windows平台下的有道词典一样准确，保证在您为单词而头疼的时候及时出现。 </p>
@@ -103,14 +100,19 @@
 				<p>
 					Openyoudao目前支持 Debian、Archlinux、Fedora的安装，其中Archlinux已经只做好了aur包，安装最为方便，方式如下
 				</p>
-				<table class="prettyprint linenums">
-					<ol class="linenums">
-						<li class="L0">
-							<span class="pln">$ sudo yaourt -S openyoudao</span>
-						</li>
-					</ol>
-				</table>
-				<p><span class="label">其他版本的方法请访问“<a href="http://openyoudao.org/tutorial.html"><b>图文教程</b></a>”</span></p>
+				<p>
+					<code class="pln">$ sudo yaourt -S openyoudao</code>
+				</p>
+				
+				<p><span class="label" style="font-size: 20px">其他版本的方法请访问“<a href="http://openyoudao.org/tutorial.html"><b>图文教程</b></a>”</span></p>
+				<p>项目地址: <a href="https://github.com/justzx2011/openyoudao">https://github.com/justzx2011/openyoudao</a> </p>
+			</div>
+			<div id="show">
+				
+				<p>演示地址v0.1: <a href="http://v.youku.com/v_show/id_XNDIyMzM0ODI4.html">http://v.youku.com/v_show/id_XNDIyMzM0ODI4.html</a>  </p>
+				<embed src="http://player.youku.com/player.php/sid/XNDAzMDUxNDk2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+				<p>演示地址Alpha: <a href="http://v.youku.com/v_show/id_XNDAzMDUxNDk2.html">http://v.youku.com/v_show/id_XNDAzMDUxNDk2.html</a>  </p>
+				<embed src="http://player.youku.com/player.php/sid/XNDIyMzM0ODI4/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 			</div>
 		</section>
 	
@@ -222,31 +224,16 @@
 			</div>
 		</section>
 
-		<section id="about">
-			<div class="page-header">
-				<h1>联系我们<small> &nbsp Connect</small></h1>
-			</div>
-			<div>
-				<p>意见和建议请发送邮箱</p>
-				&lt;justzx2011@gmail.com&gt; &lt;lvzongting@gmail.com&gt; &lt;kokdemo@gmail.com&gt;<br>
-				<p>欢迎follow 我们的推特帐号 @juxtzx @lvzongting @kokdemo</p> 
-				<p>以及本软件的官方推特帐号 <a herf="http://twitter.com/openyoudao">@openyoudao</a></p>
-				<p>项目地址: <a href="https://github.com/justzx2011/openyoudao">https://github.com/justzx2011/openyoudao</a> </p>
-				<p>演示地址v0.1: <a href="http://v.youku.com/v_show/id_XNDIyMzM0ODI4.html">http://v.youku.com/v_show/id_XNDIyMzM0ODI4.html</a>  </p>
-				<embed src="http://player.youku.com/player.php/sid/XNDAzMDUxNDk2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
-				<p>演示地址Alpha: <a href="http://v.youku.com/v_show/id_XNDAzMDUxNDk2.html">http://v.youku.com/v_show/id_XNDAzMDUxNDk2.html</a>  </p>
-				<embed src="http://player.youku.com/player.php/sid/XNDIyMzM0ODI4/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
-
-			</div>
-		</section>		
-		<hr/>
+		
+	<hr/>
       <footer>
         <p>&copy; 西电开源社区 2012</p>
-      </footer>
+      </footer>	
+	</div>			
 
-    </div> 
     <script src="./js/jquery-min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/prettify.js"></script>
    
   </body>
 </html>
