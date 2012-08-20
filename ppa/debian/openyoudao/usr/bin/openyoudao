@@ -1,0 +1,10 @@
+#!/usr/bin/python2.7
+# -*- coding: UTF-8 -*-
+# Author: justzx <justzx2011@gmail.com>
+# License: GNU LGPL
+
+__revision__ = 'alpha'
+
+if __name__=="__main__":
+    import os
+    os.system("python2.7 /usr/lib/openyoudao/youdao.py")
