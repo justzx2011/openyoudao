@@ -5,7 +5,6 @@ import re
 import popen2
 def reconstruct():
     print "start fusionicb"
-    homedir = os.getcwd()
     soup = BeautifulSoup(open(gl.origindir))
     head=open(gl.headicb,'r') 
     bodystart=open(gl.bodystarticb,'r') 
