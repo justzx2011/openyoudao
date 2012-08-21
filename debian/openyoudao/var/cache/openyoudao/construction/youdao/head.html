@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="http://shared.ydstatic.com/images/favicon.ico" type="image/x-icon" />
+<link href="http://shared.ydstatic.com/dict/v5.03/styles/result-min.css" rel="stylesheet" type="text/css" />
+<link rel="canonical" href="http://dict.youdao.com/w/textile/" />
+<link rel="search" type="application/opensearchdescription+xml" title="Yodao Dict" href="plugins/search-provider.xml" />
+<script type="text/javascript" src="js/result-min.js"></script>
+<script type="text/javascript" src="js/autocomplete.r156903.js"></script>
+<link rel="stylesheet" type="text/css" href="css/dark-glass/sidebar.css" />
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.sidebar.js"></script>
+<script type="text/javascript">
+function Getconfig(i)
+{
+var content=$('#dict_'+i).attr('rel');
+localStorage.setItem('dict',content)
+//alert(content)
+//alert(document.getElementsByTagName("input")[1].getAttribute("value"))
+localStorage.setItem('keyword',document.getElementsByClassName("keyword")[0].childNodes[0].nodeValue)
+//localStorage.setItem('keyword',document.getElementsByTagName("input")[1].getAttribute("value"))
+}
+</script>
+<script type="text/javascript">
+    var global = {
+        fromVm:{
+            searchDomain:'youdao.com'
+        }
+    };
+    function rwt(a, newlink) {
+        try {
+            if (a === window) {
+                a = window.event.srcElement;
+                while (a) {
+                    if (a.href)
+                        break;
+                    a = a.parentNode
+                }
+            }
+            a.href = newlink;
+            a.onmousedown = ""
+        } catch (p) {
+        }
+        return true
+    }
+</script>
+</head>
