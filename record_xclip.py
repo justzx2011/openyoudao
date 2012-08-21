@@ -46,10 +46,13 @@ def record_callback(reply):
             global pre_text
             if(pre_text != text):
                 pre_text = text
-                if(TRUE==os.path.exists(gl.cachedir)):
+                if(True==os.path.exists(gl.cachedir)):
                     os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
                 else:
                     os.system("mkdir  \'" + gl.cachedir + "\'") 
+                    os.system("touch  \'" + gl.cachedirhistory + "\'") 
+                    os.system("touch  \'" + gl.cachedirorigin + "\'") 
+                    os.system("touch  \'" + gl.cachedirresult + "\'") 
                     os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
             else:
                 print "我不翻译"
