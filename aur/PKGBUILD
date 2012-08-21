@@ -30,9 +30,7 @@ package() {
     "$pkgdir/usr/lib/openyoudao"
   install -d "$pkgdir/var/cache/openyoudao"
   cp -rf cache/* "$pkgdir/var/cache/openyoudao/."
-  chmod 777 "$pkgdir/var/cache/openyoudao/result.html"
-  chmod 777 "$pkgdir/var/cache/openyoudao/origin.html"
-  chmod 777 "$pkgdir/var/cache/openyoudao/history.cache"
+  chmod -R 644  "$pkgdir/var/cache/openyoudao/*"
   #install -dm644 cache/* \
   #  "$pkgdir/usr/lib/python2.7/site-packages/openyoudao/cache"
   # desktop file
