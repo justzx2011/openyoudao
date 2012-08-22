@@ -50,6 +50,7 @@ def record_callback(reply):
                     os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
                 else:
                     os.system("mkdir  \'" + gl.cachedir + "\'") 
+                    os.system("mkdir  \'" + gl.subcachedir + "\'") 
                     os.system("touch  \'" + gl.cachedirhistory + "\'") 
                     os.system("touch  \'" + gl.cachedirorigin + "\'") 
                     os.system("touch  \'" + gl.cachedirresult + "\'") 
