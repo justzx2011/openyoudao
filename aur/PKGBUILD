@@ -17,7 +17,7 @@ depends=('python2' 'xclip' 'curl' 'inotify-tools' 'python-xlib' 'python2-lxml'  
 #community/python2-beautifulsoup3 3.2.1-1
 install="openyoudao.install"
 source=("https://github.com/justzx2011/openyoudao/tarball/$pkgver")
-md5sums=('5fbea041842ca7e80a22dea5a8a4aa59')
+md5sums=('683081643a1c0291bd684063bf3c8557')
 package() {
   cd ${srcdir}/justzx2011-openyoudao-*/
   # bin
@@ -30,6 +30,7 @@ package() {
     "$pkgdir/usr/lib/openyoudao"
   install -d "$pkgdir/var/cache/openyoudao"
   cp -rf cache/* "$pkgdir/var/cache/openyoudao/."
+  chmod -R 755 "$pkgdir/var/cache/openyoudao"
   #install -dm644 cache/* \
   #  "$pkgdir/usr/lib/python2.7/site-packages/openyoudao/cache"
   # desktop file
