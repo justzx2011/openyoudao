@@ -12,6 +12,21 @@
 #Dependencies:
         python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
 #Installation
+
+#Archlinux：
+        yaourt -S openyoudao
+        
+#Ubunte/debian:        
+        Add mirrorlist:
+        
+        deb http://ppa.launchpad.net/xdlailai/openyoudao/ubuntu precise main
+        
+        deb-src http://ppa.launchpad.net/xdlailai/openyoudao/ubuntu precise main 
+        
+        #apt-get update 
+        
+        #apt-get install openyoudao
+#其他发行版linux:
         #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
         $git clone https://github.com/justzx2011/openyoudao
@@ -39,10 +54,6 @@
         #mkdir /var/cache/openyoudao
 
         #cp -rf cache/* /var/cache/openyoudao/.
-
-        #chmod 777 /var/cache/openyoudao/*.html
-
-        #chmod 777 /var/cache/openyoudao/history.cache
         
         安装desktop:
         
