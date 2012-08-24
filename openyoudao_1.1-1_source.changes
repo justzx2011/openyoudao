@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Wed, 22 Aug 2012 15:37:04 +0800
+Source: openyoudao
+Binary: openyoudao
+Architecture: source
+Version: 1.1-1
+Distribution: precise
+Urgency: low
+Maintainer: fly100 <xdlailai@gmail.com>
+Changed-By: fly100 <xdlailai@gmail.com>
+Description: 
+ openyoudao - Openyoudao是有道字典在linux下的客户端
+Changes: 
+ openyoudao (1.1-1) precise; urgency=low
+ .
+   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+Checksums-Sha1: 
+ 1a3fc6538e1ac9835f8579a824de6600b5fcc63a 1311 openyoudao_1.1-1.dsc
+ 1a5842bec9165fdb58377e190f26a6cab3e596f1 1290805 openyoudao_1.1.orig.tar.gz
+ e4e79865d75fda81e034201cd09b6c7e40777e78 2264 openyoudao_1.1-1.debian.tar.gz
+Checksums-Sha256: 
+ 6d9d0f292d418614d75ad7297f3bba430177dce831d0a351c4665732be197049 1311 openyoudao_1.1-1.dsc
+ a07a7803f7a942fce59d02c2aba218ac07798d15169ad7b4068da08b9c022a45 1290805 openyoudao_1.1.orig.tar.gz
+ cb83c16f9c887f801f2b1e62319f32d3c9594405ff2ae261172b3104d2f66974 2264 openyoudao_1.1-1.debian.tar.gz
+Files: 
+ 2a4b7cf30b60cd5d32baad3e925c1b46 1311 net optional openyoudao_1.1-1.dsc
+ 9609ab5696078d3a6814229aede05541 1290805 net optional openyoudao_1.1.orig.tar.gz
+ 979c7eaa9b8e8e81f228babdbeb54dde 2264 net optional openyoudao_1.1-1.debian.tar.gz
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+iQEcBAEBAgAGBQJQNJnAAAoJEJY5u52qdLBjCzsH/3ma+K8fm4zYxEvc3n3GwXxN
+J/P26r7c7aV1sTrYsbUmQkouWVgzhBPLVJFVGLD3tIZFNQd1ek9BJobbVRX23uDW
+h6q+zKLhi7LVnz7kqG/FQR5ZPaUc0AxovsYI8f9Dk3QLurpM+snjco+yzrowl/Lb
+ajSxXsH7yR/YSCjkCYmawr49C/cyoxz9OxJ9izEjL/P/tgsEbKmy1E8lOJhuuvsy
+83MRBBwp3rT2lRDyt09pY3LCoPTki5lZbLTSfX/rPN60kt0prckHjF3tUPx9hKgc
+S88p9pYytAo66kxi5QIIG5Lm5nk5ZhXQxhnSWyH6rzUFKKoNWgDeF2OJawskbBA=
+=aCLO
+-----END PGP SIGNATURE-----
