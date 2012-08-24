@@ -6,60 +6,46 @@
                  ftp://linux.xidian.edu.cn/xdlinux/youdao.mp4
          Author: justzx2011@gmail.com  @justzx
                  lvzongting@gmail.com  @lvzongting
-         Powered by xdlinux.info  西电开源社区 
-        
+         Powered by xdlinux.info  西电开源社区
+
 
 #Dependencies:
         python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
 #Installation
-        #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
-        
-        $git clone https://github.com/justzx2011/openyoudao
-         
-        安装bin文件，方便程序执行: 
-        
-        将bin文件：scripts/openyoudao安装到目录/usr/bin/openyoudao:
-        
-        #cp scripts/openyoudao /usr/bin/.
-        
-        设置权限：
-        
-        #chmod 755 /usr/bin/openyoudao
-        
-        安装libs文件: 
-        
-        #mkdir /usr/lib/openyoudao
+     通过ppa安装openyoudao的方法：
+     ppa地址: https://launchpad.net/~xdlailai/+archive/openyoudao
+     你可以在/etc/apt/source.list手动添加ppa源地址来获取，然后sudo apt-get
+     update，就可以apt-get install openyoudao 来安装了。
 
-        #cp ./*.py /usr/lib/openyoudao
+     如果您使用ubuntu，则可以使用sudo add-apt-repository ppa:xdlailai/
+     openyoudao 来添加ppa中openyoudao的地址，然后一样的sudo apt-get update
 
-        #chmod 644 /usr/lib/openyoudao/*.py
-        
-        安装cache文件:
-        
-        #mkdir /var/cache/openyoudao
+     如果您用的是debian，debian下没有add-apt-repository 这个命令，
+     可用脚本代替。
+     1.下载文件
 
-        #cp -rf cache/* /var/cache/openyoudao/.
+     $ wget http://blog.anantshri.info/content/uploads/2010/09/add-apt-repository.sh.txt
 
-        #chmod 777 /var/cache/openyoudao/*.html
+     2.将文件保存在 /usr/bin/
 
-        #chmod 777 /var/cache/openyoudao/history.cache
-        
-        安装desktop:
-        
-        #cp desktop/openyoudao.desktop /usr/share/applications/
+     $ cp add-apt-repository.sh.txt /usr/bin/add-apt-repository
 
-        #chmod 644 /usr/share/applications/openyoudao.desktop
+     3. 改变权限
 
-        哈哈～现在应该看到openyoudao的图标了吧～
+     $ chmod o+x /usr/bin/add-apt-repository
 
-        点击图标就能运行程序了
-        
+     4. 改变所有者为 root
+
+     $chown root:root /usr/bin/add-apt-repository
+
+     5. 然后你就可以正常使用 add-apt- repository 命令了
+
 TODO
 --------------
         1 重新设计软件界面
         2 增强与其它程序的兼容性
         3 重新规划目录、打包
-        4 重新格式化网页界面 ----- 使用beautiful soup 
+        4 重新格式化网页界面 ----- 使用beautiful soup
         5 创建配置页面
         6 去除滚动条，改用js
         7 编写config.html,作为配置页,用作主页,用js
@@ -72,7 +58,7 @@ TODO
         14 增加ocr取词功能
         15 编写QT版本
 DONE
------  
+-----
         2012-8-08  -------   修复了发音功能
         2012-8-07  -------   重新编写了使用教程，以兼容各个发行版linux
         2012-8-01  -------   修正了取词脚本
@@ -98,8 +84,8 @@ DONE
         2012-6-7   -------   增加了程序健壮性
         2012-6-6   -------   对网页进行了简单重构
         2012-6-1   -------   增加了滚动条
-        2012-5-31  -------   解决了字符串问题，实现了特殊字符的正确提取 
-        2012-5-30  -------   解决了权限问题，可以用普通用户运行程序 
+        2012-5-31  -------   解决了字符串问题，实现了特殊字符的正确提取
+        2012-5-30  -------   解决了权限问题，可以用普通用户运行程序
         2012-5-28  -------   成功的将界面和程序高度分离
         2012-5-27  -------   主程序结构设计完成，一般情况下结构不会变更
         2012-5-26  -------   完成了程序退出机制，全局统一退出标志，为差错控制模块预留了接口
@@ -113,7 +99,7 @@ UPDATES
         2012-6-6   重构了界面
         2012-6-4   对网页进行了重构,修改了css，网页交由bainizhao更新维护
         2012-6-1   增加了滚动条
-        2012-5-31  给项目主页添加了域名,地址:http://openyoudao.org/    
+        2012-5-31  给项目主页添加了域名,地址:http://openyoudao.org/
         2012-5-30  修正了一些Bug,项目可以正常使用,正式命名为openyoudao
         2012-5-28  完善了项目主页,地址:http://74.117.59.126/,注册了推@openyoudao
         2012-5-27  整理代码并提交到github
@@ -263,12 +249,12 @@ Path & File
         │   └── tutorial.html
         ├── webshot.py                           #webkit组件
         └── youdao.py                            #主程序
-        
+
         23 directories, 114 files
 
 Construction
 ----
-        
+
                                                --------------
                                             |     主程序       |
                                             |    def main()    |
