@@ -16,3 +16,4 @@ chmod -R 777 debian/openyoudao/var/cache/openyoudao/*
 #install -g users -o root -v -m 0777 -t debian/openyoudao/var/cache/openyoudao cache/result.html
 #install -g users -o root -v -m 777 -t debian/openyoudao/var/cache/openyoudao cache/origin.html
 #install -g users -o root -v -m 777 -t debian/openyoudao/var/cache/openyoudao cache/history.cache
+#pull request
