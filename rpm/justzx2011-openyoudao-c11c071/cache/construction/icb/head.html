@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="/var/cache/openyoudao/css/dark-glass/sidebar.css" />
+<script type="text/javascript" src="/var/cache/openyoudao/js/jquery.min.js"></script>
+<script type="text/javascript" src="/var/cache/openyoudao/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/var/cache/openyoudao/js/jquery.sidebar.js"></script>
+<link href="/var/cache/openyoudao/css/style_result.css" rel="stylesheet" type="text/css" />
+<script src="/var/cache/openyoudao/js/huaci.js" ></script>
+<script type="text/javascript">
+document.write("<scr"+"ipt src=\"http://static.www.iciba.com/scripts/basic.js\"></sc"+"ript>")
+</script>
+
+<script type="text/javascript">
+function Getconfig(i)
+{
+var content=$('#dict_'+i).attr('rel');
+localStorage.setItem('dict',content)
+//alert(document.getElementsByTagName("input")[0].getAttribute("value"))
+localStorage.setItem('keyword',document.getElementsByClassName("explain")[0].childNodes[0].nodeValue)
+//localStorage.setItem('keyword',document.getElementsByTagName("input")[0].getAttribute("value"))
+//alert(content)
+}
+</script>
+<script type="text/javascript">
+    var global = {
+        fromVm:{
+            searchDomain:'youdao.com'
+        }
+    };
+    function rwt(a, newlink) {
+        try {
+            if (a === window) {
+                a = window.event.srcElement;
+                while (a) {
+                    if (a.href)
+                        break;
+                    a = a.parentNode
+                }
+            }
+            a.href = newlink;
+            a.onmousedown = ""
+        } catch (p) {
+        }
+        return true
+    }
+</script>
+</head>
