@@ -1,0 +1,42 @@
+Name:	        Openyoudao	
+Version:	1.0
+Release:	1
+Summary:	GUN Openyoudao----a linux dict client for youdao
+Group:		Network
+License:	GPL
+URL:		http://openyoudao.org/
+Source0:	openyoudao.tar.gz
+BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
+
+BuildRequires:	
+Requires:	
+
+%description
+
+
+%prep
+%setup -q
+
+
+%build
+%configure
+make %{?_smp_mflags}
+
+
+%install
+rm -rf %{buildroot}
+make install DESTDIR=%{buildroot}
+
+
+%clean
+rm -rf %{buildroot}
+
+
+%files
+%defattr(-,root,root,-)
+%doc
+
+
+
+%changelog
+
