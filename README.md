@@ -93,6 +93,7 @@ TODO
         24 捕捉程序异常，sqlite操作可能会抛出异常，特别是多线程
         25 减少global使用，太多的global 影响程序的健壮性
         26 对DOM操作，借鉴PhantomJS和CasperJS
+        27 实现man手册的跳转
 DONE
 -----  
         2012-8-23  -------   发布了ppa包
