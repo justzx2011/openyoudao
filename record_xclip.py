@@ -1,7 +1,5 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-# Simple demo for the RECORD extension
-# Not very much unlike the xmacrorec2 program in the xmacro package.
 import popen2
 import sys
 import gl

@@ -2,7 +2,7 @@
 from lxml import html
 import popen2
 import sqlite3
-import requests
+#import requests
 import gl
 import string
 import sys
@@ -49,11 +49,12 @@ def lookup():
             gl.prebaseurl =  gl.baseurl
             url= gl.baseurl + text                           #合成地址
             print url + "kkkkkkkkkkkk"                       #合成地址检测点1 
-            r = requests.get(url)                            #获得网页
-            doc = html.document_fromstring(r.text)
-            f_tar=open(gl.origindir,'w+')             #缓存原始网页
-            print >>f_tar,r.text
-            f_tar.close()
+            os.system("curl -s -o \'" + gl.origindir +"\' \'" + url+ "\'")   #获得网页(非代理)
+			#r = requests.get(url)                            #获得网页
+			#doc = html.document_fromstring(r.text)
+			#f_tar=open(gl.origindir,'w+')             #缓存原始网页
+			#print >>f_tar,r.text
+			#f_tar.close()
             #os.system("echo \"wait...\" > cache/result.html")         #清空最终缓冲增强程序稳健性
             if(gl.baseurl==gl.baseurlyoudao):
                 fusionyoudao.reconstruct()                   #区分聚合
