@@ -90,8 +90,8 @@ def main():
     thread.start_new_thread(gettext,())
     sleep(0.1)
     thread.start_new_thread(lookup,())
-    sleep(1)
-    thread.start_new_thread(inputconfig,())
+#sleep(1)
+#thread.start_new_thread(inputconfig,())
     	
     while Alive:
         sleep(1)
