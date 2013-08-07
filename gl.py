@@ -5,7 +5,6 @@ global keywordtext
 global proxyDict
 global downloadwait
 global baseurl
-global lock
 global prebaseurl
 global homedir
 global datadir
@@ -22,7 +21,6 @@ global headicb
 
 keywordtext = ""
 baseurl=""
-lock=0
 userdir=os.path.expanduser('~')
 cachedir = userdir + "/.openyoudao"
 subcachedir = userdir + "/.openyoudao/cache"

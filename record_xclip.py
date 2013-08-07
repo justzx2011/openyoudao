@@ -41,10 +41,10 @@ def record_callback(reply):
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
-            print "您抹黑的是: ", text
+#print "您选取的是: ", text
             text = text.strip('\r\n\x00')
             global pre_text
-            if(pre_text != text):
+            if(pre_text != text and text!=""):
                 pre_text = text
                 if(True==os.path.exists(gl.cachedir)):
                     os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
@@ -55,8 +55,8 @@ def record_callback(reply):
                     os.system("touch  \'" + gl.cachedirorigin + "\'") 
                     os.system("touch  \'" + gl.cachedirresult + "\'") 
                     os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
-            else:
-                print "我不翻译"
+#else:
+#                print "我不翻译"
 # Check if the extension is present
 if not record_dpy.has_extension("RECORD"):
   print "RECORD extension not found"

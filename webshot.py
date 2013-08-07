@@ -1,4 +1,5 @@
 import sys
+import gl
 import os
 import gtk
 import time
@@ -48,6 +49,7 @@ class Window(gtk.Window):
         self.connect('delete-event', gtk.main_quit)
         #self.is_fullscreen = False
     def load(self, url):
+        print url
         self.output.load_uri(url)
     def reload(self):
         self.output.reload()

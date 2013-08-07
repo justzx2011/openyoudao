@@ -23,7 +23,6 @@ def lookup():
         text=myfile.readline().strip('\r\n\x00')
         if (pre_text != text or gl.prebaseurl != gl.baseurl) and text != "" : 
             pre_text = text
-            print gl.lock
             gl.prebaseurl =  gl.baseurl
             url= gl.baseurl + text                           #合成地址
             os.system("curl -s -o \'" + gl.origindir +"\' \'" + url+ "\'") 	 #获得网页(非代理)
@@ -44,7 +43,7 @@ def webshow():
 
 def gettext():
     os.system("xclip -f /dev/null")           #清空剪切板
-    os.system("/bin/echo "" > \'"+ gl.historydir + "\'")
+    os.system("cat /dev/null> \'"+ gl.historydir + "\'")
     record_xclip.record_dpy.record_enable_context(record_xclip.ctx, record_xclip.record_callback)            
     record_xclip.record_dpy.record_free_context(record_xclip.ctx)
 
@@ -55,13 +54,13 @@ def main():
     global Alive
     Alive=1
     thread.start_new_thread(webshow,())
-    sleep(1)
+    sleep(0.5)
     thread.start_new_thread(gettext,())
-    sleep(1)
+    sleep(2)
     thread.start_new_thread(lookup,())
     	
     while Alive:
-        sleep(1)
+        sleep(0.5)
         
 
     print 'All threads have terminated.'
