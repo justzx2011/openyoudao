@@ -7,7 +7,6 @@ import sys
 import webkit, gtk
 import thread
 import fusionyoudao
-import fusionicb
 import webshot
 import record_xclip
 import random
