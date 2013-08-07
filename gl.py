@@ -1,7 +1,6 @@
 #encoding=utf-8
 import os
 import sys
-import sqlite3
 global keywordtext
 global proxyDict
 global downloadwait
@@ -20,26 +19,6 @@ global bodystartyoudao
 global bodystarticb
 global bodyendicb
 global headicb
-proxyDict = {} 
-
-"""代理配置"""
-## SOCKS5 proxy for HTTP/HTTPS
-#proxyDict = {
-#    'http' : "socks5://1.2.3.4:1080",
-#    'https' : "socks5://1.2.3.4:1080"
-#}
-#
-## SOCKS4 proxy for HTTP/HTTPS
-#proxyDict = {
-#    'http' : "socks4://1.2.3.4:1080",
-#    'https' : "socks4://1.2.3.4:1080"
-#}
-#
-## HTTP proxy for HTTP/HTTPS
-#proxyDict = {
-#    'http' : "1.2.3.4:1080",
-#    'https' : "1.2.3.4:1080"
-#}
 
 keywordtext = ""
 baseurl=""
@@ -50,13 +29,10 @@ subcachedir = userdir + "/.openyoudao/cache"
 cachedirhistory = userdir + "/.openyoudao/cache/history.cache"
 cachedirorigin = userdir + "/.openyoudao/cache/origin.html"
 cachedirresult = userdir + "/.openyoudao/cache/result.html"
-datadir=userdir + "/.local/share/webkit/databases/file__0.localstorage"
-sqlitedir=userdir + "/.local/share/webkit"
 prebaseurl=""
 url=""
 workdir = os.getcwd()
 homedir = sys.path[0]
-youdaosqlitedir = "/var/cache/openyoudao/databases"
 historydir = cachedir + "/cache/history.cache"
 origindir = cachedir + "/cache/origin.html"
 resultdir = cachedir + "/cache/result.html"
