@@ -15,25 +15,25 @@ import record_xclip
 import random
 import os
 from time import sleep
-def inputconfig():
-    while Alive :
-  	  gl.prebaseurl = gl.baseurl
-  	  conn = sqlite3.connect(gl.datadir)
-  	  c = conn.cursor()
-  	  c1 = conn.cursor()
-  	  c.execute("select value from ItemTable where key = 'dict' ")
-  	  c1.execute("select value from ItemTable where key = 'keyword' ")
-  	  r= c.fetchone()
-  	  r1= c1.fetchone()
-  	  gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
-  	  if(gl.prebaseurl !=gl.baseurl):
-  	  	stext = "".join(str(r1[0]).split('\x00')) 
-  	  	c.close()
-  	  	c1.close()
-  	  	conn.close
-  	  	print stext 
-  	  	os.system("/bin/echo -e  \'"+ stext  + "\' >> \'"+ gl.historydir + "\'")
-          sleep(1)
+#def inputconfig():
+#    while Alive :
+#  	  gl.prebaseurl = gl.baseurl
+#  	  conn = sqlite3.connect(gl.datadir)
+#  	  c = conn.cursor()
+#  	  c1 = conn.cursor()
+#  	  c.execute("select value from ItemTable where key = 'dict' ")
+#  	  c1.execute("select value from ItemTable where key = 'keyword' ")
+#  	  r= c.fetchone()
+#  	  r1= c1.fetchone()
+#  	  gl.baseurl= "".join(str(r[0]).split('\x00')) #str to string
+#  	  if(gl.prebaseurl !=gl.baseurl):
+#  	  	stext = "".join(str(r1[0]).split('\x00')) 
+#  	  	c.close()
+#  	  	c1.close()
+#  	  	conn.close
+#  	  	print stext 
+#  	  	os.system("/bin/echo -e  \'"+ stext  + "\' >> \'"+ gl.historydir + "\'")
+#          sleep(1)
 def lookup():
     pre_text=""
     text=""
@@ -71,7 +71,7 @@ def webshow():
     window.load(gl.homeurl)
     window.show() 
     gtk.main() 
-    #Alive=0
+    Alive=0
 
 def gettext():
     os.system("xclip -f /dev/null")           #清空剪切板
@@ -86,9 +86,9 @@ def main():
     global Alive
     Alive=1
     thread.start_new_thread(webshow,())
-    sleep(0.1)
+    sleep(1)
     thread.start_new_thread(gettext,())
-    sleep(0.1)
+    sleep(1)
     thread.start_new_thread(lookup,())
 #sleep(1)
 #thread.start_new_thread(inputconfig,())
