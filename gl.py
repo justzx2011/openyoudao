@@ -1,14 +1,10 @@
 #encoding=utf-8
 import os
 import sys
-global keywordtext
-global proxyDict
 global downloadwait
 global pre_text
-global prebaseurl
 global homedir
 global datadir
-global historydir
 global origindir
 global resultdir
 global url
@@ -19,7 +15,6 @@ global bodystarticb
 global bodyendicb
 global headicb
 
-keywordtext = ""
 pre_text=""
 userdir=os.path.expanduser('~')
 cachedir = userdir + "/.openyoudao"
@@ -27,11 +22,9 @@ subcachedir = userdir + "/.openyoudao/cache"
 cachedirhistory = userdir + "/.openyoudao/cache/history.cache"
 cachedirorigin = userdir + "/.openyoudao/cache/origin.html"
 cachedirresult = userdir + "/.openyoudao/cache/result.html"
-prebaseurl=""
 url=""
 workdir = os.getcwd()
 homedir = sys.path[0]
-historydir = cachedir + "/cache/history.cache"
 origindir = cachedir + "/cache/origin.html"
 resultdir = cachedir + "/cache/result.html"
 headyoudao = "/var/cache/openyoudao/construction/youdao/head.html"
