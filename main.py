@@ -94,7 +94,7 @@ def main():
   global Alive
   Alive=1
   thread.start_new_thread(webshow,())
-  sleep(0.5)
+#sleep(0.5)
   thread.start_new_thread(gettext,())
   while Alive:
 	sleep(0.5)
