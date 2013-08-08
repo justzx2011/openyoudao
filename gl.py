@@ -4,7 +4,7 @@ import sys
 global keywordtext
 global proxyDict
 global downloadwait
-global baseurl
+global pre_text
 global prebaseurl
 global homedir
 global datadir
@@ -20,7 +20,7 @@ global bodyendicb
 global headicb
 
 keywordtext = ""
-baseurl=""
+pre_text=""
 userdir=os.path.expanduser('~')
 cachedir = userdir + "/.openyoudao"
 subcachedir = userdir + "/.openyoudao/cache"
