@@ -86,7 +86,6 @@ def webshow():
 
 def gettext():
   os.system("xclip -f /dev/null")           #清空剪切板
-  os.system("cat /dev/null> \'"+ gl.historydir + "\'")
   record_dpy.record_enable_context(ctx,record_callback)
   record_dpy.record_free_context(ctx)
 
