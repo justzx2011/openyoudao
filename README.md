@@ -94,6 +94,8 @@ TODO
         25 减少global使用，太多的global 影响程序的健壮性
         26 对DOM操作，借鉴PhantomJS和CasperJS
         27 实现man手册的跳转
+		28 以守护进程运行该程序
+		29 脚本竞技场
 DONE
 -----  
         2012-8-23  -------   发布了ppa包
