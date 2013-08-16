@@ -4,17 +4,21 @@ import gl
 import re
 import popen2
 def reconstruct():
+    resultdir="templates/public/result.html"
+    origindir="templates/public/origin.html"
+    headyoudao="templates/youdao/head.html"
+    youdaobodystart="templates/youdao/body-start.txt"
     print "start fusionyoudao"
-    soup = BeautifulSoup(open("templates/origin.html"))
-    head=open(gl.headyoudao,'r')
-    bodystart=open(gl.bodystartyoudao,'r')
+    soup = BeautifulSoup(open(origindir))
+    head=open(headyoudao,'r')
+    bodystart=open(youdaobodystart,'r')
     #bodyend=open('cache/construction/youdao/body-end.txt','r')
     result = soup.find('div',{"id":"results"})
     #sousuo = soup.find('form',{"id":"f"})
     #sousuo  = str(sousuo).replace("action=\"/search\"","action=\"http://dict.youdao.com/search\"")
     #result  = str(result).replace("href=\"/example/","href=\"http://dict.youdao.com/example/")
     #os.system("echo "" > cache/result.html")
-    f_tar=open(gl.resultdir,'w+')
+    f_tar=open(resultdir,'w+')
     print >> f_tar,"<html>"
     print >> f_tar,head.read()
     print >> f_tar,"<body>"
@@ -30,7 +34,7 @@ def reconstruct():
     head.close()
     bodystart.close()
     #bodyend.close()
-    os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' \'"+ gl.resultdir + "\'")
-    os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' \'"+ gl.resultdir + "\'")
+    os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' \'"+ resultdir + "\'")
+    os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' \'"+ resultdir + "\'")
     print "fusionyoudao completed"
     #os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")

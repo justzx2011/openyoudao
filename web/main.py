@@ -37,19 +37,19 @@ class BaseHandler(tornado.web.RequestHandler):
 class HomeHandler(BaseHandler):
     def get(self):
 	info="Openyoudao"
-        self.render("start.html",info=info) 
+        self.render("youdao/start.html",info=info) 
 class SearchHandler(BaseHandler):
     def post(self):
         print "hahaha"
 	keyword=self.get_argument('keyword')
         url= "http://dict.youdao.com/search?q=" + keyword
         print url
-        os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")
+	origindir="templates/public/origin.html";
+        os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + origindir +"\' \'" + url+ "\'")
         fusionyoudao.reconstruct()
-        self.render("result.html",) 
-        #gl.homeurl="file://" + gl.resultdir
-        #window.load(gl.homeurl)
-        #window.show()  
+        self.render("public/result.html",) 
+	#window.load("file:///home/justzx/workplace/openyoudao/web/templates/public/result.html")
+        #window.show()
 def tornado_init():
     tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(Application())
