@@ -1,6 +1,6 @@
 <ul id="demo_menu2" >
-          <li><sb-a onclick='$.post("/")'>有道主页</sb-a></li>
-          <li><sb-a onclick='$.post("/search", {keyword:"hello"})'>屏幕取词</sb-a></li>
+          <li><a href="/">有道首页</a></li>
+          <li><a href="/dictscreen">屏幕取词</a></li>
 </ul>
 
 <script type="text/javascript">
