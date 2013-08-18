@@ -1,5 +1,5 @@
 <ul id="demo_menu2" >
-          <li><a href="/">有道首页</a></li>
+          <li><a href="/index">有道首页</a></li>
           <li><a href="/dictscreen">屏幕取词</a></li>
 </ul>
 
