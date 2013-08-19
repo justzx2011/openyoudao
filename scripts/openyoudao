@@ -7,4 +7,4 @@ __revision__ = 'alpha'
 
 if __name__=="__main__":
     import os
-    os.system("python2.7 /usr/lib/openyoudao/youdao.py")
+    os.system("python2.7 /usr/lib/openyoudao/main.py")
