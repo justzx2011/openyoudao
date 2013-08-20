@@ -1,0 +1,32 @@
+# Maintainer: justzx <justzx2011@gmail.com>
+#	      lvzongting <lvzongting@gmail.com>
+#	      needf <zy20130729@gmail.com>
+pkgname=openyoudao
+#true && pkgname=('openyoudao-gtk2')
+pkgver=beta
+pkgrel=1
+pkgdesc="a dict client of youdao  for linux"
+arch=('x86_64' 'i686')
+url="http://www.openyoudao.org/"
+license=('LGPL3')
+depends=('python2' 'xclip' 'curl'  'python-xlib' 'python2-lxml'  'pywebkitgtk' 'python2-beautifulsoup3')
+install="openyoudao.install"
+source=("https://github.com/justzx2011/openyoudao/tarball/$pkgver")
+md5sums=('312a744c765fb7e8d2ddca3a20202d77')
+package() {
+  cd ${srcdir}/justzx2011-openyoudao-*/
+  # bin
+  install -Dm755 scripts/openyoudao \
+    "$pkgdir/usr/bin/openyoudao"
+  # libs
+  install -d "$pkgdir/usr/lib/openyoudao"
+  install -Dm644 ./*.py \
+    "$pkgdir/usr/lib/openyoudao"
+  # cache
+  install -d "$pkgdir/var/cache/openyoudao"
+  cp -rf cache/* "$pkgdir/var/cache/openyoudao/."
+  chmod -R 755 "$pkgdir/var/cache/openyoudao"
+  # desktop file
+  install -Dm644 desktop/openyoudao.desktop \
+    "$pkgdir/usr/share/applications/openyoudao.desktop"
+}
