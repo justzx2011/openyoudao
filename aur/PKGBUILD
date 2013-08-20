@@ -25,9 +25,9 @@ package() {
   install -Dm644 ./*.py \
     "$pkgdir/usr/lib/openyoudao"
   # cache
-  install -d "$pkgdir/var/cache/openyoudao"
-  cp -rf cache/* "$pkgdir/var/cache/openyoudao/."
-  chmod -R 755 "$pkgdir/var/cache/openyoudao"
+  install -d "$pkgdir/var/share/openyoudao"
+  cp -rf cache/* "$pkgdir/var/share/openyoudao/."
+  chmod -R 755 "$pkgdir/var/share/openyoudao"
   # desktop file
   install -Dm644 desktop/openyoudao.desktop \
     "$pkgdir/usr/share/applications/openyoudao.desktop"
