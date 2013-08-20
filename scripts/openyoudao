@@ -1,9 +1,11 @@
 #!/usr/bin/python2.7
 # -*- coding: UTF-8 -*-
 # Author: justzx <justzx2011@gmail.com>
-# License: GNU LGPL
+#         lvzongting <lvzongting@gmail.com>
+#	  needf <zy20130729@gmail.com>
+# License: GNU LGPL3
 
-__revision__ = 'alpha'
+__revision__ = 'beta'
 
 if __name__=="__main__":
     import os
