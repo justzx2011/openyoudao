@@ -1,0 +1,14 @@
+Source: openyoudao
+Section: net
+Priority: optional
+Maintainer: justzx <justzx2011@gmail.com>  fly100 <xdlailai@gmail.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.9.3
+Homepage: http://openyoudao.org
+#Vcs-Git: git://git.debian.org/collab-maint/hello.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/hello.git;a=summary
+
+Package: openyoudao
+Architecture: any
+Depends: python-xlib, python-webkit, python-lxml, python-beautifulsoup, xclip,  curl
+Description: <a youdao opensource dict client for linux>
