@@ -1,27 +1,35 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: openyoudao
-Source: https://github.com/justzx2011/openyoudao
-This work was packaged for Debian by:
-    justzx <justzx2011@gmail.com> on Sat, 24 Aug 2013 17:41:27 +0800
-    fly100 <xdlailai@gmail.com> on Sat, 24 Aug 2013 17:41:27 +0800
-It was downloaded from:
-    <https://github.com/justzx2011/openyoudao/releases/tag/Beta>
-Upstream Author(s):
-    <justzx justzx2011@gmail.com>
-    <lvzongting lvzongting@gmail.com>
-Copyright:2013 justzx justzx2011@gmail.com
-License:GPL-3.0+
-The Debian packaging is:
-    Copyright (C) 2013 justzx justzx2011@gmail.com
+Source: <https://github.com/justzx2011/openyoudao>
 
-# Please chose a license for your packaging work. If the program you package
-# uses a mainstream license, using the same license is the safest choice.
-# Please avoid to pick license terms that are more restrictive than the
-# packaged work, as it may make Debian's contributions unacceptable upstream.
-# If you just want it to be GPL version 3, leave the following lines in.
+Files: *
+Copyright: <2013> <Xin Zhang justzx2011@gmail.com>
+           <2013> <lvzongting lvzongting@gmail.com>
+           <2013> <fly100 xdlailai@gmail.com>
+License: GPL-3.0+
 
-and is licensed under the GPL version 3,
-see "/usr/share/common-licenses/GPL-3".
+Files: debian/*
+Copyright: 2013 Xin Zhang <justzx2011@gmail.com>
+License: GPL-3.0+
+
+License: GPL-3.0+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
 
 # Please also look if there are files or directories which have a
 # different copyright/license attached and list them here.
+# Please avoid to pick license terms that are more restrictive than the
+# packaged work, as it may make Debian's contributions unacceptable upstream.
