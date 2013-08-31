@@ -1,0 +1,88 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package openyoudao
+dpkg-buildpackage: source version 0.1-0ubuntu0
+dpkg-buildpackage: source changed by Xin Zhang <justzx2011@gmail.com>
+ dpkg-source --before-build openyoudao-0.1
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp configure-stamp
+rm -rf ./debian/openyoudao
+dh_clean
+ dpkg-source -b openyoudao-0.1
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building openyoudao using existing ./openyoudao_0.1.orig.tar.gz
+dpkg-source: info: building openyoudao in openyoudao_0.1-0ubuntu0.debian.tar.gz
+dpkg-source: info: building openyoudao in openyoudao_0.1-0ubuntu0.dsc
+ debian/rules build
+dh_testdir
+# Add here commands to configure the package.
+touch configure-stamp
+dh_testdir
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_clean -k
+dh_clean: dh_clean -k is deprecated; use dh_prep instead
+dh_installdirs
+#install here
+./install-openyoudao.sh
+"scripts/openyoudao" -> "debian/openyoudao/usr/bin/openyoudao"
+"./fusionyoudao.py" -> "debian/openyoudao/usr/lib/openyoudao/fusionyoudao.py"
+"./gl.py" -> "debian/openyoudao/usr/lib/openyoudao/gl.py"
+"./main.py" -> "debian/openyoudao/usr/lib/openyoudao/main.py"
+"./webshot.py" -> "debian/openyoudao/usr/lib/openyoudao/webshot.py"
+"desktop/openyoudao.desktop" -> "debian/openyoudao/usr/share/applications/openyoudao.desktop"
+dh_testdir
+dh_testroot
+dh_installchangelogs
+dh_installdocs
+dh_installexamples
+dh_installman
+dh_link
+dh_strip
+dh_compress
+dh_fixperms
+dh_installdeb
+dh_shlibdeps
+dh_gencontrol
+dh_md5sums
+dh_builddeb
+dpkg-deb：正在新建软件包 openyoudao，包文件为 ../openyoudao_0.1-0ubuntu0_amd64.deb。
+ dpkg-genchanges  >../openyoudao_0.1-0ubuntu0_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build openyoudao-0.1
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: openyoudao changes: bad-distribution-in-changes-file precise
+W: openyoudao source: debhelper-but-no-misc-depends openyoudao
+W: openyoudao source: dh-clean-k-is-deprecated
+W: openyoudao source: debian-rules-missing-recommended-target build-arch
+W: openyoudao source: debian-rules-missing-recommended-target build-indep
+E: openyoudao: copyright-contains-dh_make-todo-boilerplate
+W: openyoudao: readme-debian-contains-debmake-template
+E: openyoudao: extended-description-is-empty
+W: openyoudao: embedded-javascript-library usr/share/openyoudao/js/jquery.min.js
+W: openyoudao: binary-without-manpage usr/bin/openyoudao
+E: openyoudao: python-script-but-no-python-dep usr/bin/openyoudao
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/construction/youdao/head.html
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/autocomplete.r156903.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/css/style_result.css
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/result.html
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/origin.html
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/jsScrollerTween.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/icibatop.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/images/icon/icon.jpg
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/css/result-min.css
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/huaci.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/jsScrollbar.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/jsScroller.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/config.html
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/extra.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/result-min.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/jquery.sidebar.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/jquery.min.js
+W: openyoudao: executable-not-elf-or-script usr/share/openyoudao/js/jquery-ui.min.js
+Finished running lintian.

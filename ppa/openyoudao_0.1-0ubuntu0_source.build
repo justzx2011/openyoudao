@@ -1,0 +1,33 @@
+ dpkg-buildpackage -rfakeroot -d -us -uc -S
+dpkg-buildpackage: source package openyoudao
+dpkg-buildpackage: source version 0.1-0ubuntu0
+dpkg-buildpackage: source changed by Xin Zhang <justzx2011@gmail.com>
+ dpkg-source --before-build openyoudao
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp configure-stamp
+rm -rf ./debian/openyoudao
+dh_clean
+ dpkg-source -b openyoudao
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building openyoudao using existing ./openyoudao_0.1.orig.tar.gz
+dpkg-source: info: building openyoudao in openyoudao_0.1-0ubuntu0.debian.tar.gz
+dpkg-source: info: building openyoudao in openyoudao_0.1-0ubuntu0.dsc
+ dpkg-genchanges -S >../openyoudao_0.1-0ubuntu0_source.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build openyoudao
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: openyoudao changes: bad-distribution-in-changes-file precise
+W: openyoudao source: debhelper-but-no-misc-depends openyoudao
+W: openyoudao source: dh-clean-k-is-deprecated
+W: openyoudao source: debian-rules-missing-recommended-target build-arch
+W: openyoudao source: debian-rules-missing-recommended-target build-indep
+Finished running lintian.
+Now signing changes and any dsc files...
+ signfile openyoudao_0.1-0ubuntu0.dsc E56F87D9
+
+ signfile openyoudao_0.1-0ubuntu0_source.changes E56F87D9
+
+Successfully signed dsc and changes files
