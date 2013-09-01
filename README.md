@@ -19,9 +19,9 @@
 #Ubunte/debian:        
         Add mirrorlist:
         
-        deb http://ppa.launchpad.net/xdlailai/openyoudao/ubuntu precise main
+        deb http://ppa.launchpad.net/justzx2011/openyoudao/ubuntu precise main
         
-        deb-src http://ppa.launchpad.net/xdlailai/openyoudao/ubuntu precise main 
+        deb-src http://ppa.launchpad.net/justzx2011/openyoudao/ubuntu precise main 
         
         #apt-get update 
         
@@ -100,6 +100,7 @@ TODO
 		31 修复视频播放
 DONE
 -----  
+        2013-9-01  -------   发布openyoudao beta版本
         2012-8-23  -------   发布了ppa包
         2012-8-21  -------   修改了程序设计，将用户配置文件转移到了$HOME/.openyoudao目录下
         2012-8-17  -------   创建项目邮件列表，辅助项目测试
