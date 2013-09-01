@@ -1,4 +1,4 @@
-# OpenYouDao
+# YouDao
 
         It is a YouDao client for linux.
 
@@ -10,7 +10,7 @@
         
 
 #Dependencies:
-        python-xlib python-webkit python-lxml  python-beautifulsoup xclip  curl
+        python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
 #Installation:
 
 #Archlinux：
@@ -19,16 +19,15 @@
 #Ubunte/debian:        
         Add mirrorlist:
         
-        deb http://ppa.launchpad.net/justzx2011/openyoudao/ubuntu precise main
+        deb http://ppa.launchpad.net/xdlailai/openyoudao/ubuntu precise main
         
-        deb-src http://ppa.launchpad.net/justzx2011/openyoudao/ubuntu precise main 
+        deb-src http://ppa.launchpad.net/xdlailai/openyoudao/ubuntu precise main 
         
         #apt-get update 
         
         #apt-get install openyoudao
-
 #其他发行版linux:
-        #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip  curl(视具体环境安装)
+        #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
         $git clone https://github.com/justzx2011/openyoudao
          
@@ -52,11 +51,9 @@
         
         安装cache文件:
         
-        #mkdir /usr/share/openyoudao
+        #mkdir /var/cache/openyoudao
 
-        #cp -rf cache/* /usr/share/openyoudao/.
-        
-	#chmod 755 /usr/lib/openyoudao/*.py
+        #cp -rf cache/* /var/cache/openyoudao/.
         
         安装desktop:
         
@@ -66,7 +63,7 @@
 
         哈哈～现在应该看到openyoudao的图标了吧～
 
-        点击图标就能运行程序了,具体用法看提示哈～
+        点击图标就能运行程序了
         
 TODO
 --------------
@@ -97,13 +94,12 @@ TODO
         25 减少global使用，太多的global 影响程序的健壮性
         26 对DOM操作，借鉴PhantomJS和CasperJS
         27 实现man手册的跳转
-        28 以守护进程运行该程序
-        29 脚本竞技场
-        30 寻找轻量级的取词方案
-        31 修复视频播放
+		28 以守护进程运行该程序
+		29 脚本竞技场
+		30 寻找轻量级的取词方案
+		31 修复视频播放
 DONE
------ 
-        2013-9-1   -------   发布openyoudao-beta版本
+-----  
         2012-8-23  -------   发布了ppa包
         2012-8-21  -------   修改了程序设计，将用户配置文件转移到了$HOME/.openyoudao目录下
         2012-8-17  -------   创建项目邮件列表，辅助项目测试

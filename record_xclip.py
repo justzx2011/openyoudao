@@ -3,11 +3,7 @@
 # Simple demo for the RECORD extension
 # Not very much unlike the xmacrorec2 program in the xmacro package.
 import popen2
-from time import sleep
-import thread
-import webshot
 import sys
-import fusionyoudao
 import gl
 import os
 import webkit, gtk
@@ -18,6 +14,7 @@ from Xlib.ext import record
 from Xlib.protocol import rq
 local_dpy = display.Display()
 record_dpy = display.Display()
+pre_text = ""
 def lookup_keysym(keysym):
   for name in dir(XK):
     if name[:3] == "XK_" and getattr(XK, name) == keysym:
@@ -44,17 +41,23 @@ def record_callback(reply):
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
-            print "您选取的是: ", text
-            text = text.strip('\r\n\x00').lower()
-            if(gl.pre_text != text and text!=""):
-			         gl.pre_text = text
-			         url= "http://dict.youdao.com/search?q=" + text
-			         print url
-			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
-			         fusionyoudao.reconstruct()
-			         gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
-			         window.load(gl.homeurl)
-			         window.show()
+#print "您选取的是: ", text
+            text = text.strip('\r\n\x00')
+            global pre_text
+            if(pre_text != text and text!=""):
+                pre_text = text
+                if(True==os.path.exists(gl.cachedir)):
+                    os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
+                else:
+                    os.system("mkdir  \'" + gl.cachedir + "\'") 
+                    os.system("mkdir  \'" + gl.subcachedir + "\'") 
+                    os.system("touch  \'" + gl.cachedirhistory + "\'") 
+                    os.system("touch  \'" + gl.cachedirorigin + "\'") 
+                    os.system("touch  \'" + gl.cachedirresult + "\'") 
+                    os.system("/bin/echo -e  \'"+ text + "\' >> \'"+ gl.historydir + "\'")
+#else:
+#                print "我不翻译"
+# Check if the extension is present
 if not record_dpy.has_extension("RECORD"):
   print "RECORD extension not found"
   sys.exit(1)
@@ -75,27 +78,3 @@ ctx = record_dpy.record_create_context(
 'client_started': False,
 'client_died': False,
 }])
-def webshow():
-  global window
-  global Alive
-  window = webshot.Window()
-  window.load(gl.homeurl)
-  window.show()
-  gtk.main()
-  Alive=0
-
-def gettext():
-  os.system("xclip -f /dev/null")           #清空剪切板
-  record_dpy.record_enable_context(ctx,record_callback)
-  record_dpy.record_free_context(ctx)
-
-def main():
-  global Alive
-  Alive=1
-  thread.start_new_thread(webshow,())
-#sleep(0.5)
-  thread.start_new_thread(gettext,())
-  while Alive:
-	sleep(0.5)
-if __name__ == '__main__':
-	main()
