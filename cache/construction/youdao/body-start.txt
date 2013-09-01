@@ -1,9 +1,0 @@
-<ul id="demo_menu2" >
-            <li><sb-a rel="http://dict.youdao.com/search?q=" id='dict_1' >有道字典</sb-a></li>
-        </ul>
-
-<script type="text/javascript">
-        $("ul#demo_menu2").sidebar({
-            position:"right",
-        });
-        </script>
