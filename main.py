@@ -16,13 +16,7 @@ sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from Xlib import X, XK, display
 from Xlib.ext import record
 from Xlib.protocol import rq
-local_dpy = display.Display()
 record_dpy = display.Display()
-def lookup_keysym(keysym):
-  for name in dir(XK):
-    if name[:3] == "XK_" and getattr(XK, name) == keysym:
-      return name[3:]
-    return "[%d]" % keysym
 
 def record_callback(reply):
     if reply.category != record.FromServer:
@@ -75,6 +69,7 @@ ctx = record_dpy.record_create_context(
 'client_started': False,
 'client_died': False,
 }])
+
 def webshow():
   global window
   global Alive
@@ -82,18 +77,23 @@ def webshow():
   window.load(gl.homeurl)
   window.show()
   gtk.main()
+  record_dpy.record_free_context(ctx)
   Alive=0
 
 def gettext():
   os.system("xclip -f /dev/null")           #清空剪切板
   record_dpy.record_enable_context(ctx,record_callback)
   record_dpy.record_free_context(ctx)
-
+def lookup_keysym(keysym):
+  for name in dir(XK):
+    if name[:3] == "XK_" and getattr(XK, name) == keysym:
+      return name[3:]
+    return "[%d]" % keysym
 def main():
   global Alive
   Alive=1
   thread.start_new_thread(webshow,())
-#sleep(0.5)
+  sleep(0.5)
   thread.start_new_thread(gettext,())
   while Alive:
 	sleep(0.5)
