@@ -1,4 +1,4 @@
-# YouDao
+# OpenYouDao
 
         It is a YouDao client for linux.
 
@@ -97,13 +97,13 @@ TODO
         25 减少global使用，太多的global 影响程序的健壮性
         26 对DOM操作，借鉴PhantomJS和CasperJS
         27 实现man手册的跳转
-		28 以守护进程运行该程序
-		29 脚本竞技场
-		30 寻找轻量级的取词方案
-		31 修复视频播放
+        28 以守护进程运行该程序
+        29 脚本竞技场
+        30 寻找轻量级的取词方案
+        31 修复视频播放
 DONE
 ----- 
-	2013-9-1   -------   发布openyoudao-beta版本
+        2013-9-1   -------   发布openyoudao-beta版本
         2012-8-23  -------   发布了ppa包
         2012-8-21  -------   修改了程序设计，将用户配置文件转移到了$HOME/.openyoudao目录下
         2012-8-17  -------   创建项目邮件列表，辅助项目测试
