@@ -3,7 +3,7 @@
 #	      needf <zy20130729@gmail.com>
 pkgname=openyoudao
 #true && pkgname=('openyoudao-gtk2')
-pkgver=beta-0.1
+pkgver=beta0.1
 pkgrel=1
 pkgdesc="a dict client of youdao  for linux"
 arch=('x86_64' 'i686')
@@ -12,7 +12,7 @@ license=('LGPL3')
 depends=('python2' 'xclip' 'curl'  'python-xlib' 'python2-lxml'  'pywebkitgtk' 'python2-beautifulsoup3')
 install="openyoudao.install"
 source=("https://github.com/justzx2011/openyoudao/tarball/$pkgver")
-md5sums=('a9c75b95ba229d3ce9aa95d23ee01025')
+md5sums=('cfc76bcec552e1d9dea8c92f284e16a0')
 package() {
   cd ${srcdir}/justzx2011-openyoudao-*/
   #LICENSE
