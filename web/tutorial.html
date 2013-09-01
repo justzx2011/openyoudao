@@ -77,7 +77,7 @@
 <h2>1  从github上clone程序到本地目录:</h2>
 <img src="http://i1149.photobucket.com/albums/o593/justzx2011/clone.png"  alt="下载程序" /><br /><p>图1、下载程序</p>
 <h2>2  安装所依赖的工具以及库文件</h2>
-<p style="text-align:left">在debian-sid下需要安装的库文件包括：python-xlib | python-webkit | python-lxml | python-beautifulsoup | xclip  | inotify-tools curl，其他发行版linux可根据具体情况安装。</p>
+<p style="text-align:left">在debian-sid下需要安装的库文件包括：python-xlib | python-webkit | python-lxml | python-beautifulsoup | xclip  |  curl，其他发行版linux可根据具体情况安装。</p>
 
 <h2>3  安装bin文件: </h2>
 <p style="text-align:left">将bin文件：scripts/openyoudao安装到目录/usr/bin/openyoudao: </P>
@@ -89,10 +89,9 @@
 <code class="pln">#cp ./*.py  /usr/lib/openyoudao</code><br>
 <code class="pln">#chmod 644 /usr/lib/openyoudao/*.py</code>
 <h2>5  安装cache文件: </h2>
-<code class="pln">#mkdir /var/cache/openyoudao</code><br>
-<code class="pln">#cp -rf cache/*  /var/cache/openyoudao/.</code><br>
-<code class="pln">#chmod 777 /var/cache/openyoudao/*.html </code><br>
-<code class="pln">#chmod 777 /var/cache/openyoudao/history.cache</code>
+<code class="pln">#mkdir /usr/share/openyoudao</code><br>
+<code class="pln">#cp -rf cache/*  /usr/share/openyoudao/.</code><br>
+<code class="pln">#chmod -R 755 /var/cache/openyoudao </code><br>
 <h2>6 安装desktop: </h2>
 <code class="pln">#cp desktop/openyoudao.desktop /usr/share/applications/</code></br>
 <code class="pln">#chmod 644 /usr/share/applications/openyoudao.desktop</code></br>
