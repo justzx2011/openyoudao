@@ -8,4 +8,4 @@ install -g users -o root -v -m 755 -t debian/openyoudao/usr/bin      scripts/ope
 install -g users -o root -v -m 644 -t debian/openyoudao/usr/lib/openyoudao ./*.py
 install -g users -o root -v -m 644 -t debian/openyoudao/usr/share/applications  desktop/openyoudao.desktop
 cp -rf cache/* debian/openyoudao/usr/share/openyoudao
-chmod -R 777 debian/openyoudao/usr/share/openyoudao/*
+chmod -R 777 debian/openyoudao/usr/share/openyoudao
