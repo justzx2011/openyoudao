@@ -10,5 +10,5 @@ Homepage: http://openyoudao.org
 
 Package: openyoudao
 Architecture: any
-Depends: python-xlib, python-webkit, python-lxml,xclip,curl
+Depends: python-xlib, python-webkit, python-lxml,xclip,curl,python-beautifulsoup
 Description: <a youdao opensource dict client for linux>
