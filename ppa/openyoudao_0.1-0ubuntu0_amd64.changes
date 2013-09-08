@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Fri, 30 Aug 2013 23:15:38 +0800
+Source: openyoudao
+Binary: openyoudao
+Architecture: source amd64
+Version: 0.1-0ubuntu0
+Distribution: precise
+Urgency: low
+Maintainer: Xin Zhang <justzx2011@gmail.com>
+Changed-By: Xin Zhang <justzx2011@gmail.com>
+Description: 
+ openyoudao - <a youdao opensource dict client for linux>
+Changes: 
+ openyoudao (0.1-0ubuntu0) precise; urgency=low
+ .
+   * Version 0.1.
+Checksums-Sha1: 
+ f8ae316bc384409921d461b60a1538e1682355bb 839 openyoudao_0.1-0ubuntu0.dsc
+ f25d29ef6ba958ab97d07d0adfe17b586028903e 374686 openyoudao_0.1.orig.tar.gz
+ a61d865a8b61d8b138dba0e182a80ca7e680f0f1 2143 openyoudao_0.1-0ubuntu0.debian.tar.gz
+ bf0c013f29896dc7bbf5c4b5a48f86990b7f3269 182046 openyoudao_0.1-0ubuntu0_amd64.deb
+Checksums-Sha256: 
+ f670c4e3bf076a7e93f2b84dc09057ea218d86b2f6df78cb67dacf437f270425 839 openyoudao_0.1-0ubuntu0.dsc
+ ebd8f617abc2958149902a658a0ca434a81c2020a8d57f14032d29c22431086c 374686 openyoudao_0.1.orig.tar.gz
+ 46996a319083bb150c3654c65b8560c56b02aece74e009c06a033046b2dc568f 2143 openyoudao_0.1-0ubuntu0.debian.tar.gz
+ ec1fab29528f299fb871ebea640e093713abc3ec93539809c383f3823dba3791 182046 openyoudao_0.1-0ubuntu0_amd64.deb
+Files: 
+ d96d2d0a17d321fe830335ea5eee5063 839 net optional openyoudao_0.1-0ubuntu0.dsc
+ 16c5dda6ca5eb93d71537fa76bf535a8 374686 net optional openyoudao_0.1.orig.tar.gz
+ d61886ecde416d8d809f8b06d449b2a2 2143 net optional openyoudao_0.1-0ubuntu0.debian.tar.gz
+ 6b3a557c0543f2615e7c5799d2621c7a 182046 net optional openyoudao_0.1-0ubuntu0_amd64.deb

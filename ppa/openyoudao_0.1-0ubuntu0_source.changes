@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Fri, 30 Aug 2013 23:15:38 +0800
+Source: openyoudao
+Binary: openyoudao
+Architecture: source
+Version: 0.1-0ubuntu0
+Distribution: precise
+Urgency: low
+Maintainer: Xin Zhang <justzx2011@gmail.com>
+Changed-By: Xin Zhang <justzx2011@gmail.com>
+Description: 
+ openyoudao - <a youdao opensource dict client for linux>
+Changes: 
+ openyoudao (0.1-0ubuntu0) precise; urgency=low
+ .
+   * Version 0.1.
+Checksums-Sha1: 
+ f7b8dd1ae1d41c0991f300aa269eefff8c9ef769 1377 openyoudao_0.1-0ubuntu0.dsc
+ f25d29ef6ba958ab97d07d0adfe17b586028903e 374686 openyoudao_0.1.orig.tar.gz
+ 1113ab98e22fcfc1ee51a31e43d512e17e4b1f0b 2104 openyoudao_0.1-0ubuntu0.debian.tar.gz
+Checksums-Sha256: 
+ 4effc99cac349af0255d54a5c3838c5322228d351ef3183cb854f430205c29c9 1377 openyoudao_0.1-0ubuntu0.dsc
+ ebd8f617abc2958149902a658a0ca434a81c2020a8d57f14032d29c22431086c 374686 openyoudao_0.1.orig.tar.gz
+ 1544d530008f093f73e6f33b77b82168f5e937b9a63c3f1ee4fb7efe54c8b08f 2104 openyoudao_0.1-0ubuntu0.debian.tar.gz
+Files: 
+ 5df2b9237d568b0eb237676eace4c4f7 1377 net optional openyoudao_0.1-0ubuntu0.dsc
+ 16c5dda6ca5eb93d71537fa76bf535a8 374686 net optional openyoudao_0.1.orig.tar.gz
+ 33a1abe007291fbb82162496732fdc15 2104 net optional openyoudao_0.1-0ubuntu0.debian.tar.gz
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.12 (GNU/Linux)
+
+iQEcBAEBAgAGBQJSLI64AAoJEDTrwpTlb4fZVekH/iztAHRjB2JeOXHJ1gEteRfr
+H9dsNkiURE4VigbmLyr8ArLJ5FbQPZoYuZei8azd9GSPKgAM1TUVZ3INrW2SiQEK
+PaTiLXsor0nWTmsbC+dVU9u+fSaMLfIcmV56jjxxO/uzbd4N+YzlTiIK4nMYgidq
+lujvqGwHfCWyFd2EQgKTpPpZOp1jZK62vCUYyCVt6ZbYAAGynMScmD/+ZB0yJg5t
+ziyjaLhNxTBp2DnIskUAGq0HSbz8AROQfz9Xkl2gWXngSlkTkp2d7AafLVhYDQCC
+F8hK3HH6W60jwXbG/RTlRK2vU6lufTFgqcOxfJ+t329Gt+1u/dbaMakEDGVp8Ng=
+=uec9
+-----END PGP SIGNATURE-----
