@@ -10,6 +10,7 @@ import sys
 import fusionyoudao
 import gl
 import os
+import threading 
 import webkit, gtk
 # Change path so we find Xlib
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
@@ -17,7 +18,7 @@ from Xlib import X, XK, display
 from Xlib.ext import record
 from Xlib.protocol import rq
 record_dpy = display.Display()
-
+mutex = threading.Lock() 
 def record_callback(reply):
     if reply.category != record.FromServer:
         return
@@ -42,13 +43,20 @@ def record_callback(reply):
             text = text.strip('\r\n\x00').lower()
             if(gl.pre_text != text and text!=""):
 			         gl.pre_text = text
+				 if(False==os.path.exists(gl.cachedir)):
+				     os.system("mkdir  \'" + gl.cachedir + "\'")
+				     os.system("touch  \'" + gl.origindir + "\'")
+				     os.system("touch  \'" + gl.resultdir + "\'")
 			         url= "http://dict.youdao.com/search?q=" + text
 			         print url
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()
 			         gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
-			         window.load(gl.homeurl)
-			         window.show()
+				 global  mutex
+				 if mutex.acquire():
+			             window.load(gl.homeurl)
+			             window.show()
+				     mutex.release() 
 if not record_dpy.has_extension("RECORD"):
   print "RECORD extension not found"
   sys.exit(1)
