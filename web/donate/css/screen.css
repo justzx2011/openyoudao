@@ -2,7 +2,7 @@
 
 body {
 	background-color:#FFFFFF;
-	color:#eeefef;
+	color:#000000;
 	font-size:62.5%;
 	font-family:Arial, Helvetica, sans-serif;
 	margin:0;
@@ -20,7 +20,7 @@ body {
 h1, h2 {  }
 
 h1 {
-	color:#577AE9;
+	color:#0088cc;
 	font-size:36px;
 	font-weight:400;
 	margin:0;
@@ -143,18 +143,18 @@ dl.timelineMinor {
 	}
 
 		.timelineMinor dt a {
-			color:#999;
+			color:#050505;
 			cursor:pointer;
 		}
 
 		.timelineMinor dt a.closed {
-			color:#999;
+			color:#000000;
 			font-size:1em;
 			margin-left:0;
 		}
 
 		.timelineMinor dt a.open {
-			color:#7DBADF;
+			color:#580CB9;
 		}
 
 		.timelineMinor dt a:hover {
