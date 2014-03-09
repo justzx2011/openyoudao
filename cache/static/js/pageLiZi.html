@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+</head>
+<style type="text/css">
+    #content{
+        border: 1px solid red;
+        position: relative;
+    }
+    #content #load_gif{
+        display: none;
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        z-index: 999;
+    }
+</style>
+<body>
+<input type="hidden" id="totalPages">
+<div id="content">
+    <table>
+        <thead> <th>num</th><th>name</th><th>sex</th></thead>
+        <tbody></tbody>
+    </table>
+    <div id="load_gif"> <img src="css/loading.gif" alt=""></div>
+    <div id="turnPage" begPage="1" displayPage="10" pageSize="15"
+         pageDataUrl="data/result.json" totalPagesUrl="data/getTotalPage.json"></div>
+</div>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.paginate.js"></script>
+<script type="text/javascript" src="js/page.js"></script>
+<script type="text/javascript">
+    //显示分页数据
+    function showPaginateData(data) {
+        $("#content>table>tbody").html(" ");
+        var v_str="";
+        try {
+            $(data).each(function(i, item) {
+                v_str += "<tr>"
+                v_str +="<td>"+ item.num + "</td><td><a href='http://www.baidu.com'>"+item.name+"</a></td>" +
+                        "<td>"+item.sex+"</td>" ;
+                v_str +="</tr>";
+            });
+            $("#content>table>tbody").html(v_str);
+        } catch(e) {
+            alert(e);
+            return;
+        }
+    }
+</script>
+
+</body>
+</html>

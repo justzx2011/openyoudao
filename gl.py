@@ -15,9 +15,10 @@ cachedir = userdir + "/.openyoudao"
 subcachedir = userdir + "/.openyoudao/cache"
 workdir = os.getcwd()
 homedir = sys.path[0]
-origindir = cachedir + "/cache/origin.html"
-resultdir = cachedir + "/cache/result.html"
+origindir = cachedir + "/origin.html"
+resultdir = cachedir + "/result.html"
 headyoudao = "/usr/share/openyoudao/construction/youdao/head.html"
 bodystartyoudao = "/usr/share/openyoudao/construction/youdao/body-start.txt"
-homeurl = "file://" + "/usr/share/openyoudao/config.html"
+homeurl = "file:///home/bjzhangxin/.openyoudao/main.html"
+#homeurl = "file://" + "/usr/share/openyoudao/config.html"
 baseurlyoudao="http://dict.youdao.com/search?q="

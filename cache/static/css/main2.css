@@ -1,0 +1,128 @@
+body {
+    margin : 0;
+    padding : 0;
+    background : url('outer_shadow.gif') 0 0 repeat-x #e6e6dc;
+    color : #999;
+    font-family : tahoma, arial, helvetica, sans-serif;
+    text-align:center;
+    align:center;
+}
+h1, h2, h3, h4,ul,li{   /*新增了ul li选择器*/
+    margin : 0;
+    padding : 0;
+}
+p {
+    padding-left : 10px;
+    padding-right : 10px;
+    text-align : justify;
+    font-size : 0.8em;
+}
+a:link, a:visited {
+    color : #567b9b;
+    text-decoration : none;
+}
+a:hover, a:active {
+    background : #ddeeff;
+    background : url('h3.participation.gif') 100% 100% no-repeat #fff;
+}
+/*-----------------------------------以下是新增内容--------------------------------------------*/
+.fl{float: left;}
+.fr{float: right;}
+.clearfix{}
+.clearfix:after{ clear: both;content: ".";display: block;height: 0;overflow: hidden;visibility: hidden; }
+#header{padding: 15px 5px 5px;background-color: #BBB;height: 23px;}
+#header ul{list-style-type: none;}
+#header  a{padding: 5px;}
+#header .nav li{float:left;margin-right: 10px;font-weight: bolder;position: relative;}
+
+#header .nav .sub-nav {display: none;position: absolute;top: 20px;left: 0;width: 190px;}
+#header .nav .sub-nav li{width: 190px;background-color: #BBB}
+#header .nav .sub-nav a{display: block;width: 180px;text-align: left;}
+#header .exit{font-weight: bolder;}
+#header .nav  .active{display:block;}
+/*-----------------------------------以上是新增内容--------------------------------------------*/
+
+/* main.css中要删除内容
+div#header {
+    background-color:#BBB;
+    width:100%;
+    height:22px;
+    margin-bottom:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+div#header a {
+    margin-left: 5px;
+    margin-right:5px;
+}
+div#left {
+    float:left;
+    text-align:left;
+    padding-left:20px;
+}
+div#right {
+    float:right;
+    text-align:right;
+    padding-right:20px;
+}*/
+
+
+input {
+    color:#781351;
+    background: #fee3ad;
+    border: 1px solid #781351;
+    size: 70;
+}
+.submit input {
+    color : #000;
+    background: #ffa20f;
+    border: 2px outset #d7b9c9
+}
+#msgtext {
+    color:#ff0000;
+    font-size: 18px;
+}
+#formarea {
+    margin:0 auto;
+    border-right: 1px #C1DAC7;
+}
+table
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px solid #69c;
+    width:100%;
+}
+th
+{
+    padding: 3px 5px 3px 5px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #039;
+    border-bottom: 1px dashed #69c;
+    max-width:300px;
+    min-width:50px;
+}
+td
+{
+    padding: 3px 5px 3px 5px;
+    color: #111;
+    border-bottom: 1px solid #69c;
+    vertical-align: top;
+    word-break:break-all;
+    word-wrap:break-word;
+    max-width:300px;
+    min-width:50px;
+}
+
+
+
+
+
+
+
+
+
+

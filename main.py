@@ -46,7 +46,7 @@ def record_callback(reply):
 			         print url
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()
-			         gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
+			         #gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
 			         window.load(gl.homeurl)
 			         window.show()
 if not record_dpy.has_extension("RECORD"):
