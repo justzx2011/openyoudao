@@ -11,6 +11,7 @@ import fusionyoudao
 import gl
 import os
 import webkit, gtk
+import logging
 # Change path so we find Xlib
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from Xlib import X, XK, display
@@ -34,6 +35,7 @@ def record_callback(reply):
 # deal with the event type
         if event.type == X.ButtonRelease:
             # get text
+	    print "xclip"
             pipe = os.popen("xclip -o")
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
@@ -44,6 +46,7 @@ def record_callback(reply):
 			         gl.pre_text = text
 			         url= "http://dict.youdao.com/search?q=" + text
 			         print url
+				 logging.debug(text)
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()
 			         #gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
@@ -54,7 +57,7 @@ if not record_dpy.has_extension("RECORD"):
   sys.exit(1)
   r = record_dpy.record_get_version(0, 0)
   print "RECORD extension version %d.%d" % (r.major_version, r.minor_version)
-# Create a recording context; we only want key and mouse events
+# Createa recording context; we only want key and mouse events
 ctx = record_dpy.record_create_context(
 0,
 [record.AllClients],
@@ -90,6 +93,9 @@ def lookup_keysym(keysym):
       return name[3:]
     return "[%d]" % keysym
 def main():
+  logging.basicConfig(filename=gl.logname,
+                    level=logging.DEBUG,
+                    format="%(asctime)s - %(message)s")
   global Alive
   Alive=1
   thread.start_new_thread(webshow,())

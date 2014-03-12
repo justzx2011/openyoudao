@@ -13,6 +13,7 @@ pre_text=""
 userdir=os.path.expanduser('~')
 cachedir = userdir + "/.openyoudao"
 subcachedir = userdir + "/.openyoudao/cache"
+logname = userdir + "/.openyoudao/openyoudao.log"
 workdir = os.getcwd()
 homedir = sys.path[0]
 origindir = cachedir + "/origin.html"
