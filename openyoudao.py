@@ -3,6 +3,7 @@
 # Simple demo for the RECORD extension
 # Not very much unlike the xmacrorec2 program in the xmacro package.
 import popen2
+import subprocess
 from time import sleep
 import thread
 import webshot
@@ -35,15 +36,18 @@ def record_callback(reply):
 # deal with the event type
         if event.type == X.ButtonRelease:
             # get text
-	    print "xclip"
-            pipe = os.popen("xclip -o")
-            text = pipe.readline()
-            pipe.readlines()    #清空管道剩余部分
-            pipe.close()
-            print "您选取的是: ", text
-            text = text.strip('\r\n\x00').lower()
+	    cmd = "xclip -o"
+	    process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=None, shell=True)
+	    output, error = process.communicate()
+	    text = output.strip('\r\n\x00').lower()
+            #pipe = os.popen("xclip -o")
+            #text = pipe.readline()
+            #pipe.readlines()    #清空管道剩余部分
+            #pipe.close()
+            #text = text.strip('\r\n\x00').lower()
             if(gl.pre_text != text and text!=""):
 			         gl.pre_text = text
+                                 print "您选取的是: ", text
 			         url= "http://dict.youdao.com/search?q=" + text
 			         print url
 				 logging.debug(text)
@@ -77,7 +81,7 @@ def webshow():
   global window
   global Alive
   window = webshot.Window()
-  window.load(gl.homeurl)
+  window.load(gl.indexurl)
   window.show()
   gtk.main()
   record_dpy.record_free_context(ctx)
@@ -103,12 +107,12 @@ def main():
   global Alive
   Alive=1
   thread.start_new_thread(webshow,())
-  sleep(0.5)
+  #sleep(0.5)
   thread.start_new_thread(gettext,())
   while Alive:
 	if  Alive==0:
 	     os.system("ps aux | grep openyoudao.py |awk '{print $2}' |xargs kill -9")
-	sleep(0.5)
+	sleep(0.3)
 	os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9")
 if __name__ == '__main__':
 	main()

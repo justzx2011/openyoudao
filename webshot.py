@@ -38,7 +38,7 @@ class Window(gtk.Window):
         gtk.Window.__init__(self)
         self.set_resizable(True)
         self.set_title("openyoudao")
-        self.set_default_size(800, 240)
+        self.set_default_size(1024, 240)
         self.scroll = gtk.ScrolledWindow()
         self.scroll.props.hscrollbar_policy = gtk.POLICY_NEVER
         self.scroll.props.vscrollbar_policy = gtk.POLICY_NEVER
