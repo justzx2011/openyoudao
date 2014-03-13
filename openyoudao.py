@@ -81,7 +81,11 @@ def webshow():
   window.show()
   gtk.main()
   record_dpy.record_free_context(ctx)
+  #pid_xclip="ps aux| grep 'xclip'|grep -v 'grep'|awk '{print $2}' | grep -v 2454 |xargs kill -9"
+  #pid_youdao="ps aux| grep 'openyoudao.py'|grep -v 'grep'|awk '{print $2}' | grep -v 2454 |xargs kill -9"
   Alive=0
+  #os.system(pid_xclip)
+  #os.system(pid_youdao)
 
 def gettext():
   os.system("xclip -f /dev/null")           #清空剪切板
@@ -102,6 +106,9 @@ def main():
   sleep(0.5)
   thread.start_new_thread(gettext,())
   while Alive:
+	if  Alive==0:
+	     os.system("ps aux | grep openyoudao.py |awk '{print $2}' |xargs kill -9")
 	sleep(0.5)
+	os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9")
 if __name__ == '__main__':
 	main()
