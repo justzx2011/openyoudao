@@ -10,6 +10,7 @@ global headyoudao
 global bodystartyoudao
 
 pre_text=""
+cnt=0
 userdir=os.path.expanduser('~')
 cachedir = userdir + "/.openyoudao"
 subcachedir = userdir + "/.openyoudao/cache"

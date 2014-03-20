@@ -92,7 +92,7 @@ def webshow():
   #os.system(pid_youdao)
 
 def gettext():
-  os.system("xclip -f /dev/null")           #清空剪切板
+  #os.system("xclip -f /dev/null")           #清空剪切板
   record_dpy.record_enable_context(ctx,record_callback)
   record_dpy.record_free_context(ctx)
 def lookup_keysym(keysym):
@@ -101,18 +101,18 @@ def lookup_keysym(keysym):
       return name[3:]
     return "[%d]" % keysym
 def main():
+  os.system("xclip -f /dev/null")           #清空剪切板
   logging.basicConfig(filename=gl.logname,
                     level=logging.DEBUG,
                     format="%(asctime)s - %(message)s")
   global Alive
   Alive=1
   thread.start_new_thread(webshow,())
-  #sleep(0.5)
+  sleep(0.2)
   thread.start_new_thread(gettext,())
   while Alive:
 	if  Alive==0:
-	     os.system("ps aux | grep openyoudao.py |awk '{print $2}' |xargs kill -9")
-	sleep(0.3)
-	os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9")
+	    sleep(0.3)
+	    os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9")
 if __name__ == '__main__':
 	main()

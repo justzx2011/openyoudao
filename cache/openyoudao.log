@@ -1,0 +1,236 @@
+2014-03-13 23:08:34,144 - extension
+2014-03-13 23:08:58,811 -  ps aux | grep openyoudao
+1000      5075  3.7  1.9 2209456 75124 pts/4   sl+  23:08   0:01 python openyoudao.py
+2014-03-13 23:09:04,624 - ps aux | grep openyoudao
+1000      5075  3.7  1.9 2209456 75124 pts/4   sl+  23:08   0:01 python openyoudao.py
+2014-03-13 23:09:19,219 - fa xian
+2014-03-13 23:09:27,638 - ubuntu64:~/workspace/openyoudao$
+2014-03-13 23:11:43,991 - pstree -p 4
+2014-03-13 23:11:59,399 - ubuntu64:~/workspace/openyoudao$ pstree -p 5075
+python(5075)─┬─sh(5086)───pxgsettings(5087)─┬─{pxgsettings}(5089)
+             │                              └─{pxgsettings}(5090)
+             ├─{python}(5076)
+             ├─{python}(5077)
+             ├─{python}(5080)
+             ├─{python}(5081)
+             ├─{python}(5084)
+             ├─{python}(5085)
+             ├─{python}(5093)
+             └─{python}(9436)
+2014-03-13 23:12:15,471 - pstre
+2014-03-13 23:12:20,104 - 提供
+2014-03-13 23:12:29,504 - ubuntu64:~/workspace/openyoudao$ pstree -p 5075
+python(5075)─┬─sh(5086)───pxgsettings(5087)─┬─{pxgsettings}(5089)
+             │                              └─{pxgsettings}(5090)
+             ├─{python}(5076)
+             ├─{python}(5077)
+             ├─{python}(5080)
+             ├─{python}(5081)
+             ├─{python}(5084)
+             ├─{python}(5085)
+             ├─{python}(5093)
+             └─{python}(9436)
+2014-03-13 23:12:45,950 - xia
+2014-03-13 23:13:35,147 - ug&do=edit&rev=0
+2014-03-13 23:13:51,519 - underground
+2014-03-13 23:14:02,455 - 秘密
+2014-03-13 23:15:34,207 - p y t h o n
+2014-03-13 23:16:21,783 - qing kuang
+2014-03-13 23:16:27,886 - conditi
+2014-03-13 23:16:31,384 - 东北地区
+2014-03-13 23:16:35,213 -  region
+2014-03-13 23:16:38,692 - 确认
+2014-03-13 23:16:41,840 - 盘问
+2014-03-13 23:16:44,911 - inquire
+2014-03-13 23:16:51,255 - 询价
+2014-03-13 23:17:04,222 -  completed
+2014-03-13 23:17:06,863 - open
+2014-03-13 23:17:11,710 - 选取
+2014-03-13 23:17:14,614 - open
+2014-03-13 23:17:17,790 - fusion
+2014-03-13 23:17:20,847 - tart
+2014-03-13 23:19:09,739 - diao yong
+2014-03-13 23:19:28,071 - 僵si le
+2014-03-13 23:20:02,471 - 翻译
+2014-03-13 23:21:35,707 - /home/nrpe/libexec/check_conn.sh 1500 2000
+2014-03-13 23:28:48,776 - conn
+2014-03-13 23:33:04,887 - shi shi
+2014-03-13 23:34:13,370 - wen ti
+2014-03-13 23:34:21,090 - shou fu
+2014-03-13 23:34:41,355 -  district
+2014-03-13 23:36:02,390 - when
+2014-03-13 23:37:27,471 - substituted. the braces are required when parameter is a positional parameter with more than one digit, or when parameter is followed by a character which is not to be interpreted as part of its name. if the first character of parameter is an exclamation point (!), a level of variable indirection is introduced. bash uses the value of the variable formed from the rest of parameter as the name of the variable; this variable is then expanded and that value is used in the rest of the substitution, rather than the value of parameter itself. this is known as indirect expansion. the exceptions to this are the expansions of ${!prefix*} and ${!name[@]} described below. the exclamation point must immediately follow the left brace in order to introduce indirection. in each of the cases below, word is subject to tilde expansion, parameter expansion, command substitution, and arithmetic expansion. when not performing substring expansion, using the forms documented below, bash tests for a parameter that is unset or null. omitting the colon results in a test only for a parameter that is unset. ${parameter:-word} use default values. if parameter is unset or null, the expansion of word is substituted. otherwise, the value of parameter is substituted. ${parameter:=word} assign default values. if parameter is unset or 
+2014-03-13 23:40:38,622 - genera
+2014-03-13 23:40:42,775 - 免费
+2014-03-13 23:41:17,438 - charge
+2014-03-13 23:41:21,560 - 掌管
+2014-03-14 23:50:10,711 -  ls
+2014-03-14 23:50:16,714 - search
+2014-03-14 23:52:32,772 - pi li ba
+2014-03-14 23:53:34,469 - 霹雳轰掣天下-第30章 (1)
+2014-03-15 00:10:11,666 - stopper
+2014-03-15 00:10:16,818 - 限位器
+2014-03-15 00:10:19,558 - 定值
+2014-03-15 00:10:40,098 - services
+2014-03-15 00:10:45,076 - 事务
+2014-03-15 00:11:03,537 - department
+2014-03-15 00:12:22,908 - 美国国务院
+2014-03-15 00:12:56,968 - 院
+2014-03-15 00:13:00,481 - courtyard
+2014-03-15 00:13:13,186 - 生动流畅
+2014-03-15 00:20:09,159 -  fluent
+2014-03-15 00:41:01,525 - 畅流
+2014-03-15 00:43:18,302 - 翻译
+2014-03-15 00:45:22,635 - 词语
+2014-03-15 00:45:25,373 - expressions
+2014-03-15 00:52:09,979 - 复数
+2014-03-15 00:52:12,697 - number
+2014-03-15 00:52:15,721 - 数字
+2014-03-15 00:52:18,618 - 等等
+2014-03-15 00:52:20,586 -  like
+2014-03-15 00:52:24,154 - 同样的人或物
+2014-03-15 00:52:26,929 - 蜘蛛人
+2014-03-15 00:52:31,411 - 蜘蛛侠
+2014-03-15 00:52:35,596 - 哥伦比亚公司
+2014-03-15 00:52:38,795 -  发行
+2014-03-15 00:52:42,451 - launch
+2014-03-15 00:52:45,338 - 发起
+2014-03-15 00:52:55,364 - file
+2014-03-15 00:54:11,656 - search
+2014-03-15 00:54:17,418 - start
+2014-03-15 00:54:22,738 -  fusion
+2014-03-15 00:54:28,011 - completed
+2014-03-15 00:54:32,026 - 选取
+2014-03-15 00:54:34,713 - http
+2014-03-15 00:54:37,020 - start fusionyoudao
+fusionyoudao completed
+2014-03-15 00:54:39,714 - completed
+2014-03-15 00:54:42,658 - fusion
+2014-03-15 00:54:47,060 - youdao
+2014-03-15 00:54:54,593 - 本地增强版
+2014-03-15 00:54:57,204 - dictionary 
+2014-03-15 00:55:01,753 - 牛津
+2014-03-15 00:55:05,505 - label
+2014-03-15 00:55:08,618 - 贴标签于
+2014-03-15 00:55:11,275 - 英语
+2014-03-15 00:55:15,643 - 中国
+2014-03-15 00:55:19,740 - 중국
+2014-03-15 00:55:29,064 - china
+2014-03-15 00:55:33,666 - 중국
+2014-03-15 00:55:46,250 - 东亚
+2014-03-15 00:55:49,644 -  class
+2014-03-15 00:55:52,447 - 归类
+2014-03-15 00:55:55,515 -  classify
+2014-03-15 00:55:58,171 - 分等
+2014-03-15 00:56:02,907 - scenario
+2014-03-15 00:56:07,410 - 运动场景（scenario）是整个运动仿真过程的入口，是运动模型的载体，运动模型的全部数据都存储在运动场景之中
+2014-03-15 00:56:13,121 -  entrance
+2014-03-15 00:56:27,236 - the entrance examinations to high school began yesterday morning
+2014-03-15 00:56:33,159 - xaminations
+2014-03-15 00:56:37,225 - 考试
+2014-03-15 00:56:41,801 - 根据
+2014-03-15 00:56:44,730 -  with 
+2014-03-15 00:56:47,824 - 维特
+2014-03-15 00:56:59,169 - clifford 
+2014-03-15 00:57:04,338 - dance
+2014-03-15 00:57:15,140 - 业
+2014-03-15 00:57:24,505 - 佛教语。梵文karman（羯磨）的意译。佛教称业由身、口、意三处发动，分别叫做身业、口业、意业。业分善、不善、非善非不善三种，一般偏指恶业，孽。它决定在六道中的生死轮回
+2014-03-15 00:58:02,506 - 梵文
+2014-03-15 00:58:06,585 - sanskrit
+2014-03-15 00:58:12,433 - sanskrit grammar
+2014-03-15 00:58:17,976 - he was also well versed
+2014-03-15 00:58:21,321 - government
+2014-03-15 08:15:53,806 - geography
+2014-03-15 11:18:01,966 - 目录
+
+释义
+权威词典
+用法
+例句
+百科
+go top
+
+geography
+2014-03-15 11:18:04,845 - 英语
+2014-03-15 11:18:12,407 - completed
+2014-03-15 11:18:24,732 - 地理
+2014-03-15 11:18:26,664 - 地形
+2014-03-15 11:18:29,359 - 网络释义
+2014-03-15 11:18:53,109 - 翻译
+2014-03-15 11:19:03,052 - 翻译
+2014-03-15 11:20:02,179 - 翻译
+2014-03-15 11:20:05,116 -  translate
+2014-03-15 20:41:06,484 - 句子
+2014-03-15 20:41:10,210 - sentence
+2014-03-15 21:25:39,408 - target
+2014-03-15 21:25:45,642 - target
+2014-03-15 21:25:49,161 - completed
+2014-03-15 21:25:56,553 - completed
+2014-03-15 21:26:01,773 - completed
+2014-03-15 21:35:03,621 - python
+2014-03-15 21:35:06,902 - index
+2014-03-16 03:24:35,758 - python
+2014-03-16 03:34:13,426 - processor
+2014-03-16 03:34:31,363 -  i5-3230m
+2014-03-16 03:34:39,036 - jie shao
+2014-03-16 03:36:13,803 -  i5-3230m 介绍
+2014-03-16 03:36:16,534 - li nu x
+2014-03-16 03:36:30,250 - xing hao
+2014-03-16 03:37:47,881 - e6chsfufk
+2014-03-16 03:38:07,559 - 2328tx g6
+2014-03-16 03:41:10,224 - 惠普g6-
+2014-03-16 03:42:26,760 - http://flv.bn.netease.com/videolib3/1401/29/nxfed2629//sd/
+2014-03-16 03:43:32,855 -  http://flv.bn.netease.com/videolib3/1401/29/wgaoi2887//sd
+2014-03-16 03:44:00,768 -  http://flv.bn.netease.com/videolib3/1402/15/senbv0955//hd/
+2014-03-16 03:45:03,269 - 1402/15/xzwls7254//hd/
+2014-03-16 03:46:35,351 - -2328tx 
+2014-03-16 03:47:03,345 -  debian install
+2014-03-16 04:24:52,905 - wen tu
+2014-03-16 04:24:58,230 - wen du
+2014-03-16 04:25:23,031 -   cat /proc/acpi/thermal_zone/thrm/temperature
+2014-03-16 04:26:09,271 - sudo apt-get install lm-sensors sensors-applet
+2014-03-16 04:27:30,830 - sensors-detect
+2014-03-16 04:28:20,149 - linux 查看 cpu  温度
+2014-03-16 04:28:31,288 - chao pin lv
+2014-03-16 04:28:40,625 -  cd /sys/devices/system/cpu/cpu0
+2014-03-16 04:31:03,012 - huang yi
+2014-03-16 04:35:29,951 - 北京
+2014-03-16 04:35:30,945 - 武汉
+2014-03-16 04:38:01,516 - available
+2014-03-16 04:38:03,477 - : target string not available
+^[[b^[[b^[[b^[[berror: target string not available
+2014-03-16 04:38:05,088 - : target 
+2014-03-16 07:54:04,663 - target
+2014-03-16 07:54:42,255 - 北京
+2014-03-16 07:54:44,927 - 西安
+2014-03-16 08:03:17,736 - 北京
+2014-03-16 08:03:20,009 - 西安
+2014-03-16 11:47:26,757 - string
+2014-03-16 11:48:07,155 - utility
+2014-03-16 12:06:36,539 - 鼠标
+2014-03-16 12:06:40,177 - mouse
+2014-03-16 19:23:06,206 - orphaned
+2014-03-16 19:44:36,047 - yu xing dian nao
+2014-03-16 19:46:04,837 - 裕兴电脑vcd
+2014-03-16 19:47:38,885 - pei zhi
+2014-03-16 19:57:18,143 - available
+2014-03-16 19:57:23,978 - 可得
+2014-03-16 19:57:26,774 - availableness
+2014-03-16 20:09:21,386 - 辞典
+2014-03-16 20:09:29,273 - glossary
+2014-03-16 20:09:38,602 - 专业词典
+2014-03-16 20:09:41,267 - dictionary
+2014-03-16 20:09:59,786 - 词典
+2014-03-16 20:10:46,819 - 北京
+2014-03-16 20:13:38,308 - 晋升公告 
+2014-03-16 20:15:36,237 - 公
+2014-03-19 22:10:44,035 - 翻译
+2014-03-19 22:10:48,022 -  interpret
+2014-03-19 22:10:59,851 -  python
+2014-03-19 22:11:05,740 - 公司
+2014-03-19 22:11:08,905 - corporation 
+2014-03-20 22:24:09,544 - 翻译
+2014-03-20 22:24:13,633 -  translate
+2014-03-20 22:24:22,783 - 释义
+2014-03-20 22:28:49,998 - 翻译
+2014-03-20 22:28:54,051 - interpret
