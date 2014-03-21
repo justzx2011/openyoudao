@@ -11,6 +11,8 @@ import fusionyoudao
 import gl
 import os
 import webkit, gtk
+import logging
+
 # Change path so we find Xlib
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from Xlib import X, XK, display
@@ -50,7 +52,6 @@ def record_callback(reply):
 			         print url
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()
-			         gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
 			         window.load(gl.homeurl)
 			         window.show()
 if not record_dpy.has_extension("RECORD"):
@@ -78,14 +79,13 @@ def webshow():
   global window
   global Alive
   window = webshot.Window()
-  window.load(gl.homeurl)
+  window.load(gl.gl.indexurl)
   window.show()
   gtk.main()
   record_dpy.record_free_context(ctx)
   Alive=0
 
 def gettext():
-  os.system("xclip -f /dev/null")           #清空剪切板
   record_dpy.record_enable_context(ctx,record_callback)
   record_dpy.record_free_context(ctx)
 def lookup_keysym(keysym):
@@ -94,12 +94,17 @@ def lookup_keysym(keysym):
       return name[3:]
     return "[%d]" % keysym
 def main():
+  os.system("xclip -f /dev/null")           #清空剪切板
+  logging.basicConfig(filename=gl.logname,
+                     level=logging.DEBUG,
+                     format="%(asctime)s - %(message)s")
   global Alive
   Alive=1
   thread.start_new_thread(webshow,())
-  sleep(0.5)
+  sleep(0.2)
   thread.start_new_thread(gettext,())
   while Alive:
 	sleep(0.5)
+        os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9")
 if __name__ == '__main__':
 	main()
