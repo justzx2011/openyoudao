@@ -9,4 +9,4 @@ __revision__ = 'beta0.2'
 
 if __name__=="__main__":
     import os
-    os.system("python2.7 /usr/lib/openyoudao/openyoudao.py")
+    os.system("python2.7 /usr/lib/openyoudao/openyoudao.py > /dev/null")
