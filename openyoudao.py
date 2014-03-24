@@ -40,6 +40,7 @@ def record_callback(reply):
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
+            logging.debug("choose empty")
             print "您选取的是: ", text
             text = text.strip('\r\n\x00').lower()
             if(gl.pre_text != text and text!=""):
@@ -83,6 +84,7 @@ def webshow():
   window.show()
   gtk.main()
   record_dpy.record_free_context(ctx)
+  os.system("ps aux | grep openyoudao.py |awk '{print $2}' |xargs kill -9 >/dev/null")
   Alive=0
 
 def gettext():
@@ -104,7 +106,10 @@ def main():
   sleep(0.2)
   thread.start_new_thread(gettext,())
   while Alive:
-	sleep(0.8)
-        os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9")
+	sleep(0.5)
+        clip_id=os.popen("ps aux | grep xclip | grep -v grep |awk '{print $2}'| grep -v ^$ |wc -l")
+        pid = clip_id.readline().strip('\r\n\x00')
+        if int(pid)>=1:
+            os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9 >/dev/null")
 if __name__ == '__main__':
 	main()

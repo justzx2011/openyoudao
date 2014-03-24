@@ -5,7 +5,7 @@ import gl
 import re
 import popen2
 def reconstruct():
-    logging.info("start fusionyoudao")
+    #logging.info("start fusionyoudao")
     soup = BeautifulSoup(open(gl.origindir))
     head=open(gl.headyoudao,'r')
     result = soup.find('div',{"id":"results"})
@@ -19,4 +19,4 @@ def reconstruct():
     head.close()
     os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' \'"+ gl.resultdir + "\'")
     os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' \'"+ gl.resultdir + "\'")
-    logging.info("fusionyoudao completed")
+    #logging.info("fusionyoudao completed")
