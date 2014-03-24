@@ -49,7 +49,7 @@ def record_callback(reply):
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
 			         url= "http://dict.youdao.com/search?q=" + text
-			         print url
+                                 logging.debug(text)
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()
 			         window.load(gl.homeurl)
@@ -79,7 +79,7 @@ def webshow():
   global window
   global Alive
   window = webshot.Window()
-  window.load(gl.gl.indexurl)
+  window.load(gl.indexurl)
   window.show()
   gtk.main()
   record_dpy.record_free_context(ctx)
@@ -104,7 +104,7 @@ def main():
   sleep(0.2)
   thread.start_new_thread(gettext,())
   while Alive:
-	sleep(0.5)
+	sleep(0.8)
         os.system("ps aux | grep xclip |awk '{print $2}' |xargs kill -9")
 if __name__ == '__main__':
 	main()
