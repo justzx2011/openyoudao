@@ -1,10 +1,11 @@
 from BeautifulSoup import BeautifulSoup
 import os
+import logging
 import gl
 import re
 import popen2
 def reconstruct():
-    print "start fusionyoudao"
+    logging.debug("start fusionyoudao")
     soup = BeautifulSoup(open(gl.origindir))
     head=open(gl.headyoudao,'r')
     result = soup.find('div',{"id":"results"})
@@ -27,5 +28,5 @@ def reconstruct():
     os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' \'"+ gl.resultdir + "\'")
     os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' \'"+ gl.resultdir + "\'")
     #os.system("sed -i -e 's/href=\"\/simplayer.swf/href=\"http:\/\/dict.youdao.com\/simplayer.swf/g' \'"+ gl.resultdir + "\'")
-    print "fusionyoudao completed"
+    logging.debug("fusionyoudao completed")
     #os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")
