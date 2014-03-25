@@ -40,8 +40,6 @@ def record_callback(reply):
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
-            logging.debug("choose empty")
-            print "您选取的是: ", text
             text = text.strip('\r\n\x00').lower()
             if(gl.pre_text != text and text!=""):
 			         gl.pre_text = text
