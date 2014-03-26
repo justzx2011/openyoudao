@@ -94,14 +94,14 @@ def lookup_keysym(keysym):
       return name[3:]
     return "[%d]" % keysym
 def main():
+  global Alive
+  Alive=1
+  thread.start_new_thread(webshow,())
   os.system("xclip -f /dev/null")           #清空剪切板
   logging.basicConfig(filename=gl.logname,
                      level=logging.DEBUG,
                      format="%(asctime)s - %(message)s")
-  global Alive
-  Alive=1
-  thread.start_new_thread(webshow,())
-  sleep(0.2)
+  sleep(0.1)
   thread.start_new_thread(gettext,())
   while Alive:
 	sleep(0.5)
