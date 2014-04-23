@@ -2,8 +2,6 @@
 
         It is a YouDao client for linux.
 
-         Video:  http://v.youku.com/v_show/id_XNDAzMDUxNDk2.html
-                 ftp://linux.xidian.edu.cn/xdlinux/youdao.mp4
          Author: justzx2011@gmail.com  @justzx
                  lvzongting@gmail.com  @lvzongting
          Powered by xdlinux.info  西电开源社区 
@@ -28,6 +26,7 @@
         sudo apt-get update 
          
         sudo apt-get install openyoudao
+        
 #其他发行版linux:
         #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
