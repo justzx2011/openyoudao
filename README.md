@@ -30,7 +30,9 @@
 #其他发行版linux:
         #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
-        $git clone https://github.com/justzx2011/openyoudao
+        $wget https://github.com/justzx2011/openyoudao/archive/beta0.2.tar.gz
+        
+         tar -xvf beta0.2.tar.gz && cd openyoudao-beta0.2
          
         安装bin文件，方便程序执行: 
         
@@ -54,7 +56,7 @@
         
         #mkdir /var/cache/openyoudao
 
-        #cp -rf cache/* /var/cache/openyoudao/.
+        #cp -rf cache/* /usr/share/openyoudao/.
         
         安装desktop:
         
@@ -101,6 +103,7 @@ TODO
 		31 修复视频播放
 DONE
 -----  
+        2014-4-16  -------   发布openyoudao v0.2版本
         2013-9-01  -------   发布openyoudao beta版本
         2012-8-23  -------   发布了ppa包
         2012-8-21  -------   修改了程序设计，将用户配置文件转移到了$HOME/.openyoudao目录下
@@ -137,6 +140,7 @@ DONE
         2012-5-26  -------   完成了程序退出机制，全局统一退出标志，为差错控制模块预留了接口
 UPDATES
 --------------
+        2014-4-16  -------   解决了程序异常中断的bug
         2012-8-23  发布ppa
         2012-8-17  -------   创建项目邮件列表，辅助项目测试
         2012-8-08  修复了发音功能
