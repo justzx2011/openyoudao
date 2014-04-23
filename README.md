@@ -18,14 +18,16 @@
         
 #Ubunte/debian:        
         Add mirrorlist:
-        
-        deb http://ppa.launchpad.net/justzx2011/openyoudao/ubuntu precise main
-        
-        deb-src http://ppa.launchpad.net/justzx2011/openyoudao/ubuntu precise main 
-        
-        #apt-get update 
-        
-        #apt-get install openyoudao
+
+        deb http://ppa.launchpad.net/justzx2011/openyoudao-v0.2/ubuntu trusty main 
+
+        deb-src http://ppa.launchpad.net/justzx2011/openyoudao-v0.2/ubuntu trusty main
+
+        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  14C9B91C3F9493B9
+
+        sudo apt-get update 
+         
+        sudo apt-get install openyoudao
 #其他发行版linux:
         #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
