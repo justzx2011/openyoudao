@@ -11,6 +11,8 @@ import fusionyoudao
 import gl
 import os
 import webkit, gtk
+import logging
+
 # Change path so we find Xlib
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from Xlib import X, XK, display
@@ -38,7 +40,6 @@ def record_callback(reply):
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
-            print "您选取的是: ", text
             text = text.strip('\r\n\x00').lower()
             if(gl.pre_text != text and text!=""):
 			         gl.pre_text = text
@@ -47,10 +48,9 @@ def record_callback(reply):
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
 			         url= "http://dict.youdao.com/search?q=" + text
-			         print url
+                                 logging.debug(text)
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()
-			         gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
 			         window.load(gl.homeurl)
 			         window.show()
 if not record_dpy.has_extension("RECORD"):
@@ -78,7 +78,7 @@ def webshow():
   global window
   global Alive
   window = webshot.Window()
-  window.load(gl.homeurl)
+  window.load(gl.indexurl)
   window.show()
   gtk.main()
   record_dpy.record_free_context(ctx)
@@ -86,7 +86,6 @@ def webshow():
   Alive=0
 
 def gettext():
-  os.system("xclip -f /dev/null")           #清空剪切板
   record_dpy.record_enable_context(ctx,record_callback)
   record_dpy.record_free_context(ctx)
 def lookup_keysym(keysym):
@@ -98,7 +97,11 @@ def main():
   global Alive
   Alive=1
   thread.start_new_thread(webshow,())
-  sleep(0.5)
+  os.system("xclip -f /dev/null")           #清空剪切板
+  logging.basicConfig(filename=gl.logname,
+                     level=logging.DEBUG,
+                     format="%(asctime)s - %(message)s")
+  sleep(0.1)
   thread.start_new_thread(gettext,())
   while Alive:
 	sleep(0.5)

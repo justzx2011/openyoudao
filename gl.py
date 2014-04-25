@@ -2,7 +2,6 @@
 import os
 import sys
 global pre_text
-global cachedir
 global homedir
 global origindir
 global resultdir
@@ -11,14 +10,17 @@ global headyoudao
 global bodystartyoudao
 
 pre_text=""
-userdir=os.path.expanduser('~')
-workdir = os.getcwd()
-homedir = sys.path[0]
+cnt=0
 userdir=os.path.expanduser('~')
 cachedir = userdir + "/.openyoudao"
-origindir = userdir + "/.openyoudao/origin.html"
-resultdir = userdir + "/.openyoudao/result.html"
+subcachedir = userdir + "/.openyoudao/cache"
+logname = userdir + "/.openyoudao/openyoudao.log"
+workdir = os.getcwd()
+homedir = sys.path[0]
+origindir = cachedir + "/origin.html"
+resultdir = cachedir + "/result.html"
 headyoudao = "/usr/share/openyoudao/construction/youdao/head.html"
 bodystartyoudao = "/usr/share/openyoudao/construction/youdao/body-start.txt"
-homeurl = "file://" + "/usr/share/openyoudao/config.html"
+homeurl = "file:///home/bjzhangxin/.openyoudao/main.html"
+indexurl = "file:///home/bjzhangxin/.openyoudao/index.html"
 baseurlyoudao="http://dict.youdao.com/search?q="
