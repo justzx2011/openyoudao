@@ -1,0 +1,3 @@
+include LICENSE README.md
+recursive-include cache *
+include desktop/openyoudao.desktop
