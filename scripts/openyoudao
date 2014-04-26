@@ -2,10 +2,12 @@
 # -*- coding: UTF-8 -*-
 # Author: justzx <justzx2011@gmail.com>
 #         lvzongting <lvzongting@gmail.com>
-#	  needf <zy20130729@gmail.com>
-# License: GNU LGPL3
+#	  kokdemo <kokdemo@gmail.com>
+#         xdlailai <xdlailai@gmail.com>
+#         Marguerite Su <marguerite@opensuse.org>
+# License: MIT
 
-__revision__ = 'beta'
+__revision__ = 'v0.2'
 
 if __name__=="__main__":
     import os
