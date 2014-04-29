@@ -27,6 +27,18 @@
          
         sudo apt-get install openyoudao
         
+#Opensuse:
+
+        http://software.opensuse.org/package/openyoudao
+        
+#setup.py:
+
+        git clone https://github.com/justzx2011/openyoudao
+        
+        python setup.py build 
+        
+        sudo python setup.py install
+        
 #其他发行版linux:
         #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
