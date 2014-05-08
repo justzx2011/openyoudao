@@ -4,6 +4,7 @@ import os
 import gtk
 import time
 import webkit
+
 class OutputView(webkit.WebView):
     '''a class that represents the output widget of a conversation
     '''
@@ -39,6 +40,7 @@ class Window(gtk.Window):
         self.set_resizable(True)
         self.set_title("openyoudao")
         self.set_default_size(800, 240)
+        self.set_icon_from_file("/usr/share/openyoudao/images/icon/icon.jpg")
         self.scroll = gtk.ScrolledWindow()
         self.scroll.props.hscrollbar_policy = gtk.POLICY_NEVER
         self.scroll.props.vscrollbar_policy = gtk.POLICY_NEVER

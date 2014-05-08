@@ -14,7 +14,7 @@
 #Archlinux：
         yaourt -S openyoudao
         
-#Ubunte/debian:        
+#Ubuntu/debian:        
         Add mirrorlist:
 
         deb http://ppa.launchpad.net/justzx2011/openyoudao-v0.2/ubuntu trusty main 
