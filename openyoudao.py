@@ -39,22 +39,27 @@ def record_callback(reply):
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
             print "您选取的是: ", text
-            text = text.strip('\r\n\x00').lower()
+            text = text.strip('\r\n\x00').lower().strip()
             if(gl.pre_text != text and text!=""):
 			         gl.pre_text = text
 				 if(False==os.path.exists(gl.cachedir)):
 				     os.system("mkdir  \'" + gl.cachedir + "\'")
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
-                                 if text=="%zh2en":
+                                 if "%zh2en" in text:
                                      gl.searchurl=gl.zh2en
-                                 if text=="%zh2jap":
+			             url= gl.searchurl + "开源"
+                                 elif "%zh2jap" in text:
                                      gl.searchurl=gl.zh2jap
-                                 if text=="%zh2ko":
+			             url= gl.searchurl + "开源"
+                                 elif "%zh2ko" in text:
                                      gl.searchurl=gl.zh2ko
-                                 if text=="%zh2fr":
+			             url= gl.searchurl + "开源"
+                                 elif "%zh2fr" in text:
                                      gl.searchurl=gl.zh2fr
-			         url= gl.searchurl + text
+			             url= gl.searchurl + "开源"
+                                 else:
+			             url= gl.searchurl + text
 			         print url
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()

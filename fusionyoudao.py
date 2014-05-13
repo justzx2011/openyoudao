@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from BeautifulSoup import BeautifulSoup
 import os
 import gl
@@ -27,5 +29,7 @@ def reconstruct():
     os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' \'"+ gl.resultdir + "\'")
     os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' \'"+ gl.resultdir + "\'")
     #os.system("sed -i -e 's/href=\"\/simplayer.swf/href=\"http:\/\/dict.youdao.com\/simplayer.swf/g' \'"+ gl.resultdir + "\'")
+    os.system("sed -i -e 's/英文写作助手/返回配置主页/g' \'"+ gl.resultdir + "\'")
+    os.system("sed -i -e 's/http:\/\/dict.youdao.com\/writing\/?keyfrom=dictweb/file:\/\/\/usr\/share\/openyoudao\/config.html/g' \'"+ gl.resultdir + "\'")
     print "fusionyoudao completed"
     #os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")
