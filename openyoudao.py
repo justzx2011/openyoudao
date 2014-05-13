@@ -46,7 +46,15 @@ def record_callback(reply):
 				     os.system("mkdir  \'" + gl.cachedir + "\'")
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
-			         url= "http://dict.youdao.com/search?q=" + text
+                                 if text=="%zh2en":
+                                     gl.searchurl=gl.zh2en
+                                 if text=="%zh2jap":
+                                     gl.searchurl=gl.zh2jap
+                                 if text=="%zh2ko":
+                                     gl.searchurl=gl.zh2ko
+                                 if text=="%zh2fr":
+                                     gl.searchurl=gl.zh2fr
+			         url= gl.searchurl + text
 			         print url
 			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			         fusionyoudao.reconstruct()
