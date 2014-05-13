@@ -6,9 +6,5 @@
 #         xdlailai <xdlailai@gmail.com>
 #         Marguerite Su <marguerite@opensuse.org>
 # License: MIT
-
 __revision__ = 'v0.2'
-
-if __name__=="__main__":
-    import os
-    os.system("python2.7 /usr/lib/openyoudao/openyoudao.py")
+python2.7 /usr/lib/openyoudao/openyoudao.py
