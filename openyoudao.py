@@ -48,16 +48,16 @@ def record_callback(reply):
 				     os.system("touch  \'" + gl.resultdir + "\'")
                                  if "%zh2en" in text:
                                      gl.searchurl=gl.zh2en
-			             url= gl.searchurl + "开源"
+			             url= gl.searchurl + "汉英互译"
                                  elif "%zh2jap" in text:
                                      gl.searchurl=gl.zh2jap
-			             url= gl.searchurl + "开源"
+			             url= gl.searchurl + "汉日互译"
                                  elif "%zh2ko" in text:
                                      gl.searchurl=gl.zh2ko
-			             url= gl.searchurl + "开源"
+			             url= gl.searchurl + "汉韩互译"
                                  elif "%zh2fr" in text:
                                      gl.searchurl=gl.zh2fr
-			             url= gl.searchurl + "开源"
+			             url= gl.searchurl + "汉法互译"
                                  elif "%page2index" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
