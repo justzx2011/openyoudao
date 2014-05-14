@@ -1,10 +1,1 @@
-#!/usr/bin/python2.7
-# -*- coding: UTF-8 -*-
-# Author: justzx <justzx2011@gmail.com>
-#         lvzongting <lvzongting@gmail.com>
-#	  kokdemo <kokdemo@gmail.com>
-#         xdlailai <xdlailai@gmail.com>
-#         Marguerite Su <marguerite@opensuse.org>
-# License: MIT
-__revision__ = 'v0.2'
 python2.7 /usr/lib/openyoudao/openyoudao.py
