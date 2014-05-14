@@ -58,7 +58,7 @@ def record_callback(reply):
                                  elif "%zh2fr" in text:
                                      gl.searchurl=gl.zh2fr
 			             url= gl.searchurl + "汉法互译"
-                                 elif "%page2index" in text:
+                                 elif "%index" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
                                  else:
