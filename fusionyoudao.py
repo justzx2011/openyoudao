@@ -28,6 +28,7 @@ def reconstruct():
     head.close()
     os.system("sed -i -e 's/action=\"\/search/action=\"http:\/\/dict.youdao.com\/search/g' \'"+ gl.resultdir + "\'")
     os.system("sed -i -e 's/href=\"\/example/href=\"http:\/\/dict.youdao.com\/example/g' \'"+ gl.resultdir + "\'")
+    os.system("sed -i -e 's/href=\"\/simplayer.swf/href=\"http:\/\/dict.youdao.com\/simplayer.swf/g' \'"+ gl.resultdir + "\'")
     #os.system("sed -i -e 's/href=\"\/simplayer.swf/href=\"http:\/\/dict.youdao.com\/simplayer.swf/g' \'"+ gl.resultdir + "\'")
     os.system("sed -i -e 's/<h3>目录<\/h3>/<h3>%index<\/h3>/g' \'"+ gl.resultdir + "\'")
     #os.system("sed -i -e 's/http:\/\/dict.youdao.com\/writing\/?keyfrom=dictweb/file:\/\/\/usr\/share\/openyoudao\/config.html/g' \'"+ gl.resultdir + "\'")
