@@ -34,6 +34,7 @@ def record_callback(reply):
 # deal with the event type
         if event.type == X.ButtonRelease:
             # get text
+            global Alive
             pipe = os.popen("xclip -o")
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
@@ -46,29 +47,44 @@ def record_callback(reply):
 				     os.system("mkdir  \'" + gl.cachedir + "\'")
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
-                                 if "%zh2en" in text:
+                                 if "%zh2enlj%" in text:
+                                     gl.searchurl=gl.zh2enlj
+			             url= gl.searchurl + "汉英例句"
+                                 elif "%zh2japlj%" in text:
+                                     gl.searchurl=gl.zh2japlj
+			             url= gl.searchurl + "汉日例句"
+                                 elif "%zh2kolj%" in text:
+                                     gl.searchurl=gl.zh2kolj
+			             url= gl.searchurl + "汉韩例句"
+                                 elif "%zh2frlj%" in text:
+                                     gl.searchurl=gl.zh2frlj
+			             url= gl.searchurl + "汉法例句"
+                                 elif "%zh2en%" in text:
                                      gl.searchurl=gl.zh2en
 			             url= gl.searchurl + "汉英互译"
-                                 elif "%zh2jap" in text:
+                                 elif "%zh2jap%" in text:
                                      gl.searchurl=gl.zh2jap
 			             url= gl.searchurl + "汉日互译"
-                                 elif "%zh2ko" in text:
+                                 elif "%zh2ko%" in text:
                                      gl.searchurl=gl.zh2ko
 			             url= gl.searchurl + "汉韩互译"
-                                 elif "%zh2fr" in text:
+                                 elif "%zh2fr%" in text:
                                      gl.searchurl=gl.zh2fr
 			             url= gl.searchurl + "汉法互译"
-                                 elif "%index" in text:
+                                 elif "%index%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
+                                 elif "%exits%" in text:
+                                     Alive=0
                                  else:
 			             url= gl.searchurl + text
                                  if url !="":
 			             os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			             fusionyoudao.reconstruct()
 			             gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
-			         window.load(gl.homeurl)
-			         window.show()
+                                 if Alive==1:
+			             window.load(gl.homeurl)
+			             window.show()
 if not record_dpy.has_extension("RECORD"):
   print "RECORD extension not found"
   sys.exit(1)
@@ -117,7 +133,7 @@ def main():
   sleep(0.5)
   thread.start_new_thread(gettext,())
   while Alive:
-	sleep(0.5)
+	sleep(0.2)
         clip_id=os.popen("ps aux | grep xclip | grep -v grep |awk '{print $2}'| grep -v ^$ |wc -l")
         pid = clip_id.readline().strip('\r\n\x00')
         if int(pid)>=1:

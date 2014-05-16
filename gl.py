@@ -27,3 +27,7 @@ zh2en=searchurl
 zh2jap="http://dict.youdao.com/search?le=jap&q="
 zh2ko="http://dict.youdao.com/search?le=ko&q="
 zh2fr="http://dict.youdao.com/search?le=ko&q="
+zh2enlj="http://dict.youdao.com/search?le=eng&q=lj%3A"
+zh2japlj="http://dict.youdao.com/search?le=jap&q=lj%3A"
+zh2kolj="http://dict.youdao.com/search?le=ko&q=lj%3A"
+zh2frlj="http://dict.youdao.com/search?le=fr&q=lj%3A"
