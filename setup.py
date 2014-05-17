@@ -29,7 +29,7 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
 	'Environment :: X11 Applications :: GTK',
-        Intended Audience :: End Users/Desktop',
+        'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
