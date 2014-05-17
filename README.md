@@ -17,9 +17,9 @@
 #Ubuntu/debian:        
         Add mirrorlist:
 
-        deb http://ppa.launchpad.net/justzx2011/openyoudao-v0.2/ubuntu trusty main 
+        deb http://ppa.launchpad.net/justzx2011/openyoudao-v0.3/ubuntu trusty main 
 
-        deb-src http://ppa.launchpad.net/justzx2011/openyoudao-v0.2/ubuntu trusty main
+        deb-src http://ppa.launchpad.net/justzx2011/openyoudao-v0.3/ubuntu trusty main
 
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  14C9B91C3F9493B9
 
