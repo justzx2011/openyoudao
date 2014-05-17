@@ -47,7 +47,7 @@ def reconstruct(func):
         os.system("sed -i -e '/全部</'d \'"+ gl.resultdir + "\'")
         os.system("sed -i -e '/音频例句</'d \'"+ gl.resultdir + "\'")
         os.system("sed -i -e '/视频例句</'d \'"+ gl.resultdir + "\'")
-        os.system("sed -i -e 's/<li class=\"nav-collins\"><a href=\"http:\/\/dict.youdao.com\/writing\/?keyfrom=dictweb\" hidefocus=\"true\">英文写作助手<\/a><span class=\"collins-icon\"><\/span><\/li>//g' \'"+ gl.resultdir + "\'")
+    os.system("sed -i -e 's/<li class=\"nav-collins\"><a href=\"http:\/\/dict.youdao.com\/writing\/?keyfrom=dictweb\" hidefocus=\"true\">英文写作助手<\/a><span class=\"collins-icon\"><\/span><\/li>//g' \'"+ gl.resultdir + "\'")
     #os.system("sed -i -e 's/http:\/\/dict.youdao.com\/writing\/?keyfrom=dictweb/file:\/\/\/usr\/share\/openyoudao\/config.html/g' \'"+ gl.resultdir + "\'")
     print "fusionyoudao completed"
     #os.system("sed -i -e 's/<\/div><\/div><\/div>/ /g' cache/result.html")
