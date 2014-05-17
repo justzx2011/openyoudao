@@ -51,18 +51,22 @@ def record_callback(reply):
                                      gl.homeurl="file:///usr/share/openyoudao/zh2enlj.html"
                                      gl.searchurl=gl.zh2enlj
                                      url = ""
+                                     gl.func="lj"
                                  elif "%zh2japlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2japlj.html"
                                      gl.searchurl=gl.zh2japlj
                                      url = ""
+                                     gl.func="lj"
                                  elif "%zh2kolj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2kolj.html"
                                      gl.searchurl=gl.zh2kolj
                                      url = ""
+                                     gl.func="lj"
                                  elif "%zh2frlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2frlj.html"
                                      gl.searchurl=gl.zh2frlj
                                      url = ""
+                                     gl.func="lj"
                                  elif "%zh2en%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2en.html"
                                      gl.searchurl=gl.zh2en
@@ -94,7 +98,7 @@ def record_callback(reply):
 			             url= gl.searchurl + text
                                  if url !="":
 			             os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
-			             fusionyoudao.reconstruct()
+			             fusionyoudao.reconstruct(gl.func)
 			             gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
                                  if Alive==1:
 			             window.load(gl.homeurl)
