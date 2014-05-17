@@ -48,29 +48,37 @@ def record_callback(reply):
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
                                  if "%zh2enlj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2enlj.html"
                                      gl.searchurl=gl.zh2enlj
-			             url= gl.searchurl + "汉英例句"
+                                     url = ""
                                  elif "%zh2japlj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2japlj.html"
                                      gl.searchurl=gl.zh2japlj
-			             url= gl.searchurl + "汉日例句"
+                                     url = ""
                                  elif "%zh2kolj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2kolj.html"
                                      gl.searchurl=gl.zh2kolj
-			             url= gl.searchurl + "汉韩例句"
+                                     url = ""
                                  elif "%zh2frlj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2frlj.html"
                                      gl.searchurl=gl.zh2frlj
-			             url= gl.searchurl + "汉法例句"
+                                     url = ""
                                  elif "%zh2en%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2en.html"
                                      gl.searchurl=gl.zh2en
-			             url= gl.searchurl + "汉英互译"
+                                     url = ""
                                  elif "%zh2jap%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2jap.html"
                                      gl.searchurl=gl.zh2jap
-			             url= gl.searchurl + "汉日互译"
+                                     url = ""
                                  elif "%zh2ko%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2ko.html"
                                      gl.searchurl=gl.zh2ko
-			             url= gl.searchurl + "汉韩互译"
+                                     url = ""
                                  elif "%zh2fr%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2fr.html"
                                      gl.searchurl=gl.zh2fr
-			             url= gl.searchurl + "汉法互译"
+                                     url = ""
                                  elif "%index%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
