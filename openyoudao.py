@@ -34,25 +34,71 @@ def record_callback(reply):
 # deal with the event type
         if event.type == X.ButtonRelease:
             # get text
+            global Alive
             pipe = os.popen("xclip -o")
             text = pipe.readline()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
             print "您选取的是: ", text
-            text = text.strip('\r\n\x00').lower()
+            text = text.strip('\r\n\x00').lower().strip()
             if(gl.pre_text != text and text!=""):
 			         gl.pre_text = text
 				 if(False==os.path.exists(gl.cachedir)):
 				     os.system("mkdir  \'" + gl.cachedir + "\'")
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
-			         url= "http://dict.youdao.com/search?q=" + text
-			         print url
-			         os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
-			         fusionyoudao.reconstruct()
-			         gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
-			         window.load(gl.homeurl)
-			         window.show()
+                                 if "%zh2enlj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2enlj.html"
+                                     gl.searchurl=gl.zh2enlj
+                                     url = ""
+                                 elif "%zh2japlj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2japlj.html"
+                                     gl.searchurl=gl.zh2japlj
+                                     url = ""
+                                 elif "%zh2kolj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2kolj.html"
+                                     gl.searchurl=gl.zh2kolj
+                                     url = ""
+                                 elif "%zh2frlj%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2frlj.html"
+                                     gl.searchurl=gl.zh2frlj
+                                     url = ""
+                                 elif "%zh2en%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2en.html"
+                                     gl.searchurl=gl.zh2en
+                                     url = ""
+                                 elif "%zh2jap%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2jap.html"
+                                     gl.searchurl=gl.zh2jap
+                                     url = ""
+                                 elif "%zh2ko%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2ko.html"
+                                     gl.searchurl=gl.zh2ko
+                                     url = ""
+                                 elif "%zh2fr%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/zh2fr.html"
+                                     gl.searchurl=gl.zh2fr
+                                     url = ""
+                                 elif "%index%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/config.html"
+                                     url = ""
+                                 elif "%helps%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/help.html"
+                                     url = ""
+                                 elif "%donate%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/donate.html"
+                                     url = ""
+                                 elif "%exits%" in text:
+                                     Alive=0
+                                 else:
+			             url= gl.searchurl + text
+                                 if url !="":
+			             os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
+			             fusionyoudao.reconstruct()
+			             gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
+                                 if Alive==1:
+			             window.load(gl.homeurl)
+			             window.show()
 if not record_dpy.has_extension("RECORD"):
   print "RECORD extension not found"
   sys.exit(1)
@@ -101,7 +147,7 @@ def main():
   sleep(0.5)
   thread.start_new_thread(gettext,())
   while Alive:
-	sleep(0.5)
+	sleep(0.2)
         clip_id=os.popen("ps aux | grep xclip | grep -v grep |awk '{print $2}'| grep -v ^$ |wc -l")
         pid = clip_id.readline().strip('\r\n\x00')
         if int(pid)>=1:
