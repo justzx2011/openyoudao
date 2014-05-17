@@ -74,6 +74,9 @@ def record_callback(reply):
                                  elif "%index%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
+                                 elif "%helps%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/help.html"
+                                     url = ""
                                  elif "%exits%" in text:
                                      Alive=0
                                  else:

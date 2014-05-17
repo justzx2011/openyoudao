@@ -21,6 +21,7 @@ resultdir = userdir + "/.openyoudao/result.html"
 headyoudao = "/usr/share/openyoudao/construction/youdao/head.html"
 bodystartyoudao = "/usr/share/openyoudao/construction/youdao/body-start.txt"
 homeurl = "file://" + "/usr/share/openyoudao/config.html"
+helpurl = "file://" + "/usr/share/openyoudao/help.html"
 baseurlyoudao="http://dict.youdao.com/search?q="
 searchurl="http://dict.youdao.com/search?le=eng&q="
 zh2en=searchurl
