@@ -8,7 +8,7 @@ f.close()
 
 setup(
     name='openyoudao',
-    version=1.0,
+    version=0.3,
     description='A Youdao client for Linux',
     long_description=readme,
     author='justzx',
@@ -23,6 +23,7 @@ setup(
 		("/usr/share/openyoudao/construction/youdao",['cache/construction/youdao/head.html']),
 		("/usr/share/openyoudao/css",glob.glob("cache/css/*.css")),
 		("/usr/share/openyoudao/images/icon/",['cache/images/icon/icon.jpg']),
+		("/usr/share/openyoudao/images/donate/",['cache/images/icon/alipay.png']),
 		("/usr/share/openyoudao/js", glob.glob("cache/js/*.js")),
     ],
     classifiers=[
