@@ -9,8 +9,10 @@ global resultdir
 global homeurl
 global headyoudao
 global bodystartyoudao
+import locale
 
 pre_text=""
+locale=locale.getdefaultlocale()
 userdir=os.path.expanduser('~')
 workdir = os.getcwd()
 homedir = sys.path[0]
