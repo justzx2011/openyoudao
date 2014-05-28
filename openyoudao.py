@@ -92,6 +92,9 @@ def record_callback(reply):
                                  elif "%donate%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/donate.html"
                                      url = ""
+                                 elif "%expand%" in text:
+                                     gl.homeurl="file:///usr/share/openyoudao/expand.html"
+                                     url = ""
                                  elif "%exits%" in text:
                                      Alive=0
                                  else:
