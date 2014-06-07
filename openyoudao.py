@@ -54,37 +54,45 @@ def record_callback(reply):
                                      gl.searchurl=gl.zh2enlj
                                      url = ""
                                      gl.func="lj"
+                                     gl.Dict="youdao"
                                  elif "%zh2japlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2japlj.html"
                                      gl.searchurl=gl.zh2japlj
                                      url = ""
                                      gl.func="lj"
+                                     gl.Dict="youdao"
                                  elif "%zh2kolj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2kolj.html"
                                      gl.searchurl=gl.zh2kolj
                                      url = ""
                                      gl.func="lj"
+                                     gl.Dict="youdao"
                                  elif "%zh2frlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2frlj.html"
                                      gl.searchurl=gl.zh2frlj
                                      url = ""
                                      gl.func="lj"
+                                     gl.Dict="youdao"
                                  elif "%zh2en%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2en.html"
                                      gl.searchurl=gl.zh2en
                                      url = ""
+                                     gl.Dict="youdao"
                                  elif "%zh2jap%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2jap.html"
                                      gl.searchurl=gl.zh2jap
                                      url = ""
+                                     gl.Dict="youdao"
                                  elif "%zh2ko%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2ko.html"
                                      gl.searchurl=gl.zh2ko
                                      url = ""
+                                     gl.Dict="youdao"
                                  elif "%zh2fr%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2fr.html"
                                      gl.searchurl=gl.zh2fr
                                      url = ""
+                                     gl.Dict="youdao"
                                  elif "%index%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
@@ -105,16 +113,15 @@ def record_callback(reply):
                                      Alive=0
                                  else:
 			             url= gl.searchurl + text
-                                 print gl.Dict 
                                  if  url !="":
                                      if gl.Dict=="google":
                                          gs = goslate.Goslate()
                                          gl.lang=gs.detect(text)
-                                         #taget=gs.translate(text, 'zh')
                                          g_tar=open(gl.googledir,'w+')
-                                         basehtml="<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Google Translate</title></head><body><p>Source Language：%s</p><p>Target Language:%s</p><p>Selected Text:%s</p><p>Target Text:%s</p></body></html>"%(gl.lang,'zh',text,gs.translate(text, 'zh'))
-                                         print "待翻译的语言是:%s" %(gl.lang)
-                                         print "译文是:%s" % (gs.translate(text, 'zh'))
+                                         if gl.lang=='zh-CN':
+                                             basehtml="<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Google Translate</title></head><body><p>Source Language：&nbsp;&nbsp;%s</p><p>Target Language :&nbsp;&nbsp;&nbsp;%s</p><p>Selected &nbsp;&nbsp;Text :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%s</p><p>Target &nbsp;&nbsp;&nbsp;&nbsp;Text :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%s</p><p>%s &nbsp;&nbsp;&nbsp;%s</p></body></html>"%(gl.lang,'en',text,gs.translate(text, 'en'),"%index%","%expand%")
+                                         else:
+                                             basehtml="<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Google Translate</title></head><body><p>Source Language：&nbsp;&nbsp;%s</p><p>Target Language :&nbsp;&nbsp;&nbsp;%s</p><p>Selected &nbsp;&nbsp;Text :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%s</p><p>Target &nbsp;&nbsp;&nbsp;&nbsp;Text :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%s</p><p>%s &nbsp;&nbsp;&nbsp;%s</p></body></html>"%(gl.lang,'zh-CN',text,gs.translate(text, 'zh-CN'),"%index%","%expand%")
                                          print >> g_tar,basehtml
                                          g_tar.close()
                                          gl.homeurl= "file://" + gl.googledir
