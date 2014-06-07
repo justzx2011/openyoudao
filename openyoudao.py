@@ -111,15 +111,17 @@ def record_callback(reply):
                                          gs = goslate.Goslate()
                                          gl.lang=gs.detect(text)
                                          #taget=gs.translate(text, 'zh')
+                                         g_tar=open(gl.googledir,'w+')
+                                         basehtml="<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>Google Translate</title></head><body><p>Source Language：%s</p><p>Target Language:%s</p><p>Selected Text:%s</p><p>Target Text:%s</p></body></html>"%(gl.lang,'zh',text,gs.translate(text, 'zh'))
                                          print "待翻译的语言是:%s" %(gl.lang)
                                          print "译文是:%s" % (gs.translate(text, 'zh'))
+                                         print >> g_tar,basehtml
+                                         g_tar.close()
+                                         gl.homeurl= "file://" + gl.googledir
                                      if gl.Dict=="youdao":
 			                 os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			                 fusionyoudao.reconstruct(gl.func)
 			                 gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
-                                         if Alive==1:
-			                     window.load(gl.homeurl)
-			                     window.show()
                                  if Alive==1:
 			             window.load(gl.homeurl)
 			             window.show()

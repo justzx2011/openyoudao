@@ -11,6 +11,7 @@ global headyoudao
 global bodystartyoudao
 import locale
 
+#[youdao config]
 pre_text=""
 locale=locale.getdefaultlocale()
 userdir=os.path.expanduser('~')
@@ -26,6 +27,8 @@ homeurl = "file://" + "/usr/share/openyoudao/config.html"
 expandurl = "file://" + "/usr/share/openyoudao/expand.html"
 helpurl = "file://" + "/usr/share/openyoudao/help.html"
 baseurlyoudao="http://dict.youdao.com/search?q="
+
+#[youdao lj]
 searchurl="http://dict.youdao.com/search?le=eng&q="
 zh2en=searchurl
 zh2jap="http://dict.youdao.com/search?le=jap&q="
@@ -38,3 +41,6 @@ zh2frlj="http://dict.youdao.com/search?le=fr&q=lj%3A"
 func="default"
 Dict="youdao"
 lang="en"
+
+#[google config]
+googledir = userdir + "/.openyoudao/google.html"
