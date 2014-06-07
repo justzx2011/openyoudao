@@ -42,7 +42,7 @@ def record_callback(reply):
             pipe.close()
             print "您选取的是: ", text
             text = text.strip('\r\n\x00').lower().strip()
-            if(gl.pre_text != text and text!=""):
+            if(gl.pre_text != text and text!=""and gl.lock=="0" or text=="%lock%"):
                                  url = ""
 			         gl.pre_text = text
 				 if(False==os.path.exists(gl.cachedir)):
@@ -93,6 +93,8 @@ def record_callback(reply):
                                      gl.searchurl=gl.zh2fr
                                      url = ""
                                      gl.Dict="youdao"
+
+                                 #config
                                  elif "%index%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
@@ -108,6 +110,14 @@ def record_callback(reply):
                                      url = ""
                                  elif "%expand%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/expand.html"
+                                     url = ""
+                                 elif "%lock%" in text:
+                                     if gl.lock=="0":
+                                         gl.lock="1"
+                                         gl.homeurl="file:///usr/share/openyoudao/lock.html"
+                                     else:
+                                         gl.lock="0"
+                                         gl.homeurl="file:///usr/share/openyoudao/unlock.html"
                                      url = ""
                                  elif "%exits%" in text:
                                      Alive=0

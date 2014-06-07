@@ -10,7 +10,8 @@ global homeurl
 global headyoudao
 global bodystartyoudao
 import locale
-
+#[config]
+lock="0"
 #[youdao config]
 pre_text=""
 locale=locale.getdefaultlocale()
