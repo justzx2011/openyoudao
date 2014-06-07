@@ -3,6 +3,7 @@
 # Simple demo for the RECORD extension
 # Not very much unlike the xmacrorec2 program in the xmacro package.
 import popen2
+import  goslate
 from time import sleep
 import thread
 import webshot
@@ -42,6 +43,7 @@ def record_callback(reply):
             print "您选取的是: ", text
             text = text.strip('\r\n\x00').lower().strip()
             if(gl.pre_text != text and text!=""):
+                                 url = ""
 			         gl.pre_text = text
 				 if(False==os.path.exists(gl.cachedir)):
 				     os.system("mkdir  \'" + gl.cachedir + "\'")
@@ -92,6 +94,7 @@ def record_callback(reply):
                                  elif "%goslate%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/goslate.html"
                                      url = ""
+                                     gl.Dict="google"
                                  elif "%donate%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/donate.html"
                                      url = ""
@@ -102,10 +105,21 @@ def record_callback(reply):
                                      Alive=0
                                  else:
 			             url= gl.searchurl + text
-                                 if url !="":
-			             os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
-			             fusionyoudao.reconstruct(gl.func)
-			             gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
+                                 print gl.Dict 
+                                 if  url !="":
+                                     if gl.Dict=="google":
+                                         gs = goslate.Goslate()
+                                         gl.lang=gs.detect(text)
+                                         #taget=gs.translate(text, 'zh')
+                                         print "待翻译的语言是:%s" %(gl.lang)
+                                         print "译文是:%s" % (gs.translate(text, 'zh'))
+                                     if gl.Dict=="youdao":
+			                 os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
+			                 fusionyoudao.reconstruct(gl.func)
+			                 gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
+                                         if Alive==1:
+			                     window.load(gl.homeurl)
+			                     window.show()
                                  if Alive==1:
 			             window.load(gl.homeurl)
 			             window.show()
@@ -145,11 +159,6 @@ def gettext():
   os.system("xclip -f /dev/null")           #清空剪切板
   record_dpy.record_enable_context(ctx,record_callback)
   record_dpy.record_free_context(ctx)
-def lookup_keysym(keysym):
-  for name in dir(XK):
-    if name[:3] == "XK_" and getattr(XK, name) == keysym:
-      return name[3:]
-    return "[%d]" % keysym
 def main():
   global Alive
   Alive=1
