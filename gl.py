@@ -45,3 +45,7 @@ lang="en"
 
 #[google config]
 googledir = userdir + "/.openyoudao/google.html"
+
+#[common config]
+keyworddir = userdir + "/.openyoudao/keyword.html"
+historydir = userdir + "/.openyoudao/history.html"

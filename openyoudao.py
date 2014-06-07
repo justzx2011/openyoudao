@@ -49,6 +49,7 @@ def record_callback(reply):
 				     os.system("mkdir  \'" + gl.cachedir + "\'")
 				     os.system("touch  \'" + gl.origindir + "\'")
 				     os.system("touch  \'" + gl.resultdir + "\'")
+                                 #youdao
                                  if "%zh2enlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2enlj.html"
                                      gl.searchurl=gl.zh2enlj
@@ -111,6 +112,17 @@ def record_callback(reply):
                                  elif "%expand%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/expand.html"
                                      url = ""
+                                 elif "%history%" in text:
+                                     gl.homeurl= "file://" + gl.historydir
+                                     if Alive==1:
+                                         his_tar=open(gl.historydir,'w')
+                                         print >> his_tar,"<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>History</title></head><body><p>%s&nbsp;&nbsp;&nbsp;&nbsp;%s</p>"%("%index%","%expand%") 
+                                         keyword=open(gl.keyworddir,'r')
+                                         print >> his_tar,keyword.read() 
+                                         print >> his_tar,"</body></html>" 
+                                         his_tar.close()
+                                         keyword.close()
+                                     url = ""
                                  elif "%lock%" in text:
                                      if gl.lock=="0":
                                          gl.lock="1"
@@ -124,6 +136,11 @@ def record_callback(reply):
                                  else:
 			             url= gl.searchurl + text
                                  if  url !="":
+                                     if Alive==1:
+                                         k_tar=open(gl.keyworddir,'a')
+                                         print >> k_tar,"<p>%s</p>" % text
+                                         k_tar.close()
+                                     #[google youdao]
                                      if gl.Dict=="google":
                                          gs = goslate.Goslate()
                                          gl.lang=gs.detect(text)
