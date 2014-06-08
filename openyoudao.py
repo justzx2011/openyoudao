@@ -124,7 +124,7 @@ def record_callback(reply):
                                  elif "%expand%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/expand.html"
                                      url = ""
-                                     gl.title="更多应用"
+                                     gl.title="展开选项"
                                  elif "%history%" in text:
                                      gl.homeurl= "file://" + gl.historydir
                                      if Alive==1:
