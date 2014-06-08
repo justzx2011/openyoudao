@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
-# Simple demo for the RECORD extension
+# RECORD extension
 # Not very much unlike the xmacrorec2 program in the xmacro package.
 import popen2
 import  goslate
@@ -56,62 +56,75 @@ def record_callback(reply):
                                      url = ""
                                      gl.func="lj"
                                      gl.Dict="youdao"
+                                     gl.title="汉英例句"
                                  elif "%zh2japlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2japlj.html"
                                      gl.searchurl=gl.zh2japlj
                                      url = ""
                                      gl.func="lj"
                                      gl.Dict="youdao"
+                                     gl.title="汉日例句"
                                  elif "%zh2kolj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2kolj.html"
                                      gl.searchurl=gl.zh2kolj
                                      url = ""
                                      gl.func="lj"
                                      gl.Dict="youdao"
+                                     gl.title="汉韩例句"
                                  elif "%zh2frlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2frlj.html"
                                      gl.searchurl=gl.zh2frlj
                                      url = ""
                                      gl.func="lj"
                                      gl.Dict="youdao"
+                                     gl.title="汉法例句"
                                  elif "%zh2en%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2en.html"
                                      gl.searchurl=gl.zh2en
                                      url = ""
                                      gl.Dict="youdao"
+                                     gl.title="汉英互译"
                                  elif "%zh2jap%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2jap.html"
                                      gl.searchurl=gl.zh2jap
                                      url = ""
                                      gl.Dict="youdao"
+                                     gl.title="汉日互译"
                                  elif "%zh2ko%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2ko.html"
                                      gl.searchurl=gl.zh2ko
                                      url = ""
-                                     gl.Dict="youdao"
+                                     gl.Dict="youdao"  
+                                     gl.title="汉韩互译"
                                  elif "%zh2fr%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2fr.html"
                                      gl.searchurl=gl.zh2fr
                                      url = ""
                                      gl.Dict="youdao"
+                                     gl.title="汉法互译"
 
                                  #config
                                  elif "%index%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/config.html"
                                      url = ""
+                                     gl.title="有道首页"
                                  elif "%helps%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/help.html"
                                      url = ""
+                                     gl.title="使用说明"
                                  elif "%goslate%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/goslate.html"
                                      url = ""
                                      gl.Dict="google"
+                                     gl.title="谷歌翻译"
                                  elif "%donate%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/donate.html"
                                      url = ""
+                                     gl.title="捐赠页面"
                                  elif "%expand%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/expand.html"
                                      url = ""
+                                     gl.title="更多应用"
                                  elif "%history%" in text:
                                      gl.homeurl= "file://" + gl.historydir
                                      if Alive==1:
@@ -123,13 +136,16 @@ def record_callback(reply):
                                          his_tar.close()
                                          keyword.close()
                                      url = ""
+                                     gl.title="取词历史"
                                  elif "%lock%" in text:
                                      if gl.lock=="0":
                                          gl.lock="1"
                                          gl.homeurl="file:///usr/share/openyoudao/lock.html"
+                                         gl.title="锁定取词"
                                      else:
                                          gl.lock="0"
                                          gl.homeurl="file:///usr/share/openyoudao/unlock.html"
+                                         gl.title="取词解锁"
                                      url = ""
                                  elif "%exits%" in text:
                                      Alive=0
@@ -157,6 +173,7 @@ def record_callback(reply):
 			                 fusionyoudao.reconstruct(gl.func)
 			                 gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
                                  if Alive==1:
+			             window.settitle(gl.title)
 			             window.load(gl.homeurl)
 			             window.show()
 if not record_dpy.has_extension("RECORD"):

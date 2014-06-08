@@ -1,3 +1,5 @@
+#!/usr/bin/python 
+#-*- coding: utf-8 -*-
 import sys
 import gl
 import os
@@ -15,11 +17,11 @@ class OutputView(webkit.WebView):
         self.set_property('can-default', True)
         self.set_full_content_zoom(1)
        # self.clipbord = gtk.Clipboard()
-        #settings = self.get_settings()
+        settings = self.get_settings()
         #try:
         #    settings.set_property('enable-universal-access-from-file-uris', True)
         #    settings.set_property('javascript-can-access-clipboard', False)
-        #    settings.set_property('enable-default-context-menu', True)
+        settings.set_property('enable-default-context-menu', False)
         #    settings.set_property('enable-page-cache', True)
         #    settings.set_property('tab-key-cycles-through-elements', True)
         #    settings.set_property('enable-file-access-from-file-uris', True)
@@ -38,7 +40,7 @@ class Window(gtk.Window):
     def __init__(self):
         gtk.Window.__init__(self)
         self.set_resizable(True)
-        self.set_title("openyoudao")
+        self.set_title("有道首页")
         self.set_default_size(800, 280)
         self.set_icon_from_file("/usr/share/openyoudao/images/icon/icon.jpg")
         self.scroll = gtk.ScrolledWindow()
@@ -55,6 +57,8 @@ class Window(gtk.Window):
         self.output.load_uri(url)
     def reload(self):
         self.output.reload()
+    def settitle(self,title):
+        self.set_title(title)
         
 #window = Window()
 #window.load(sys.argv[1])

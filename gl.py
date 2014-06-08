@@ -12,6 +12,7 @@ global bodystartyoudao
 import locale
 #[config]
 lock="0"
+title="有道首页"
 #[youdao config]
 pre_text=""
 locale=locale.getdefaultlocale()
