@@ -153,9 +153,16 @@ def record_callback(reply):
 			             url= gl.searchurl + text
                                  if  url !="":
                                      if Alive==1:
-                                         k_tar=open(gl.keyworddir,'a')
-                                         print >> k_tar,"<p>%s</p>" % text
-                                         k_tar.close()
+                                         fp = file(gl.keyworddir)
+                                         lines = []
+                                         for line in fp: # 内置的迭代器, 效率很高
+                                             lines.append(line)
+                                         fp.close()
+                                         lines.insert(0, "<p>%s</p>" % text) # 在第二行插入
+                                         s = '\n'.join(lines)
+                                         fp = file(gl.keyworddir, 'w')
+                                         fp.write(s)
+                                         fp.close()
                                      #[google youdao]
                                      if gl.Dict=="google":
                                          gs = goslate.Goslate()
