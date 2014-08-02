@@ -47,8 +47,14 @@ def record_callback(reply):
 			         gl.pre_text = text
 				 if(False==os.path.exists(gl.cachedir)):
 				     os.system("mkdir  \'" + gl.cachedir + "\'")
+				 if(False==os.path.exists(gl.origindir)):
 				     os.system("touch  \'" + gl.origindir + "\'")
+				 if(False==os.path.exists(gl.resultdir)):
 				     os.system("touch  \'" + gl.resultdir + "\'")
+				 if(False==os.path.exists(gl.historydir)):
+				     os.system("touch  \'" + gl.historydir + "\'")
+				 if(False==os.path.exists(gl.keyworddir)):
+				     os.system("touch  \'" + gl.keyworddir + "\'")
                                  #youdao
                                  if "%zh2enlj%" in text:
                                      gl.homeurl="file:///usr/share/openyoudao/zh2enlj.html"
