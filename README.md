@@ -17,9 +17,9 @@
 #Ubuntu/debian:        
         Add mirrorlist:
 
-        deb http://ppa.launchpad.net/justzx2011/openyoudao-v0.3/ubuntu trusty main 
+        deb http://ppa.launchpad.net/justzx2011/openyoudao-v0.4/ubuntu trusty main 
 
-        deb-src http://ppa.launchpad.net/justzx2011/openyoudao-v0.3/ubuntu trusty main
+        deb-src http://ppa.launchpad.net/justzx2011/openyoudao-v0.4/ubuntu trusty main
 
         sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  14C9B91C3F9493B9
 
@@ -42,9 +42,9 @@
 #其他发行版linux:
         #apt-get install python-xlib python-webkit python-lxml  python-beautifulsoup xclip inotify-tools curl
         
-        $wget https://github.com/justzx2011/openyoudao/archive/beta0.3.tar.gz
+        $wget https://github.com/justzx2011/openyoudao/archive/beta0.4.tar.gz
         
-         tar -xvf beta0.3.tar.gz && cd openyoudao-beta0.3
+         tar -xvf beta0.4.tar.gz && cd openyoudao-beta0.4
          
         安装bin文件，方便程序执行: 
         
@@ -115,6 +115,7 @@ TODO
 		31 修复视频播放
 DONE
 -----  
+        2014-8-02  -------   发布openyoudao v0.4版本
         2014-5-17  -------   发布openyoudao v0.3版本
         2014-4-16  -------   发布openyoudao v0.2版本
         2013-9-01  -------   发布openyoudao beta版本
@@ -153,6 +154,9 @@ DONE
         2012-5-26  -------   完成了程序退出机制，全局统一退出标志，为差错控制模块预留了接口
 UPDATES
 --------------
+        2014-8-02  -------   增加了取词历史
+        2014-7-07  -------   增加了取词锁定功能
+        2014-7-06  -------   增加了谷歌翻译
         2014-5-16  -------   增加了汉日互译、汉韩互译、汉法互译
         2014-5-15  -------   修复了视频例句无法播放的问题
         2014-5-7   -------   增加了程序启动图标
