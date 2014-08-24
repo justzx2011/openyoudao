@@ -11,7 +11,9 @@ import sys
 import fusionyoudao
 import gl
 import os
-import webkit, gtk
+#import webkit, gtk
+from gi.repository import Gdk,Gtk,GLib,WebKit
+
 # Change path so we find Xlib
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from Xlib import X, XK, display
@@ -191,7 +193,7 @@ def record_callback(reply):
                                  if Alive==1:
 			             window.settitle(gl.title)
 			             window.load(gl.homeurl)
-			             window.show()
+			             window.show_all()
 if not record_dpy.has_extension("RECORD"):
   print "RECORD extension not found"
   sys.exit(1)
@@ -217,9 +219,10 @@ def webshow():
   global window
   global Alive
   window = webshot.Window()
-  window.load(gl.homeurl)
-  window.show()
-  gtk.main()
+  #window.load(gl.homeurl)
+  window.load("file:///usr/share/openyoudao/config.html")
+  window.show_all()
+  Gtk.main()
   record_dpy.record_free_context(ctx)
   os.system("ps aux | grep openyoudao.py |awk '{print $2}' |xargs kill -9 >/dev/null")
   Alive=0
