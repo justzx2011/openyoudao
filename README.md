@@ -31,6 +31,14 @@
 
         http://software.opensuse.org/package/openyoudao
         
+#Fedora 19/20/21/rawhide 使用以下命令安装：
+     
+        yum install openyoudao
+
+#RHEL/CentOS 7 使用以下命令安装： 
+
+        yum --enablerepo=epel-testing install openyoudao
+        
 #setup.py:
 
         git clone https://github.com/justzx2011/openyoudao
