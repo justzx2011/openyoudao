@@ -33,11 +33,19 @@
         
 #Fedora 19/20/21/rawhide 使用以下命令安装：
      
-        yum install openyoudao
+        yum install dnf-plugins-core
+        
+        dnf copr enable mosquito/myrepo
+        
+        dnf install openyoudao
 
 #RHEL/CentOS 7 使用以下命令安装： 
 
-        yum --enablerepo=epel-testing install openyoudao
+        yum-config-manager --add-repo=https://copr.fedoraproject.org/coprs/mosquito/myrepo/repo/epel-7/mosquito-myrepo-epel-7.repo
+
+        yum install epel-release 
+         
+        yum install openyoudao
         
 #setup.py:
 
