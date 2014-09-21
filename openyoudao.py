@@ -43,6 +43,7 @@ def record_callback(reply):
                 text = text.strip(' -') + pipe.readline().strip('\r\n\x00 ').lower()
             else:
                 text = text + ' ' + pipe.readline().strip('\r\n\x00 ').lower()
+                text = text.strip()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
             print "您选取的是: ", text
