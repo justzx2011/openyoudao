@@ -37,11 +37,16 @@ def record_callback(reply):
             # get text
             global Alive
             pipe = os.popen("xclip -o")
-            text = pipe.readline()
+            text = pipe.readline().strip('\r\n\x00 ').lower()
+            #如果首行以连字符'-'结尾，则去掉'-'和空格接次行，否则加空格接次行
+            if text.endswith('-'):
+                text = text.strip(' -') + pipe.readline().strip('\r\n\x00 ').lower()
+            else:
+                text = text + ' ' + pipe.readline().strip('\r\n\x00 ').lower()
+                text = text.strip()
             pipe.readlines()    #清空管道剩余部分
             pipe.close()
             print "您选取的是: ", text
-            text = text.strip('\r\n\x00').lower().strip()
             if(gl.pre_text != text and text!=""and gl.lock=="0" or text=="%lock%"):
                                  url = ""
 			         gl.pre_text = text
