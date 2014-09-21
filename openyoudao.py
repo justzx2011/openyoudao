@@ -137,7 +137,7 @@ def record_callback(reply):
                                          his_tar=open(gl.historydir,'w')
                                          print >> his_tar,"<!DOCTYPE html><html><head><meta charset=\"utf-8\"><title>History</title></head><body><p>%s&nbsp;&nbsp;&nbsp;&nbsp;%s</p>"%("%index%","%expand%") 
                                          keyword=open(gl.keyworddir,'r')
-                                         print >> his_tar,keyword.read() 
+                                         print >> his_tar,''.join(keyword.readlines()[::-1]) 
                                          print >> his_tar,"</body></html>" 
                                          his_tar.close()
                                          keyword.close()
