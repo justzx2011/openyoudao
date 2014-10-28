@@ -185,7 +185,7 @@ def record_callback(reply):
                                          g_tar.close()
                                          gl.homeurl= "file://" + gl.googledir
                                      if gl.Dict=="youdao":
-			                 os.system("curl -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
+			                 os.system("curl  -A \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/37.0.2062.120 Chrome/37.0.2062.120 Safari/537.36\" -s -w %{http_code}:%{time_connect}:%{time_starttransfer}:%{time_total}:%{speed_download} -o \'" + gl.origindir +"\' \'" + url+ "\'")       #获得网页(非代理)
 			                 fusionyoudao.reconstruct(gl.func)
 			                 gl.homeurl="file://" + gl.resultdir #合成最终缓冲访问地址
                                  if Alive==1:
